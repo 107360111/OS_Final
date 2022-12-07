@@ -1,0 +1,1216 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		07F77B6AD62FDDFB05BF28A3A60EBD37 /* MJRefreshFooter.h in Headers */ = {isa = PBXBuildFile; fileRef = 45C1E7E9B8A49767AE2D79E66936C6BC /* MJRefreshFooter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0AA7116E1D252587AC7ED903AC819A19 /* MJRefreshBackStateFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 35B779A0DEFAFE508FFED12A480ABC75 /* MJRefreshBackStateFooter.m */; };
+		0C1AFE23669A9BA4871BD5162694DA16 /* MJRefreshAutoGifFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 254C2A408A44446F8C44475D15E5FA7E /* MJRefreshAutoGifFooter.m */; };
+		0CDAB089881F61CADA60025AACAF31B2 /* MJRefreshComponent.h in Headers */ = {isa = PBXBuildFile; fileRef = 8C5519297F32DDBA0B36F9A494A5F9C6 /* MJRefreshComponent.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0D9637DA7816E2FC05536E6E870CF866 /* MJRefreshStateHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = C26319AA6376CBE6FF20103DD95865AB /* MJRefreshStateHeader.m */; };
+		0E644BD8993C8F4A19C207D09FF8C90F /* MJRefreshGifHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = 41C533DD9218FEEDBE8BAAA6A9B79072 /* MJRefreshGifHeader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0FA40B9DF2A0775AB73E8B3065A48147 /* Pods-OS_Final-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D8AC6EAEACDF006DBEEC38A82FA3D05 /* Pods-OS_Final-dummy.m */; };
+		1506A50224587430A19AE54C219F4CD9 /* CheckBoxColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB56E8DBE10E425951B44895CBCC00BD /* CheckBoxColor.swift */; };
+		159FEAE5DC496012A9552E424EFBF14E /* MJRefreshBackNormalFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = DFBF0017CD3B1387F918636981A34D8F /* MJRefreshBackNormalFooter.m */; };
+		17E5507F92F0DF1DD5C3AB12E53F559F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31FE7C6ECA71C614A5A667C679B23874 /* Foundation.framework */; };
+		1CE0F0874503E35AA310A1BCF0800160 /* UIScrollView+MJRefresh.h in Headers */ = {isa = PBXBuildFile; fileRef = 33F52238FBF3ADA983D626C0B95F8D0C /* UIScrollView+MJRefresh.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		23AA70D14BB99F73F03FDE59359F27D3 /* MJRefreshStateHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = 1E006315A7F4DE595D49B06C5398D8A4 /* MJRefreshStateHeader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		23B1B3EF1DE0EEABC738100054F62ECF /* RadioButtonContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3212C9CCF1FF4E68B3B82DD30D6AF5 /* RadioButtonContainer.swift */; };
+		3559CB444E9476521EFC53162D3BA759 /* RadioButtonCircleStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4ACA53339C4EFEB2B409F21E0E3478 /* RadioButtonCircleStyle.swift */; };
+		3859DBEDF12402A0371AD7E81A64656B /* MJRefreshBackStateFooter.h in Headers */ = {isa = PBXBuildFile; fileRef = 37DC54D8E43C0931AB48BB9B12ECEF01 /* MJRefreshBackStateFooter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3A964EDC08E99323BF6503D20E2DFFD0 /* UIView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 71E86BBEE01BC3E7D16AC0B4B36E2947 /* UIView+MJExtension.m */; };
+		3B5F1529F4F4806E8ADC5F58E66A394F /* UIView+MJExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = A39004F1C6F9CBBB774141924DD37C8F /* UIView+MJExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3FD86BDF5CF8B360C42AADF88D79576A /* CheckboxButtonContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D17610EF1898BC3008B0F4633D7F435 /* CheckboxButtonContainer.swift */; };
+		4001EC5DAA386E42713C35BCC2EC094B /* MJRefreshNormalHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = 96963455681630A033D25D725895250C /* MJRefreshNormalHeader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		420395BBCA9A731942BBBBBF094F9EDC /* UIScrollView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = D68BB1D72A11BA48B9B4658187365DCA /* UIScrollView+MJExtension.m */; };
+		42769DFD54A6DDE8A15AA6EC62D3D27C /* MJRefreshBackFooter.h in Headers */ = {isa = PBXBuildFile; fileRef = 2FE966EA2D91888C086107DD3DC2C276 /* MJRefreshBackFooter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		467C86257878CC3C69D163F5E310FF90 /* MJRefreshConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = FE6A66BC7D77A6B23790730A79B7BCF4 /* MJRefreshConfig.m */; };
+		483CE65E6233FFEA9FDCD18653895F2E /* MJRefreshTrailer.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D438D2EE3ACD897E93A58972BAF6DB9 /* MJRefreshTrailer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4C21B29DF1EBA01A074A424E675742A3 /* MJRefreshComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 71E7A24F3379252DB51815EBABE0E61A /* MJRefreshComponent.m */; };
+		4D2B321D39AAB3315A51650B025EF3B0 /* MJRefresh-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B26CACA5EE8A513576CAC5444EC9443E /* MJRefresh-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5418927E483D4FF27688102720414BD3 /* MBRadioCheckboxButton-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 298A850B9E9E3DCA66CA86B8AD93A494 /* MBRadioCheckboxButton-dummy.m */; };
+		54D5456318ADD3931FEEE1E58F0BB32B /* NSBundle+MJRefresh.h in Headers */ = {isa = PBXBuildFile; fileRef = C194D7E45C8FC745C76064D3376A0665 /* NSBundle+MJRefresh.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		55F8DCA5C5AFC115D38B5526B23CF9DD /* NSBundle+MJRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = FEFD75BDEC2969BF1333ABF7E4CD5FD7 /* NSBundle+MJRefresh.m */; };
+		60FDD6CB7F83ED6D8595AE8ACA1C82E2 /* MJRefreshAutoStateFooter.h in Headers */ = {isa = PBXBuildFile; fileRef = 6093D957A0024E52F1379B89620B5CCD /* MJRefreshAutoStateFooter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		617D61683EAA9132282BD8994C421FAC /* MJRefreshConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BE30ECA19DC6997B1E29461FD79F613 /* MJRefreshConst.m */; };
+		6A547A95BC64599BB3F68DC49A88798D /* MJRefreshBackGifFooter.h in Headers */ = {isa = PBXBuildFile; fileRef = 18CCC98C11AB53AF3B2CD2140BFF8A87 /* MJRefreshBackGifFooter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6DFA70326D4C540DC43BD455F5A4A658 /* Toast-Swift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BF5B2F3ECA5AEFB1418730B7504E480 /* Toast-Swift-dummy.m */; };
+		6ED70AF94E1D948F55A1BBE24BC1E18A /* RadioCheckboxBaseContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D259BCBD9E0825B37C3C51487734F109 /* RadioCheckboxBaseContainer.swift */; };
+		74968C67D6F9AF67166C042AAF292DCC /* MJRefreshGifHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E31C948011BA925B68399D18195A4C1 /* MJRefreshGifHeader.m */; };
+		78B109BCC17A4E07A7F222AFA51AA43E /* MJRefreshNormalTrailer.m in Sources */ = {isa = PBXBuildFile; fileRef = FB777137413605DD3922A763A4A86430 /* MJRefreshNormalTrailer.m */; };
+		8261EB3F4FF0C888B04F23A7D0ABAC5F /* MBRadioCheckboxButton-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 937A9E864FEFD219967188AD14014E25 /* MBRadioCheckboxButton-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		87E3B15B2AA7D226CB60059610C1241A /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FEFE490E4A06D19E868B2B9014BB8BF /* QuartzCore.framework */; };
+		8E4B8F6ADBAE6B282FE5A56048F15E13 /* MJRefreshStateTrailer.m in Sources */ = {isa = PBXBuildFile; fileRef = F579780726FA9D0019ABA72C0BB8BD60 /* MJRefreshStateTrailer.m */; };
+		917F16B07EA66CB72F07F5CB361FC4C5 /* MJRefreshHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = 4510040A68DD6555424CF6C6976A9220 /* MJRefreshHeader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9ADED4F688110C1BBBF2B8DAA577A707 /* CheckboxButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071EDBE038E4155ECA3E6514983D5184 /* CheckboxButton.swift */; };
+		9B4973BA90509F48F1B7B9B34D586743 /* MJRefreshAutoFooter.h in Headers */ = {isa = PBXBuildFile; fileRef = 30935583887748F25F8455DEC24D0B66 /* MJRefreshAutoFooter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9C333A6C461FE5AA4CE484D1A360CD7F /* CheckboxButtonContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEDD7D02664D7EA9994D1101877B287 /* CheckboxButtonContainerView.swift */; };
+		9ECFF9072040CE074EAD416F59618D0F /* MJRefreshBackGifFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = CEAEAAFDAE5C23D3ABBB3E401F7B924C /* MJRefreshBackGifFooter.m */; };
+		9F6192414966FBD2E3C51C9B57FA9043 /* MJRefreshNormalTrailer.h in Headers */ = {isa = PBXBuildFile; fileRef = 01FC29EAC76535FEC84124144A1A47BD /* MJRefreshNormalTrailer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9F68C501B0D5D15DCEB532198F3C2C34 /* MJRefreshAutoStateFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 61050124A76383AA0DA9B30781628BB6 /* MJRefreshAutoStateFooter.m */; };
+		9FA4F1CCAEB88E3CAE81570A7EAB3A6B /* RadioButtonColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B78576D12FFD700FDF2423DF04065B /* RadioButtonColor.swift */; };
+		9FCC4E5C401D97B4012035CE55B60DF2 /* MJRefreshConst.h in Headers */ = {isa = PBXBuildFile; fileRef = 41BC1A034B8B1D26799BDF4B1867A520 /* MJRefreshConst.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A3393EFF38E156037FB17424B9B9E398 /* MJRefresh.h in Headers */ = {isa = PBXBuildFile; fileRef = 46A15D3AE3A8A820A6312B4854291440 /* MJRefresh.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A71CA360A99661E0EC2216BB82F75DA5 /* RadioCheckboxBaseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969C4320389A0DAF76AE8E3422782924 /* RadioCheckboxBaseButton.swift */; };
+		A8607A12B0AC32C484162D0A11B0356E /* MJRefreshBackNormalFooter.h in Headers */ = {isa = PBXBuildFile; fileRef = 766673C0435A603B4EA9F141E1D15C59 /* MJRefreshBackNormalFooter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A9E68323AB90D1A381E5F5F33ABDB4DF /* MJRefreshBackFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 096F53A2780B8DCB047F0D05BB6B225C /* MJRefreshBackFooter.m */; };
+		AA9D39AC9D4861420E28E03232DCFA5D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31FE7C6ECA71C614A5A667C679B23874 /* Foundation.framework */; };
+		B2083977CFDAD7AE9F79BC2F5BF6C70F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31FE7C6ECA71C614A5A667C679B23874 /* Foundation.framework */; };
+		BC16696C43BE045C91B790800309FA19 /* UIScrollView+MJRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 92B674BE670F755E983791EF923D60C7 /* UIScrollView+MJRefresh.m */; };
+		BF20C741EBB18F936CA31F2E41DC9F23 /* Toast-Swift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 679F8E9A28C5EB70C593108DDEA927BC /* Toast-Swift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BFC890F8FF888CAE6A3830CF2695CF2A /* MJRefreshStateTrailer.h in Headers */ = {isa = PBXBuildFile; fileRef = 82B6C5266B4F0012C79520D0C0FA03E9 /* MJRefreshStateTrailer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C27297AF5D2C27C32678D786D812949F /* MJRefreshTrailer.m in Sources */ = {isa = PBXBuildFile; fileRef = F619959E9A4C12804E39B65956DB6475 /* MJRefreshTrailer.m */; };
+		C85C62365BE7C1A80B3C57F9BC5548AC /* MJRefreshFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = DAC21EF806AAEF7593FC57A3E8EA4970 /* MJRefreshFooter.m */; };
+		CAE29563450C7ED7B9BEFD4F8C3788CA /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 544F94E5850114E501F8AD6025AF4A26 /* Toast.swift */; };
+		CDECFB8688DE5ACD21DC69EF9660602C /* MJRefreshAutoNormalFooter.h in Headers */ = {isa = PBXBuildFile; fileRef = 429C5C54813AFBC29E3D688191009D18 /* MJRefreshAutoNormalFooter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D3D23AC513D9BD37E9584ECC7A43EB96 /* MJRefresh.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 6422322477EE17EFA54C502A7B76103E /* MJRefresh.bundle */; };
+		D66DD5EEDAC4A367E08DECFFE4006DF7 /* RadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E2D59A67A3D1DA60775BE2988CD327 /* RadioButton.swift */; };
+		DD8E31735F20B7A3C929DBE48C49C8BC /* MJRefreshConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = CC2358BC5B98B5CA5F4B3FA6A089B648 /* MJRefreshConfig.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DE911CEE44D57BD0DB5323A6DAA89DC8 /* MJRefresh-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CB83091B767A5A2E9A15CD1408BF201 /* MJRefresh-dummy.m */; };
+		DFC3B8E7F14C2E3E05BB465DA2E4C686 /* MJRefreshAutoGifFooter.h in Headers */ = {isa = PBXBuildFile; fileRef = 6FF83310CC869C216ABA4557BB94A57A /* MJRefreshAutoGifFooter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E24D51518E38AA5360A31077696BCDA3 /* MJRefreshNormalHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 1224B69E17BD9ED2E9B7AE7A823CAE96 /* MJRefreshNormalHeader.m */; };
+		E3B6CB4C049E7AE6E527752516F93779 /* Pods-OS_Final-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E9AB9BEBA8DDD33D496B8D230F8DFA69 /* Pods-OS_Final-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EB8A749587F2C4E2BA13F7D88E9EC710 /* RadioButtonContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0FF51BA5C617A8462395830E4F52A9 /* RadioButtonContainerView.swift */; };
+		EBF728A69C9C501641662643EA6D04FF /* CheckboxLineStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67A6F11D821CE83F911C7C1E3F309525 /* CheckboxLineStyle.swift */; };
+		ED848677AE20D7BB3FE15E579FCB4108 /* MJRefreshAutoNormalFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 29927C470D0777E9AA8D24B769A6CC8D /* MJRefreshAutoNormalFooter.m */; };
+		F63B657F58A60E5C11531DA7223C4105 /* UIScrollView+MJExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = F5F31D200AE0BD14FA1ED0F743F8DF95 /* UIScrollView+MJExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F8D48E6A3708835A22ED1185609E11A5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31FE7C6ECA71C614A5A667C679B23874 /* Foundation.framework */; };
+		FE97AC91E478283BA3F3EAD91C5A62A7 /* MJRefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 13D3F1C21819575BAB283C2513B9C1D5 /* MJRefreshHeader.m */; };
+		FEAE9FB1E69E23FFD8AA692BEE336A98 /* MJRefreshAutoFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = D7B7CB4F870AC96CA608D600BA0C24C5 /* MJRefreshAutoFooter.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		319BE27955988B865F2253EF333CCAB0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B990BD87169C76A3ED3FE8A9258D91A3;
+			remoteInfo = "Toast-Swift";
+		};
+		9DEC51156EE103F478EAD9EACC083E20 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6868056D761E163D10FDAF8CF1C4D9B8;
+			remoteInfo = MJRefresh;
+		};
+		A99A0796356A5233DDCF739B166DF4CF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9AB9C4135C214FAD2CB39E8241B20B94;
+			remoteInfo = MBRadioCheckboxButton;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		01FC29EAC76535FEC84124144A1A47BD /* MJRefreshNormalTrailer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MJRefreshNormalTrailer.h; path = MJRefresh/Custom/Trailer/MJRefreshNormalTrailer.h; sourceTree = "<group>"; };
+		02B18A6FBF77B4DF8F0C60976C9F51FD /* Pods-OS_Final.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-OS_Final.debug.xcconfig"; sourceTree = "<group>"; };
+		071EDBE038E4155ECA3E6514983D5184 /* CheckboxButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CheckboxButton.swift; path = Source/CheckboxButton/CheckboxButton.swift; sourceTree = "<group>"; };
+		096F53A2780B8DCB047F0D05BB6B225C /* MJRefreshBackFooter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MJRefreshBackFooter.m; path = MJRefresh/Base/MJRefreshBackFooter.m; sourceTree = "<group>"; };
+		0BE30ECA19DC6997B1E29461FD79F613 /* MJRefreshConst.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MJRefreshConst.m; path = MJRefresh/MJRefreshConst.m; sourceTree = "<group>"; };
+		0D438D2EE3ACD897E93A58972BAF6DB9 /* MJRefreshTrailer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MJRefreshTrailer.h; path = MJRefresh/Base/MJRefreshTrailer.h; sourceTree = "<group>"; };
+		109EA95691F8417648AF12F7D46DF14F /* MBRadioCheckboxButton.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MBRadioCheckboxButton.debug.xcconfig; sourceTree = "<group>"; };
+		1224B69E17BD9ED2E9B7AE7A823CAE96 /* MJRefreshNormalHeader.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MJRefreshNormalHeader.m; path = MJRefresh/Custom/Header/MJRefreshNormalHeader.m; sourceTree = "<group>"; };
+		13D3F1C21819575BAB283C2513B9C1D5 /* MJRefreshHeader.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MJRefreshHeader.m; path = MJRefresh/Base/MJRefreshHeader.m; sourceTree = "<group>"; };
+		15B145D39C33298EA3D82BD3D50A1798 /* Toast-Swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Toast-Swift.release.xcconfig"; sourceTree = "<group>"; };
+		17168A39F287D3DDCA1314B9D5E49212 /* Pods-OS_Final.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-OS_Final.release.xcconfig"; sourceTree = "<group>"; };
+		18CCC98C11AB53AF3B2CD2140BFF8A87 /* MJRefreshBackGifFooter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MJRefreshBackGifFooter.h; path = MJRefresh/Custom/Footer/Back/MJRefreshBackGifFooter.h; sourceTree = "<group>"; };
+		1B85BC1C65234D95B628E12A2F09127E /* MBRadioCheckboxButton.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MBRadioCheckboxButton.release.xcconfig; sourceTree = "<group>"; };
+		1E006315A7F4DE595D49B06C5398D8A4 /* MJRefreshStateHeader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MJRefreshStateHeader.h; path = MJRefresh/Custom/Header/MJRefreshStateHeader.h; sourceTree = "<group>"; };
+		2239EFC6FCA4870FA432E87AE32F71CE /* Pods-OS_Final */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-OS_Final"; path = Pods_OS_Final.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		249FBE6411F00505269E5791A8AFA314 /* Toast-Swift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Toast-Swift-prefix.pch"; sourceTree = "<group>"; };
+		254C2A408A44446F8C44475D15E5FA7E /* MJRefreshAutoGifFooter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MJRefreshAutoGifFooter.m; path = MJRefresh/Custom/Footer/Auto/MJRefreshAutoGifFooter.m; sourceTree = "<group>"; };
+		295C92378E0416CB76EA05AF28ED0A78 /* MJRefresh.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MJRefresh.debug.xcconfig; sourceTree = "<group>"; };
+		298A850B9E9E3DCA66CA86B8AD93A494 /* MBRadioCheckboxButton-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MBRadioCheckboxButton-dummy.m"; sourceTree = "<group>"; };
+		29927C470D0777E9AA8D24B769A6CC8D /* MJRefreshAutoNormalFooter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MJRefreshAutoNormalFooter.m; path = MJRefresh/Custom/Footer/Auto/MJRefreshAutoNormalFooter.m; sourceTree = "<group>"; };
+		2CB83091B767A5A2E9A15CD1408BF201 /* MJRefresh-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MJRefresh-dummy.m"; sourceTree = "<group>"; };
+		2FE966EA2D91888C086107DD3DC2C276 /* MJRefreshBackFooter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MJRefreshBackFooter.h; path = MJRefresh/Base/MJRefreshBackFooter.h; sourceTree = "<group>"; };
+		2FEFE490E4A06D19E868B2B9014BB8BF /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
+		30935583887748F25F8455DEC24D0B66 /* MJRefreshAutoFooter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MJRefreshAutoFooter.h; path = MJRefresh/Base/MJRefreshAutoFooter.h; sourceTree = "<group>"; };
+		31FE7C6ECA71C614A5A667C679B23874 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		331C58E0392B571520041C2235E845C3 /* MBRadioCheckboxButton-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "MBRadioCheckboxButton-Info.plist"; sourceTree = "<group>"; };
+		33F52238FBF3ADA983D626C0B95F8D0C /* UIScrollView+MJRefresh.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIScrollView+MJRefresh.h"; path = "MJRefresh/UIScrollView+MJRefresh.h"; sourceTree = "<group>"; };
+		356EE4C26AEB785DF785C6ACC6103D36 /* Toast-Swift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Toast-Swift.modulemap"; sourceTree = "<group>"; };
+		35B779A0DEFAFE508FFED12A480ABC75 /* MJRefreshBackStateFooter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MJRefreshBackStateFooter.m; path = MJRefresh/Custom/Footer/Back/MJRefreshBackStateFooter.m; sourceTree = "<group>"; };
+		37DC54D8E43C0931AB48BB9B12ECEF01 /* MJRefreshBackStateFooter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MJRefreshBackStateFooter.h; path = MJRefresh/Custom/Footer/Back/MJRefreshBackStateFooter.h; sourceTree = "<group>"; };
+		41BC1A034B8B1D26799BDF4B1867A520 /* MJRefreshConst.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MJRefreshConst.h; path = MJRefresh/MJRefreshConst.h; sourceTree = "<group>"; };
+		41C533DD9218FEEDBE8BAAA6A9B79072 /* MJRefreshGifHeader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MJRefreshGifHeader.h; path = MJRefresh/Custom/Header/MJRefreshGifHeader.h; sourceTree = "<group>"; };
+		429C5C54813AFBC29E3D688191009D18 /* MJRefreshAutoNormalFooter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MJRefreshAutoNormalFooter.h; path = MJRefresh/Custom/Footer/Auto/MJRefreshAutoNormalFooter.h; sourceTree = "<group>"; };
+		43FC4D0EC0EDAD028A7DBF1BF5BAD841 /* Pods-OS_Final-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-OS_Final-frameworks.sh"; sourceTree = "<group>"; };
+		4510040A68DD6555424CF6C6976A9220 /* MJRefreshHeader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MJRefreshHeader.h; path = MJRefresh/Base/MJRefreshHeader.h; sourceTree = "<group>"; };
+		45C1E7E9B8A49767AE2D79E66936C6BC /* MJRefreshFooter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MJRefreshFooter.h; path = MJRefresh/Base/MJRefreshFooter.h; sourceTree = "<group>"; };
+		46A15D3AE3A8A820A6312B4854291440 /* MJRefresh.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MJRefresh.h; path = MJRefresh/MJRefresh.h; sourceTree = "<group>"; };
+		544F94E5850114E501F8AD6025AF4A26 /* Toast.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Toast.swift; path = Toast/Toast.swift; sourceTree = "<group>"; };
+		5CA166A2B65A9DD9F05A60E24C957626 /* Toast-Swift-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Toast-Swift-Info.plist"; sourceTree = "<group>"; };
+		5D17610EF1898BC3008B0F4633D7F435 /* CheckboxButtonContainer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CheckboxButtonContainer.swift; path = Source/CheckboxButton/CheckboxButtonContainer.swift; sourceTree = "<group>"; };
+		5FEBFEA874DCBD24A7B3D965E92A4FFC /* MBRadioCheckboxButton.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = MBRadioCheckboxButton.modulemap; sourceTree = "<group>"; };
+		6093D957A0024E52F1379B89620B5CCD /* MJRefreshAutoStateFooter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MJRefreshAutoStateFooter.h; path = MJRefresh/Custom/Footer/Auto/MJRefreshAutoStateFooter.h; sourceTree = "<group>"; };
+		61050124A76383AA0DA9B30781628BB6 /* MJRefreshAutoStateFooter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MJRefreshAutoStateFooter.m; path = MJRefresh/Custom/Footer/Auto/MJRefreshAutoStateFooter.m; sourceTree = "<group>"; };
+		6422322477EE17EFA54C502A7B76103E /* MJRefresh.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = MJRefresh.bundle; path = MJRefresh/MJRefresh.bundle; sourceTree = "<group>"; };
+		679F8E9A28C5EB70C593108DDEA927BC /* Toast-Swift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Toast-Swift-umbrella.h"; sourceTree = "<group>"; };
+		67A6F11D821CE83F911C7C1E3F309525 /* CheckboxLineStyle.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CheckboxLineStyle.swift; path = Source/CheckboxButton/CheckboxLineStyle.swift; sourceTree = "<group>"; };
+		6BF5B2F3ECA5AEFB1418730B7504E480 /* Toast-Swift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Toast-Swift-dummy.m"; sourceTree = "<group>"; };
+		6E31C948011BA925B68399D18195A4C1 /* MJRefreshGifHeader.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MJRefreshGifHeader.m; path = MJRefresh/Custom/Header/MJRefreshGifHeader.m; sourceTree = "<group>"; };
+		6FF83310CC869C216ABA4557BB94A57A /* MJRefreshAutoGifFooter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MJRefreshAutoGifFooter.h; path = MJRefresh/Custom/Footer/Auto/MJRefreshAutoGifFooter.h; sourceTree = "<group>"; };
+		710AC36089DF8BC031447C5DD8747546 /* Pods-OS_Final.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-OS_Final.modulemap"; sourceTree = "<group>"; };
+		71E7A24F3379252DB51815EBABE0E61A /* MJRefreshComponent.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MJRefreshComponent.m; path = MJRefresh/Base/MJRefreshComponent.m; sourceTree = "<group>"; };
+		71E86BBEE01BC3E7D16AC0B4B36E2947 /* UIView+MJExtension.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIView+MJExtension.m"; path = "MJRefresh/UIView+MJExtension.m"; sourceTree = "<group>"; };
+		740399D3DC4F29B42D0ABF91CBB12E3E /* MJRefresh-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "MJRefresh-Info.plist"; sourceTree = "<group>"; };
+		766673C0435A603B4EA9F141E1D15C59 /* MJRefreshBackNormalFooter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MJRefreshBackNormalFooter.h; path = MJRefresh/Custom/Footer/Back/MJRefreshBackNormalFooter.h; sourceTree = "<group>"; };
+		7C0FF51BA5C617A8462395830E4F52A9 /* RadioButtonContainerView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RadioButtonContainerView.swift; path = Source/RadioButton/RadioButtonContainerView.swift; sourceTree = "<group>"; };
+		824CCE09FA3A951E5A3689C288DEEE32 /* Pods-OS_Final-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-OS_Final-acknowledgements.markdown"; sourceTree = "<group>"; };
+		82B6C5266B4F0012C79520D0C0FA03E9 /* MJRefreshStateTrailer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MJRefreshStateTrailer.h; path = MJRefresh/Custom/Trailer/MJRefreshStateTrailer.h; sourceTree = "<group>"; };
+		839850A52B4B8AAB29471F265994FA54 /* MBRadioCheckboxButton-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MBRadioCheckboxButton-prefix.pch"; sourceTree = "<group>"; };
+		8A4ACA53339C4EFEB2B409F21E0E3478 /* RadioButtonCircleStyle.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RadioButtonCircleStyle.swift; path = Source/RadioButton/RadioButtonCircleStyle.swift; sourceTree = "<group>"; };
+		8C5519297F32DDBA0B36F9A494A5F9C6 /* MJRefreshComponent.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MJRefreshComponent.h; path = MJRefresh/Base/MJRefreshComponent.h; sourceTree = "<group>"; };
+		92B674BE670F755E983791EF923D60C7 /* UIScrollView+MJRefresh.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIScrollView+MJRefresh.m"; path = "MJRefresh/UIScrollView+MJRefresh.m"; sourceTree = "<group>"; };
+		937A9E864FEFD219967188AD14014E25 /* MBRadioCheckboxButton-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MBRadioCheckboxButton-umbrella.h"; sourceTree = "<group>"; };
+		96963455681630A033D25D725895250C /* MJRefreshNormalHeader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MJRefreshNormalHeader.h; path = MJRefresh/Custom/Header/MJRefreshNormalHeader.h; sourceTree = "<group>"; };
+		969C4320389A0DAF76AE8E3422782924 /* RadioCheckboxBaseButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RadioCheckboxBaseButton.swift; path = Source/BaseButton/RadioCheckboxBaseButton.swift; sourceTree = "<group>"; };
+		9D8AC6EAEACDF006DBEEC38A82FA3D05 /* Pods-OS_Final-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-OS_Final-dummy.m"; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A2E2D59A67A3D1DA60775BE2988CD327 /* RadioButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RadioButton.swift; path = Source/RadioButton/RadioButton.swift; sourceTree = "<group>"; };
+		A39004F1C6F9CBBB774141924DD37C8F /* UIView+MJExtension.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+MJExtension.h"; path = "MJRefresh/UIView+MJExtension.h"; sourceTree = "<group>"; };
+		B26CACA5EE8A513576CAC5444EC9443E /* MJRefresh-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MJRefresh-umbrella.h"; sourceTree = "<group>"; };
+		B78D90E2D30B5E99CF752FDC0B46CA0D /* Pods-OS_Final-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-OS_Final-Info.plist"; sourceTree = "<group>"; };
+		BEEDD7D02664D7EA9994D1101877B287 /* CheckboxButtonContainerView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CheckboxButtonContainerView.swift; path = Source/CheckboxButton/CheckboxButtonContainerView.swift; sourceTree = "<group>"; };
+		C194D7E45C8FC745C76064D3376A0665 /* NSBundle+MJRefresh.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSBundle+MJRefresh.h"; path = "MJRefresh/NSBundle+MJRefresh.h"; sourceTree = "<group>"; };
+		C26319AA6376CBE6FF20103DD95865AB /* MJRefreshStateHeader.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MJRefreshStateHeader.m; path = MJRefresh/Custom/Header/MJRefreshStateHeader.m; sourceTree = "<group>"; };
+		CB56E8DBE10E425951B44895CBCC00BD /* CheckBoxColor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CheckBoxColor.swift; path = Source/CheckboxButton/CheckBoxColor.swift; sourceTree = "<group>"; };
+		CC2358BC5B98B5CA5F4B3FA6A089B648 /* MJRefreshConfig.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MJRefreshConfig.h; path = MJRefresh/MJRefreshConfig.h; sourceTree = "<group>"; };
+		CEAEAAFDAE5C23D3ABBB3E401F7B924C /* MJRefreshBackGifFooter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MJRefreshBackGifFooter.m; path = MJRefresh/Custom/Footer/Back/MJRefreshBackGifFooter.m; sourceTree = "<group>"; };
+		D259BCBD9E0825B37C3C51487734F109 /* RadioCheckboxBaseContainer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RadioCheckboxBaseContainer.swift; path = Source/BaseButton/RadioCheckboxBaseContainer.swift; sourceTree = "<group>"; };
+		D417802829D6AE846D84D5AF790AA35E /* MBRadioCheckboxButton */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = MBRadioCheckboxButton; path = MBRadioCheckboxButton.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D45D1ECC7CCA145376DDC94396CDA671 /* Toast-Swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Toast-Swift.debug.xcconfig"; sourceTree = "<group>"; };
+		D6043471C96F93DC41F7DD1E0D7D8B35 /* Toast-Swift */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Toast-Swift"; path = Toast_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D68BB1D72A11BA48B9B4658187365DCA /* UIScrollView+MJExtension.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIScrollView+MJExtension.m"; path = "MJRefresh/UIScrollView+MJExtension.m"; sourceTree = "<group>"; };
+		D7B7CB4F870AC96CA608D600BA0C24C5 /* MJRefreshAutoFooter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MJRefreshAutoFooter.m; path = MJRefresh/Base/MJRefreshAutoFooter.m; sourceTree = "<group>"; };
+		D9B78576D12FFD700FDF2423DF04065B /* RadioButtonColor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RadioButtonColor.swift; path = Source/RadioButton/RadioButtonColor.swift; sourceTree = "<group>"; };
+		DAC21EF806AAEF7593FC57A3E8EA4970 /* MJRefreshFooter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MJRefreshFooter.m; path = MJRefresh/Base/MJRefreshFooter.m; sourceTree = "<group>"; };
+		DFBF0017CD3B1387F918636981A34D8F /* MJRefreshBackNormalFooter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MJRefreshBackNormalFooter.m; path = MJRefresh/Custom/Footer/Back/MJRefreshBackNormalFooter.m; sourceTree = "<group>"; };
+		E281CB391BDDF3083A66289E188976AA /* MJRefresh.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MJRefresh.release.xcconfig; sourceTree = "<group>"; };
+		E49D6D248DD1CEE584E6776B9164A1B2 /* MJRefresh */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = MJRefresh; path = MJRefresh.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E9AB9BEBA8DDD33D496B8D230F8DFA69 /* Pods-OS_Final-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-OS_Final-umbrella.h"; sourceTree = "<group>"; };
+		EC3212C9CCF1FF4E68B3B82DD30D6AF5 /* RadioButtonContainer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RadioButtonContainer.swift; path = Source/RadioButton/RadioButtonContainer.swift; sourceTree = "<group>"; };
+		EC8A8BE1B083DC1A19C8D11FC5C8E644 /* Pods-OS_Final-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-OS_Final-acknowledgements.plist"; sourceTree = "<group>"; };
+		F579780726FA9D0019ABA72C0BB8BD60 /* MJRefreshStateTrailer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MJRefreshStateTrailer.m; path = MJRefresh/Custom/Trailer/MJRefreshStateTrailer.m; sourceTree = "<group>"; };
+		F5F31D200AE0BD14FA1ED0F743F8DF95 /* UIScrollView+MJExtension.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIScrollView+MJExtension.h"; path = "MJRefresh/UIScrollView+MJExtension.h"; sourceTree = "<group>"; };
+		F619959E9A4C12804E39B65956DB6475 /* MJRefreshTrailer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MJRefreshTrailer.m; path = MJRefresh/Base/MJRefreshTrailer.m; sourceTree = "<group>"; };
+		FB777137413605DD3922A763A4A86430 /* MJRefreshNormalTrailer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MJRefreshNormalTrailer.m; path = MJRefresh/Custom/Trailer/MJRefreshNormalTrailer.m; sourceTree = "<group>"; };
+		FC51F719DB607EAE34A52DFE66CE0496 /* MJRefresh.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = MJRefresh.modulemap; sourceTree = "<group>"; };
+		FE6A66BC7D77A6B23790730A79B7BCF4 /* MJRefreshConfig.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MJRefreshConfig.m; path = MJRefresh/MJRefreshConfig.m; sourceTree = "<group>"; };
+		FEFD75BDEC2969BF1333ABF7E4CD5FD7 /* NSBundle+MJRefresh.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSBundle+MJRefresh.m"; path = "MJRefresh/NSBundle+MJRefresh.m"; sourceTree = "<group>"; };
+		FFDB972C9577B02CCA02AFC8C8F95F81 /* MJRefresh-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MJRefresh-prefix.pch"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		27AE6978B7DEAB3C99D6DD07D4532395 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				17E5507F92F0DF1DD5C3AB12E53F559F /* Foundation.framework in Frameworks */,
+				87E3B15B2AA7D226CB60059610C1241A /* QuartzCore.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BE74A91047955988F000B237997D614A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA9D39AC9D4861420E28E03232DCFA5D /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CB67B3D3AF1419175CC08B8CA6456BEB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F8D48E6A3708835A22ED1185609E11A5 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F48B561409203DC9924B158D7EF9F51D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B2083977CFDAD7AE9F79BC2F5BF6C70F /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1628BF05B4CAFDCC3549A101F5A10A17 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D325A42620E7427FB70FB046C7B7B240 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		19EE23CDECC50099D68DD56B46CD8E85 /* MBRadioCheckboxButton */ = {
+			isa = PBXGroup;
+			children = (
+				071EDBE038E4155ECA3E6514983D5184 /* CheckboxButton.swift */,
+				5D17610EF1898BC3008B0F4633D7F435 /* CheckboxButtonContainer.swift */,
+				BEEDD7D02664D7EA9994D1101877B287 /* CheckboxButtonContainerView.swift */,
+				CB56E8DBE10E425951B44895CBCC00BD /* CheckBoxColor.swift */,
+				67A6F11D821CE83F911C7C1E3F309525 /* CheckboxLineStyle.swift */,
+				A2E2D59A67A3D1DA60775BE2988CD327 /* RadioButton.swift */,
+				8A4ACA53339C4EFEB2B409F21E0E3478 /* RadioButtonCircleStyle.swift */,
+				D9B78576D12FFD700FDF2423DF04065B /* RadioButtonColor.swift */,
+				EC3212C9CCF1FF4E68B3B82DD30D6AF5 /* RadioButtonContainer.swift */,
+				7C0FF51BA5C617A8462395830E4F52A9 /* RadioButtonContainerView.swift */,
+				969C4320389A0DAF76AE8E3422782924 /* RadioCheckboxBaseButton.swift */,
+				D259BCBD9E0825B37C3C51487734F109 /* RadioCheckboxBaseContainer.swift */,
+				CCA6114E92388CF7CC94E0882A107A12 /* Support Files */,
+			);
+			name = MBRadioCheckboxButton;
+			path = MBRadioCheckboxButton;
+			sourceTree = "<group>";
+		};
+		1FB6F6349296A12BCC8404C9BA5234D6 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				356EE4C26AEB785DF785C6ACC6103D36 /* Toast-Swift.modulemap */,
+				6BF5B2F3ECA5AEFB1418730B7504E480 /* Toast-Swift-dummy.m */,
+				5CA166A2B65A9DD9F05A60E24C957626 /* Toast-Swift-Info.plist */,
+				249FBE6411F00505269E5791A8AFA314 /* Toast-Swift-prefix.pch */,
+				679F8E9A28C5EB70C593108DDEA927BC /* Toast-Swift-umbrella.h */,
+				D45D1ECC7CCA145376DDC94396CDA671 /* Toast-Swift.debug.xcconfig */,
+				15B145D39C33298EA3D82BD3D50A1798 /* Toast-Swift.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Toast-Swift";
+			sourceTree = "<group>";
+		};
+		28495B6289924C67B714A947F4BDB1CE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				19EE23CDECC50099D68DD56B46CD8E85 /* MBRadioCheckboxButton */,
+				9A85009DCFBF305F2E2BB3BC7956A1A9 /* MJRefresh */,
+				B516E63962C611AC1B8EBB0B39D2CE6E /* Toast-Swift */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		70E97376E24D5A5F64CB8FC741CBE15E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				6422322477EE17EFA54C502A7B76103E /* MJRefresh.bundle */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		8A3B3FD36BB19A878D95255C3D7EAD9A /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				FC51F719DB607EAE34A52DFE66CE0496 /* MJRefresh.modulemap */,
+				2CB83091B767A5A2E9A15CD1408BF201 /* MJRefresh-dummy.m */,
+				740399D3DC4F29B42D0ABF91CBB12E3E /* MJRefresh-Info.plist */,
+				FFDB972C9577B02CCA02AFC8C8F95F81 /* MJRefresh-prefix.pch */,
+				B26CACA5EE8A513576CAC5444EC9443E /* MJRefresh-umbrella.h */,
+				295C92378E0416CB76EA05AF28ED0A78 /* MJRefresh.debug.xcconfig */,
+				E281CB391BDDF3083A66289E188976AA /* MJRefresh.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/MJRefresh";
+			sourceTree = "<group>";
+		};
+		8B879F766E1895A6DCBF5FFAD6B8D556 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D417802829D6AE846D84D5AF790AA35E /* MBRadioCheckboxButton */,
+				E49D6D248DD1CEE584E6776B9164A1B2 /* MJRefresh */,
+				2239EFC6FCA4870FA432E87AE32F71CE /* Pods-OS_Final */,
+				D6043471C96F93DC41F7DD1E0D7D8B35 /* Toast-Swift */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9A85009DCFBF305F2E2BB3BC7956A1A9 /* MJRefresh */ = {
+			isa = PBXGroup;
+			children = (
+				46A15D3AE3A8A820A6312B4854291440 /* MJRefresh.h */,
+				30935583887748F25F8455DEC24D0B66 /* MJRefreshAutoFooter.h */,
+				D7B7CB4F870AC96CA608D600BA0C24C5 /* MJRefreshAutoFooter.m */,
+				6FF83310CC869C216ABA4557BB94A57A /* MJRefreshAutoGifFooter.h */,
+				254C2A408A44446F8C44475D15E5FA7E /* MJRefreshAutoGifFooter.m */,
+				429C5C54813AFBC29E3D688191009D18 /* MJRefreshAutoNormalFooter.h */,
+				29927C470D0777E9AA8D24B769A6CC8D /* MJRefreshAutoNormalFooter.m */,
+				6093D957A0024E52F1379B89620B5CCD /* MJRefreshAutoStateFooter.h */,
+				61050124A76383AA0DA9B30781628BB6 /* MJRefreshAutoStateFooter.m */,
+				2FE966EA2D91888C086107DD3DC2C276 /* MJRefreshBackFooter.h */,
+				096F53A2780B8DCB047F0D05BB6B225C /* MJRefreshBackFooter.m */,
+				18CCC98C11AB53AF3B2CD2140BFF8A87 /* MJRefreshBackGifFooter.h */,
+				CEAEAAFDAE5C23D3ABBB3E401F7B924C /* MJRefreshBackGifFooter.m */,
+				766673C0435A603B4EA9F141E1D15C59 /* MJRefreshBackNormalFooter.h */,
+				DFBF0017CD3B1387F918636981A34D8F /* MJRefreshBackNormalFooter.m */,
+				37DC54D8E43C0931AB48BB9B12ECEF01 /* MJRefreshBackStateFooter.h */,
+				35B779A0DEFAFE508FFED12A480ABC75 /* MJRefreshBackStateFooter.m */,
+				8C5519297F32DDBA0B36F9A494A5F9C6 /* MJRefreshComponent.h */,
+				71E7A24F3379252DB51815EBABE0E61A /* MJRefreshComponent.m */,
+				CC2358BC5B98B5CA5F4B3FA6A089B648 /* MJRefreshConfig.h */,
+				FE6A66BC7D77A6B23790730A79B7BCF4 /* MJRefreshConfig.m */,
+				41BC1A034B8B1D26799BDF4B1867A520 /* MJRefreshConst.h */,
+				0BE30ECA19DC6997B1E29461FD79F613 /* MJRefreshConst.m */,
+				45C1E7E9B8A49767AE2D79E66936C6BC /* MJRefreshFooter.h */,
+				DAC21EF806AAEF7593FC57A3E8EA4970 /* MJRefreshFooter.m */,
+				41C533DD9218FEEDBE8BAAA6A9B79072 /* MJRefreshGifHeader.h */,
+				6E31C948011BA925B68399D18195A4C1 /* MJRefreshGifHeader.m */,
+				4510040A68DD6555424CF6C6976A9220 /* MJRefreshHeader.h */,
+				13D3F1C21819575BAB283C2513B9C1D5 /* MJRefreshHeader.m */,
+				96963455681630A033D25D725895250C /* MJRefreshNormalHeader.h */,
+				1224B69E17BD9ED2E9B7AE7A823CAE96 /* MJRefreshNormalHeader.m */,
+				01FC29EAC76535FEC84124144A1A47BD /* MJRefreshNormalTrailer.h */,
+				FB777137413605DD3922A763A4A86430 /* MJRefreshNormalTrailer.m */,
+				1E006315A7F4DE595D49B06C5398D8A4 /* MJRefreshStateHeader.h */,
+				C26319AA6376CBE6FF20103DD95865AB /* MJRefreshStateHeader.m */,
+				82B6C5266B4F0012C79520D0C0FA03E9 /* MJRefreshStateTrailer.h */,
+				F579780726FA9D0019ABA72C0BB8BD60 /* MJRefreshStateTrailer.m */,
+				0D438D2EE3ACD897E93A58972BAF6DB9 /* MJRefreshTrailer.h */,
+				F619959E9A4C12804E39B65956DB6475 /* MJRefreshTrailer.m */,
+				C194D7E45C8FC745C76064D3376A0665 /* NSBundle+MJRefresh.h */,
+				FEFD75BDEC2969BF1333ABF7E4CD5FD7 /* NSBundle+MJRefresh.m */,
+				F5F31D200AE0BD14FA1ED0F743F8DF95 /* UIScrollView+MJExtension.h */,
+				D68BB1D72A11BA48B9B4658187365DCA /* UIScrollView+MJExtension.m */,
+				33F52238FBF3ADA983D626C0B95F8D0C /* UIScrollView+MJRefresh.h */,
+				92B674BE670F755E983791EF923D60C7 /* UIScrollView+MJRefresh.m */,
+				A39004F1C6F9CBBB774141924DD37C8F /* UIView+MJExtension.h */,
+				71E86BBEE01BC3E7D16AC0B4B36E2947 /* UIView+MJExtension.m */,
+				70E97376E24D5A5F64CB8FC741CBE15E /* Resources */,
+				8A3B3FD36BB19A878D95255C3D7EAD9A /* Support Files */,
+			);
+			name = MJRefresh;
+			path = MJRefresh;
+			sourceTree = "<group>";
+		};
+		B516E63962C611AC1B8EBB0B39D2CE6E /* Toast-Swift */ = {
+			isa = PBXGroup;
+			children = (
+				544F94E5850114E501F8AD6025AF4A26 /* Toast.swift */,
+				1FB6F6349296A12BCC8404C9BA5234D6 /* Support Files */,
+			);
+			name = "Toast-Swift";
+			path = "Toast-Swift";
+			sourceTree = "<group>";
+		};
+		CCA6114E92388CF7CC94E0882A107A12 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				5FEBFEA874DCBD24A7B3D965E92A4FFC /* MBRadioCheckboxButton.modulemap */,
+				298A850B9E9E3DCA66CA86B8AD93A494 /* MBRadioCheckboxButton-dummy.m */,
+				331C58E0392B571520041C2235E845C3 /* MBRadioCheckboxButton-Info.plist */,
+				839850A52B4B8AAB29471F265994FA54 /* MBRadioCheckboxButton-prefix.pch */,
+				937A9E864FEFD219967188AD14014E25 /* MBRadioCheckboxButton-umbrella.h */,
+				109EA95691F8417648AF12F7D46DF14F /* MBRadioCheckboxButton.debug.xcconfig */,
+				1B85BC1C65234D95B628E12A2F09127E /* MBRadioCheckboxButton.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/MBRadioCheckboxButton";
+			sourceTree = "<group>";
+		};
+		CF1408CF629C7361332E53B88F7BD30C = {
+			isa = PBXGroup;
+			children = (
+				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				1628BF05B4CAFDCC3549A101F5A10A17 /* Frameworks */,
+				28495B6289924C67B714A947F4BDB1CE /* Pods */,
+				8B879F766E1895A6DCBF5FFAD6B8D556 /* Products */,
+				F42FEBBFBB0879BE00EBA6E83B18715A /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		D325A42620E7427FB70FB046C7B7B240 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				31FE7C6ECA71C614A5A667C679B23874 /* Foundation.framework */,
+				2FEFE490E4A06D19E868B2B9014BB8BF /* QuartzCore.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		D393C1A5824BDC4DB1C91FA7BBAD444B /* Pods-OS_Final */ = {
+			isa = PBXGroup;
+			children = (
+				710AC36089DF8BC031447C5DD8747546 /* Pods-OS_Final.modulemap */,
+				824CCE09FA3A951E5A3689C288DEEE32 /* Pods-OS_Final-acknowledgements.markdown */,
+				EC8A8BE1B083DC1A19C8D11FC5C8E644 /* Pods-OS_Final-acknowledgements.plist */,
+				9D8AC6EAEACDF006DBEEC38A82FA3D05 /* Pods-OS_Final-dummy.m */,
+				43FC4D0EC0EDAD028A7DBF1BF5BAD841 /* Pods-OS_Final-frameworks.sh */,
+				B78D90E2D30B5E99CF752FDC0B46CA0D /* Pods-OS_Final-Info.plist */,
+				E9AB9BEBA8DDD33D496B8D230F8DFA69 /* Pods-OS_Final-umbrella.h */,
+				02B18A6FBF77B4DF8F0C60976C9F51FD /* Pods-OS_Final.debug.xcconfig */,
+				17168A39F287D3DDCA1314B9D5E49212 /* Pods-OS_Final.release.xcconfig */,
+			);
+			name = "Pods-OS_Final";
+			path = "Target Support Files/Pods-OS_Final";
+			sourceTree = "<group>";
+		};
+		F42FEBBFBB0879BE00EBA6E83B18715A /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				D393C1A5824BDC4DB1C91FA7BBAD444B /* Pods-OS_Final */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		2E64926C1A5BCFE944E9C8824FAA09EC /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E3B6CB4C049E7AE6E527752516F93779 /* Pods-OS_Final-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		63D019064C2255A3D74C25BDF1937802 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF20C741EBB18F936CA31F2E41DC9F23 /* Toast-Swift-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		99029B5D81FB4D23C6DB0A3B5EE59EFD /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8261EB3F4FF0C888B04F23A7D0ABAC5F /* MBRadioCheckboxButton-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BE790E81C1285AEE6F5F1D53FAAA6431 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A3393EFF38E156037FB17424B9B9E398 /* MJRefresh.h in Headers */,
+				4D2B321D39AAB3315A51650B025EF3B0 /* MJRefresh-umbrella.h in Headers */,
+				9B4973BA90509F48F1B7B9B34D586743 /* MJRefreshAutoFooter.h in Headers */,
+				DFC3B8E7F14C2E3E05BB465DA2E4C686 /* MJRefreshAutoGifFooter.h in Headers */,
+				CDECFB8688DE5ACD21DC69EF9660602C /* MJRefreshAutoNormalFooter.h in Headers */,
+				60FDD6CB7F83ED6D8595AE8ACA1C82E2 /* MJRefreshAutoStateFooter.h in Headers */,
+				42769DFD54A6DDE8A15AA6EC62D3D27C /* MJRefreshBackFooter.h in Headers */,
+				6A547A95BC64599BB3F68DC49A88798D /* MJRefreshBackGifFooter.h in Headers */,
+				A8607A12B0AC32C484162D0A11B0356E /* MJRefreshBackNormalFooter.h in Headers */,
+				3859DBEDF12402A0371AD7E81A64656B /* MJRefreshBackStateFooter.h in Headers */,
+				0CDAB089881F61CADA60025AACAF31B2 /* MJRefreshComponent.h in Headers */,
+				DD8E31735F20B7A3C929DBE48C49C8BC /* MJRefreshConfig.h in Headers */,
+				9FCC4E5C401D97B4012035CE55B60DF2 /* MJRefreshConst.h in Headers */,
+				07F77B6AD62FDDFB05BF28A3A60EBD37 /* MJRefreshFooter.h in Headers */,
+				0E644BD8993C8F4A19C207D09FF8C90F /* MJRefreshGifHeader.h in Headers */,
+				917F16B07EA66CB72F07F5CB361FC4C5 /* MJRefreshHeader.h in Headers */,
+				4001EC5DAA386E42713C35BCC2EC094B /* MJRefreshNormalHeader.h in Headers */,
+				9F6192414966FBD2E3C51C9B57FA9043 /* MJRefreshNormalTrailer.h in Headers */,
+				23AA70D14BB99F73F03FDE59359F27D3 /* MJRefreshStateHeader.h in Headers */,
+				BFC890F8FF888CAE6A3830CF2695CF2A /* MJRefreshStateTrailer.h in Headers */,
+				483CE65E6233FFEA9FDCD18653895F2E /* MJRefreshTrailer.h in Headers */,
+				54D5456318ADD3931FEEE1E58F0BB32B /* NSBundle+MJRefresh.h in Headers */,
+				F63B657F58A60E5C11531DA7223C4105 /* UIScrollView+MJExtension.h in Headers */,
+				1CE0F0874503E35AA310A1BCF0800160 /* UIScrollView+MJRefresh.h in Headers */,
+				3B5F1529F4F4806E8ADC5F58E66A394F /* UIView+MJExtension.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		6868056D761E163D10FDAF8CF1C4D9B8 /* MJRefresh */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5E89F66C429FDBC2640FED5096301703 /* Build configuration list for PBXNativeTarget "MJRefresh" */;
+			buildPhases = (
+				BE790E81C1285AEE6F5F1D53FAAA6431 /* Headers */,
+				34B3E0BE1B1A07BFFD7A2D6B5E9519B5 /* Sources */,
+				BE74A91047955988F000B237997D614A /* Frameworks */,
+				6BC6B1E5D11829114DBBAD7889E74631 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MJRefresh;
+			productName = MJRefresh;
+			productReference = E49D6D248DD1CEE584E6776B9164A1B2 /* MJRefresh */;
+			productType = "com.apple.product-type.framework";
+		};
+		925326667E39EBFE3A2E3B3EB800382B /* Pods-OS_Final */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4F1F0F9CA47B1958B4B365141FE698C6 /* Build configuration list for PBXNativeTarget "Pods-OS_Final" */;
+			buildPhases = (
+				2E64926C1A5BCFE944E9C8824FAA09EC /* Headers */,
+				1525B7A5A70F8779D0CD5DCB5D9E45FC /* Sources */,
+				F48B561409203DC9924B158D7EF9F51D /* Frameworks */,
+				0CD045FF4DF62E24973B9E8599D9A577 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				82A13FE36E9C32D6506B8688A032E310 /* PBXTargetDependency */,
+				C8D46D36489FFB64AC003DA4CA8BBE0E /* PBXTargetDependency */,
+				D29BFA76713B8C49101AA66F340E9163 /* PBXTargetDependency */,
+			);
+			name = "Pods-OS_Final";
+			productName = Pods_OS_Final;
+			productReference = 2239EFC6FCA4870FA432E87AE32F71CE /* Pods-OS_Final */;
+			productType = "com.apple.product-type.framework";
+		};
+		9AB9C4135C214FAD2CB39E8241B20B94 /* MBRadioCheckboxButton */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FB4BEC059C7575BF250F8B16A71BF848 /* Build configuration list for PBXNativeTarget "MBRadioCheckboxButton" */;
+			buildPhases = (
+				99029B5D81FB4D23C6DB0A3B5EE59EFD /* Headers */,
+				B98CE19BB7971175179D187333AA1A28 /* Sources */,
+				CB67B3D3AF1419175CC08B8CA6456BEB /* Frameworks */,
+				E79E6C27751464578F232CB6D60265C5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MBRadioCheckboxButton;
+			productName = MBRadioCheckboxButton;
+			productReference = D417802829D6AE846D84D5AF790AA35E /* MBRadioCheckboxButton */;
+			productType = "com.apple.product-type.framework";
+		};
+		B990BD87169C76A3ED3FE8A9258D91A3 /* Toast-Swift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3393B836BCDFD5292B077E63A26DC97F /* Build configuration list for PBXNativeTarget "Toast-Swift" */;
+			buildPhases = (
+				63D019064C2255A3D74C25BDF1937802 /* Headers */,
+				C576B265A93E25312929172E0AB5B460 /* Sources */,
+				27AE6978B7DEAB3C99D6DD07D4532395 /* Frameworks */,
+				39537AB4608D9B5FE694169E21AD9F19 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Toast-Swift";
+			productName = Toast_Swift;
+			productReference = D6043471C96F93DC41F7DD1E0D7D8B35 /* Toast-Swift */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1300;
+				LastUpgradeCheck = 1300;
+			};
+			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			productRefGroup = 8B879F766E1895A6DCBF5FFAD6B8D556 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9AB9C4135C214FAD2CB39E8241B20B94 /* MBRadioCheckboxButton */,
+				6868056D761E163D10FDAF8CF1C4D9B8 /* MJRefresh */,
+				925326667E39EBFE3A2E3B3EB800382B /* Pods-OS_Final */,
+				B990BD87169C76A3ED3FE8A9258D91A3 /* Toast-Swift */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0CD045FF4DF62E24973B9E8599D9A577 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		39537AB4608D9B5FE694169E21AD9F19 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6BC6B1E5D11829114DBBAD7889E74631 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D3D23AC513D9BD37E9584ECC7A43EB96 /* MJRefresh.bundle in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E79E6C27751464578F232CB6D60265C5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1525B7A5A70F8779D0CD5DCB5D9E45FC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0FA40B9DF2A0775AB73E8B3065A48147 /* Pods-OS_Final-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		34B3E0BE1B1A07BFFD7A2D6B5E9519B5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE911CEE44D57BD0DB5323A6DAA89DC8 /* MJRefresh-dummy.m in Sources */,
+				FEAE9FB1E69E23FFD8AA692BEE336A98 /* MJRefreshAutoFooter.m in Sources */,
+				0C1AFE23669A9BA4871BD5162694DA16 /* MJRefreshAutoGifFooter.m in Sources */,
+				ED848677AE20D7BB3FE15E579FCB4108 /* MJRefreshAutoNormalFooter.m in Sources */,
+				9F68C501B0D5D15DCEB532198F3C2C34 /* MJRefreshAutoStateFooter.m in Sources */,
+				A9E68323AB90D1A381E5F5F33ABDB4DF /* MJRefreshBackFooter.m in Sources */,
+				9ECFF9072040CE074EAD416F59618D0F /* MJRefreshBackGifFooter.m in Sources */,
+				159FEAE5DC496012A9552E424EFBF14E /* MJRefreshBackNormalFooter.m in Sources */,
+				0AA7116E1D252587AC7ED903AC819A19 /* MJRefreshBackStateFooter.m in Sources */,
+				4C21B29DF1EBA01A074A424E675742A3 /* MJRefreshComponent.m in Sources */,
+				467C86257878CC3C69D163F5E310FF90 /* MJRefreshConfig.m in Sources */,
+				617D61683EAA9132282BD8994C421FAC /* MJRefreshConst.m in Sources */,
+				C85C62365BE7C1A80B3C57F9BC5548AC /* MJRefreshFooter.m in Sources */,
+				74968C67D6F9AF67166C042AAF292DCC /* MJRefreshGifHeader.m in Sources */,
+				FE97AC91E478283BA3F3EAD91C5A62A7 /* MJRefreshHeader.m in Sources */,
+				E24D51518E38AA5360A31077696BCDA3 /* MJRefreshNormalHeader.m in Sources */,
+				78B109BCC17A4E07A7F222AFA51AA43E /* MJRefreshNormalTrailer.m in Sources */,
+				0D9637DA7816E2FC05536E6E870CF866 /* MJRefreshStateHeader.m in Sources */,
+				8E4B8F6ADBAE6B282FE5A56048F15E13 /* MJRefreshStateTrailer.m in Sources */,
+				C27297AF5D2C27C32678D786D812949F /* MJRefreshTrailer.m in Sources */,
+				55F8DCA5C5AFC115D38B5526B23CF9DD /* NSBundle+MJRefresh.m in Sources */,
+				420395BBCA9A731942BBBBBF094F9EDC /* UIScrollView+MJExtension.m in Sources */,
+				BC16696C43BE045C91B790800309FA19 /* UIScrollView+MJRefresh.m in Sources */,
+				3A964EDC08E99323BF6503D20E2DFFD0 /* UIView+MJExtension.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B98CE19BB7971175179D187333AA1A28 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9ADED4F688110C1BBBF2B8DAA577A707 /* CheckboxButton.swift in Sources */,
+				3FD86BDF5CF8B360C42AADF88D79576A /* CheckboxButtonContainer.swift in Sources */,
+				9C333A6C461FE5AA4CE484D1A360CD7F /* CheckboxButtonContainerView.swift in Sources */,
+				1506A50224587430A19AE54C219F4CD9 /* CheckBoxColor.swift in Sources */,
+				EBF728A69C9C501641662643EA6D04FF /* CheckboxLineStyle.swift in Sources */,
+				5418927E483D4FF27688102720414BD3 /* MBRadioCheckboxButton-dummy.m in Sources */,
+				D66DD5EEDAC4A367E08DECFFE4006DF7 /* RadioButton.swift in Sources */,
+				3559CB444E9476521EFC53162D3BA759 /* RadioButtonCircleStyle.swift in Sources */,
+				9FA4F1CCAEB88E3CAE81570A7EAB3A6B /* RadioButtonColor.swift in Sources */,
+				23B1B3EF1DE0EEABC738100054F62ECF /* RadioButtonContainer.swift in Sources */,
+				EB8A749587F2C4E2BA13F7D88E9EC710 /* RadioButtonContainerView.swift in Sources */,
+				A71CA360A99661E0EC2216BB82F75DA5 /* RadioCheckboxBaseButton.swift in Sources */,
+				6ED70AF94E1D948F55A1BBE24BC1E18A /* RadioCheckboxBaseContainer.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C576B265A93E25312929172E0AB5B460 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CAE29563450C7ED7B9BEFD4F8C3788CA /* Toast.swift in Sources */,
+				6DFA70326D4C540DC43BD455F5A4A658 /* Toast-Swift-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		82A13FE36E9C32D6506B8688A032E310 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = MBRadioCheckboxButton;
+			target = 9AB9C4135C214FAD2CB39E8241B20B94 /* MBRadioCheckboxButton */;
+			targetProxy = A99A0796356A5233DDCF739B166DF4CF /* PBXContainerItemProxy */;
+		};
+		C8D46D36489FFB64AC003DA4CA8BBE0E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = MJRefresh;
+			target = 6868056D761E163D10FDAF8CF1C4D9B8 /* MJRefresh */;
+			targetProxy = 9DEC51156EE103F478EAD9EACC083E20 /* PBXContainerItemProxy */;
+		};
+		D29BFA76713B8C49101AA66F340E9163 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Toast-Swift";
+			target = B990BD87169C76A3ED3FE8A9258D91A3 /* Toast-Swift */;
+			targetProxy = 319BE27955988B865F2253EF333CCAB0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1F6D3DD34E8A819816BB3E88E22EDACC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D45D1ECC7CCA145376DDC94396CDA671 /* Toast-Swift.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Toast-Swift/Toast-Swift-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Toast-Swift/Toast-Swift-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/Toast-Swift/Toast-Swift.modulemap";
+				PRODUCT_MODULE_NAME = Toast_Swift;
+				PRODUCT_NAME = Toast_Swift;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		208342D338E4B16C9F4368FFE2AA9E56 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 17168A39F287D3DDCA1314B9D5E49212 /* Pods-OS_Final.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-OS_Final/Pods-OS_Final-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-OS_Final/Pods-OS_Final.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		4BC7450F9457737EE3E637BA155B56F7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		7BEB34ECDB4EA726FAF26C2E92CC9EB6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1B85BC1C65234D95B628E12A2F09127E /* MBRadioCheckboxButton.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/MBRadioCheckboxButton/MBRadioCheckboxButton-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/MBRadioCheckboxButton/MBRadioCheckboxButton-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/MBRadioCheckboxButton/MBRadioCheckboxButton.modulemap";
+				PRODUCT_MODULE_NAME = MBRadioCheckboxButton;
+				PRODUCT_NAME = MBRadioCheckboxButton;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		7C216F295FAC6E31612355D76BFB5380 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 02B18A6FBF77B4DF8F0C60976C9F51FD /* Pods-OS_Final.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-OS_Final/Pods-OS_Final-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-OS_Final/Pods-OS_Final.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		8B5A46FF8D3C1289CDEE3BAFACABCD2A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		A9E5DC85DF2483929E2E5F381966064A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 295C92378E0416CB76EA05AF28ED0A78 /* MJRefresh.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/MJRefresh/MJRefresh-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/MJRefresh/MJRefresh-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/MJRefresh/MJRefresh.modulemap";
+				PRODUCT_MODULE_NAME = MJRefresh;
+				PRODUCT_NAME = MJRefresh;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		AFAA020C878D5EF2D68686CDAF9FBC39 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E281CB391BDDF3083A66289E188976AA /* MJRefresh.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/MJRefresh/MJRefresh-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/MJRefresh/MJRefresh-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/MJRefresh/MJRefresh.modulemap";
+				PRODUCT_MODULE_NAME = MJRefresh;
+				PRODUCT_NAME = MJRefresh;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		DD076AFEEE0A686B597DD62BCA7E46CF /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 15B145D39C33298EA3D82BD3D50A1798 /* Toast-Swift.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Toast-Swift/Toast-Swift-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Toast-Swift/Toast-Swift-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/Toast-Swift/Toast-Swift.modulemap";
+				PRODUCT_MODULE_NAME = Toast_Swift;
+				PRODUCT_NAME = Toast_Swift;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		FB5BDC244595532C4E107D340490B696 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 109EA95691F8417648AF12F7D46DF14F /* MBRadioCheckboxButton.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/MBRadioCheckboxButton/MBRadioCheckboxButton-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/MBRadioCheckboxButton/MBRadioCheckboxButton-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/MBRadioCheckboxButton/MBRadioCheckboxButton.modulemap";
+				PRODUCT_MODULE_NAME = MBRadioCheckboxButton;
+				PRODUCT_NAME = MBRadioCheckboxButton;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3393B836BCDFD5292B077E63A26DC97F /* Build configuration list for PBXNativeTarget "Toast-Swift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1F6D3DD34E8A819816BB3E88E22EDACC /* Debug */,
+				DD076AFEEE0A686B597DD62BCA7E46CF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4BC7450F9457737EE3E637BA155B56F7 /* Debug */,
+				8B5A46FF8D3C1289CDEE3BAFACABCD2A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4F1F0F9CA47B1958B4B365141FE698C6 /* Build configuration list for PBXNativeTarget "Pods-OS_Final" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7C216F295FAC6E31612355D76BFB5380 /* Debug */,
+				208342D338E4B16C9F4368FFE2AA9E56 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5E89F66C429FDBC2640FED5096301703 /* Build configuration list for PBXNativeTarget "MJRefresh" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A9E5DC85DF2483929E2E5F381966064A /* Debug */,
+				AFAA020C878D5EF2D68686CDAF9FBC39 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FB4BEC059C7575BF250F8B16A71BF848 /* Build configuration list for PBXNativeTarget "MBRadioCheckboxButton" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FB5BDC244595532C4E107D340490B696 /* Debug */,
+				7BEB34ECDB4EA726FAF26C2E92CC9EB6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+}
