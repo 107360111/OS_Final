@@ -8,6 +8,7 @@ target 'OS_Final' do
   pod 'MBRadioCheckboxButton', '2.0'
   pod 'MJRefresh', '3.7.2'
   pod 'Toast-Swift', '5.0.1'
+  pod 'Realm', '5.0.3'
   # Pods for OS_Final
 
 end
