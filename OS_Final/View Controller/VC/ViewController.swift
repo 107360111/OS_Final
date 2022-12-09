@@ -25,9 +25,7 @@ class ViewController: NotificationVC {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setGradientStatusBar()
-        
-        self.showNoticeDialogVC(title: .reLogin)
-        
+                
         scroll(to: 1, animated: false)
     }
     
