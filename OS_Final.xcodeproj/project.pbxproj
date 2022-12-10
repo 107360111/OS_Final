@@ -48,6 +48,8 @@
 		1434160B2940319900984E57 /* barCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 143416092940319900984E57 /* barCollectionViewCell.xib */; };
 		1434160E2940398900984E57 /* listTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1434160C2940398900984E57 /* listTableViewCell.swift */; };
 		1434160F2940398900984E57 /* listTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1434160D2940398900984E57 /* listTableViewCell.xib */; };
+		14DC70962943322700618899 /* WriteInDialogVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DC70942943322700618899 /* WriteInDialogVC.swift */; };
+		14DC70972943322700618899 /* WriteInDialogVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14DC70952943322700618899 /* WriteInDialogVC.xib */; };
 		683D942D70AC2B7D58190E23 /* Pods_OS_Final.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AAEF591EBA5DA2A57C1A76F /* Pods_OS_Final.framework */; };
 /* End PBXBuildFile section */
 
@@ -95,6 +97,8 @@
 		143416092940319900984E57 /* barCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = barCollectionViewCell.xib; sourceTree = "<group>"; };
 		1434160C2940398900984E57 /* listTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = listTableViewCell.swift; sourceTree = "<group>"; };
 		1434160D2940398900984E57 /* listTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = listTableViewCell.xib; sourceTree = "<group>"; };
+		14DC70942943322700618899 /* WriteInDialogVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteInDialogVC.swift; sourceTree = "<group>"; };
+		14DC70952943322700618899 /* WriteInDialogVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WriteInDialogVC.xib; sourceTree = "<group>"; };
 		251CF70F1BAE36B7A01BC685 /* Pods-OS_Final.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OS_Final.debug.xcconfig"; path = "Target Support Files/Pods-OS_Final/Pods-OS_Final.debug.xcconfig"; sourceTree = "<group>"; };
 		61349CE4B2F986B0BF8DA7F2 /* Pods-OS_Final.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OS_Final.release.xcconfig"; path = "Target Support Files/Pods-OS_Final/Pods-OS_Final.release.xcconfig"; sourceTree = "<group>"; };
 		7AAEF591EBA5DA2A57C1A76F /* Pods_OS_Final.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OS_Final.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -205,6 +209,7 @@
 			isa = PBXGroup;
 			children = (
 				143415C7293F27BA00984E57 /* ChooseDialogVC */,
+				14DC7093294331FA00618899 /* WriteInDialogVC */,
 			);
 			path = "Dialog VC";
 			sourceTree = "<group>";
@@ -451,6 +456,15 @@
 			path = listTableViewCell;
 			sourceTree = "<group>";
 		};
+		14DC7093294331FA00618899 /* WriteInDialogVC */ = {
+			isa = PBXGroup;
+			children = (
+				14DC70942943322700618899 /* WriteInDialogVC.swift */,
+				14DC70952943322700618899 /* WriteInDialogVC.xib */,
+			);
+			path = WriteInDialogVC;
+			sourceTree = "<group>";
+		};
 		96B6EE55B5CE2BD4070B91DB /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -535,6 +549,7 @@
 				1434160F2940398900984E57 /* listTableViewCell.xib in Resources */,
 				1434159C293F21BA00984E57 /* Assets.xcassets in Resources */,
 				1434159A293F21B900984E57 /* Main.storyboard in Resources */,
+				14DC70972943322700618899 /* WriteInDialogVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -588,6 +603,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				140E3C5B294316390012BCCC /* locatedManager.swift in Sources */,
+				14DC70962943322700618899 /* WriteInDialogVC.swift in Sources */,
 				14341601293F399B00984E57 /* ListVC.swift in Sources */,
 				14341597293F21B900984E57 /* ViewController.swift in Sources */,
 				143415FD293F394000984E57 /* ScheduleVC.swift in Sources */,
@@ -774,8 +790,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -804,8 +819,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

@@ -14,6 +14,7 @@ import MBRadioCheckboxButton
     @objc optional func dismissButtonDidTap(with title: Titles)
     @objc optional func checkBtnClick(isCheck: Bool)
 }
+
 class ChooseDialogVC: UIViewController {
     @IBOutlet var view_background: UIView!
     

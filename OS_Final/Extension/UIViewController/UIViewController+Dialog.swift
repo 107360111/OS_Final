@@ -26,6 +26,13 @@ extension UIViewController {
         VC.dialogShow(vc: self)
     }
     
+    // MARK: -- W --
+    func showWriteInDialogVC() {
+        let VC = WriteInDialogVC()
+        VC.delegate = self as? WriteInDialogVCDelegate
+        VC.dialogShow(vc: self)
+    }
+    
     func dialogShow(vc: UIViewController, animator: Animator = .enlarge, completion: (() -> Void)? = nil) {
         self.modalPresentationStyle = .overFullScreen
         

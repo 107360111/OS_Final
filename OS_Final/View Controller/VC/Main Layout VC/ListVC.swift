@@ -7,18 +7,21 @@
 
 import UIKit
 import MJRefresh
+import Toast_Swift
 
 class ListVC: NotificationVC {
     @IBOutlet var tableView: UITableView!
     
     @IBOutlet var view_gradient: UIView!
     @IBOutlet var view_timeChange: UIView!
+    @IBOutlet var view_timeChange_width: NSLayoutConstraint!
     @IBOutlet var view_writeIn: UIView!
-    
+
     @IBOutlet var imageView_list: UIImageView! // 給予popover的邊界，沒有要做其他動作
     @IBOutlet var label_title: UILabel!
     @IBOutlet var label_totalCost: UILabel!
     
+    private let isPad: Bool = UIDevice.current.userInterfaceIdiom == .pad
     private var selectedTimeTndex: Int = 0
     private var timeChangeArr = [String]()
     
@@ -51,6 +54,7 @@ class ListVC: NotificationVC {
         
         view_gradient.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
         
+        view_timeChange_width.constant = isPad ? 250 : AppWidth / 2
         setViewTap()
     }
     
@@ -95,7 +99,7 @@ class ListVC: NotificationVC {
     }
     
     @objc private func timeChangeDidTap() {
-        let popverVC = setPopover(isAutoLayout: false, cellLimit: timeChangeArr.count, width: Int(view_timeChange.bounds.width))
+        let popverVC = setPopover(isAutoLayout: false, cellLimit: timeChangeArr.count, width: Int(view_timeChange_width.constant))
         popverVC.tableView.backgroundColor = UIColor.white_FFFFFF
         popverVC.tableView.delegate = self
         popverVC.tableView.dataSource = self
@@ -110,10 +114,22 @@ class ListVC: NotificationVC {
     }
     
     @objc private func writeInDidTap() {
-        self.showNoticeDialogVC(title: .writeIn)
+        self.showWriteInDialogVC()
     }
 }
 
+extension ListVC: WriteInDialogVCDelegate {
+    func chooseQRcode() {
+        var grayStyle = ToastStyle()
+        grayStyle.backgroundColor = .darkGray
+        self.view.makeToast("選擇QR code輸入", duration: 0.5, position: .bottom, style: grayStyle)
+    }
+    func chooseWritten() {
+        var grayStyle = ToastStyle()
+        grayStyle.backgroundColor = .darkGray
+        self.view.makeToast("選擇手動輸入", duration: 0.5, position: .bottom, style: grayStyle)
+    }
+}
 extension ListVC: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         // 設定header個數
