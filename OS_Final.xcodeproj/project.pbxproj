@@ -48,8 +48,15 @@
 		1434160B2940319900984E57 /* barCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 143416092940319900984E57 /* barCollectionViewCell.xib */; };
 		1434160E2940398900984E57 /* listTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1434160C2940398900984E57 /* listTableViewCell.swift */; };
 		1434160F2940398900984E57 /* listTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1434160D2940398900984E57 /* listTableViewCell.xib */; };
+		14453659294732C700A2DE7D /* iconTypeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14453657294732C700A2DE7D /* iconTypeTableViewCell.swift */; };
+		1445365A294732C700A2DE7D /* iconTypeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14453658294732C700A2DE7D /* iconTypeTableViewCell.xib */; };
+		14C535C12944586300DCE20D /* WriteInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C535BF2944586300DCE20D /* WriteInVC.swift */; };
+		14C535C22944586300DCE20D /* WriteInVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14C535C02944586300DCE20D /* WriteInVC.xib */; };
+		14C911A02944858600422F8F /* DateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C9119F2944858600422F8F /* DateManager.swift */; };
 		14DC70962943322700618899 /* WriteInDialogVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DC70942943322700618899 /* WriteInDialogVC.swift */; };
 		14DC70972943322700618899 /* WriteInDialogVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14DC70952943322700618899 /* WriteInDialogVC.xib */; };
+		14F3C09D294703CD00C771E4 /* numberKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F3C09C294703CD00C771E4 /* numberKeyboard.swift */; };
+		14F3C09F294703D900C771E4 /* numberKeyboard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14F3C09E294703D900C771E4 /* numberKeyboard.xib */; };
 		683D942D70AC2B7D58190E23 /* Pods_OS_Final.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AAEF591EBA5DA2A57C1A76F /* Pods_OS_Final.framework */; };
 /* End PBXBuildFile section */
 
@@ -97,8 +104,15 @@
 		143416092940319900984E57 /* barCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = barCollectionViewCell.xib; sourceTree = "<group>"; };
 		1434160C2940398900984E57 /* listTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = listTableViewCell.swift; sourceTree = "<group>"; };
 		1434160D2940398900984E57 /* listTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = listTableViewCell.xib; sourceTree = "<group>"; };
+		14453657294732C700A2DE7D /* iconTypeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iconTypeTableViewCell.swift; sourceTree = "<group>"; };
+		14453658294732C700A2DE7D /* iconTypeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = iconTypeTableViewCell.xib; sourceTree = "<group>"; };
+		14C535BF2944586300DCE20D /* WriteInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteInVC.swift; sourceTree = "<group>"; };
+		14C535C02944586300DCE20D /* WriteInVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WriteInVC.xib; sourceTree = "<group>"; };
+		14C9119F2944858600422F8F /* DateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateManager.swift; sourceTree = "<group>"; };
 		14DC70942943322700618899 /* WriteInDialogVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteInDialogVC.swift; sourceTree = "<group>"; };
 		14DC70952943322700618899 /* WriteInDialogVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WriteInDialogVC.xib; sourceTree = "<group>"; };
+		14F3C09C294703CD00C771E4 /* numberKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = numberKeyboard.swift; sourceTree = "<group>"; };
+		14F3C09E294703D900C771E4 /* numberKeyboard.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = numberKeyboard.xib; sourceTree = "<group>"; };
 		251CF70F1BAE36B7A01BC685 /* Pods-OS_Final.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OS_Final.debug.xcconfig"; path = "Target Support Files/Pods-OS_Final/Pods-OS_Final.debug.xcconfig"; sourceTree = "<group>"; };
 		61349CE4B2F986B0BF8DA7F2 /* Pods-OS_Final.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OS_Final.release.xcconfig"; path = "Target Support Files/Pods-OS_Final/Pods-OS_Final.release.xcconfig"; sourceTree = "<group>"; };
 		7AAEF591EBA5DA2A57C1A76F /* Pods_OS_Final.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OS_Final.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -169,6 +183,7 @@
 				143415AA293F24C700984E57 /* Class */,
 				143415AB293F24D300984E57 /* Extension */,
 				143415AC293F24DE00984E57 /* Manager */,
+				14F3C09A294702B700C771E4 /* Tools */,
 				14341594293F21B900984E57 /* SceneDelegate.swift */,
 				1434159B293F21BA00984E57 /* Assets.xcassets */,
 				1434159D293F21BA00984E57 /* LaunchScreen.storyboard */,
@@ -201,6 +216,7 @@
 				143415AE293F25C000984E57 /* Base */,
 				14341596293F21B900984E57 /* ViewController.swift */,
 				143415F9293F38AA00984E57 /* Main Layout VC */,
+				14C535BE2944583100DCE20D /* WriteInVC */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -242,6 +258,7 @@
 		143415AC293F24DE00984E57 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
+				14C9119E2944857500422F8F /* DateManager */,
 				140E3C592943161F0012BCCC /* locatedManager */,
 				143415E3293F2D7300984E57 /* FileManager */,
 				143415B3293F261A00984E57 /* PNManager */,
@@ -433,6 +450,7 @@
 		143416062940315800984E57 /* TableCell */ = {
 			isa = PBXGroup;
 			children = (
+				144536562947329200A2DE7D /* iconTypeTableViewCell */,
 				14D0E7F22940AF1000E7B31F /* listTableViewCell */,
 			);
 			path = TableCell;
@@ -445,6 +463,32 @@
 				143416092940319900984E57 /* barCollectionViewCell.xib */,
 			);
 			path = barCollectionViewCell;
+			sourceTree = "<group>";
+		};
+		144536562947329200A2DE7D /* iconTypeTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				14453657294732C700A2DE7D /* iconTypeTableViewCell.swift */,
+				14453658294732C700A2DE7D /* iconTypeTableViewCell.xib */,
+			);
+			path = iconTypeTableViewCell;
+			sourceTree = "<group>";
+		};
+		14C535BE2944583100DCE20D /* WriteInVC */ = {
+			isa = PBXGroup;
+			children = (
+				14C535BF2944586300DCE20D /* WriteInVC.swift */,
+				14C535C02944586300DCE20D /* WriteInVC.xib */,
+			);
+			path = WriteInVC;
+			sourceTree = "<group>";
+		};
+		14C9119E2944857500422F8F /* DateManager */ = {
+			isa = PBXGroup;
+			children = (
+				14C9119F2944858600422F8F /* DateManager.swift */,
+			);
+			path = DateManager;
 			sourceTree = "<group>";
 		};
 		14D0E7F22940AF1000E7B31F /* listTableViewCell */ = {
@@ -463,6 +507,23 @@
 				14DC70952943322700618899 /* WriteInDialogVC.xib */,
 			);
 			path = WriteInDialogVC;
+			sourceTree = "<group>";
+		};
+		14F3C09A294702B700C771E4 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				14F3C09B294702C900C771E4 /* numberKeyboard */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		14F3C09B294702C900C771E4 /* numberKeyboard */ = {
+			isa = PBXGroup;
+			children = (
+				14F3C09C294703CD00C771E4 /* numberKeyboard.swift */,
+				14F3C09E294703D900C771E4 /* numberKeyboard.xib */,
+			);
+			path = numberKeyboard;
 			sourceTree = "<group>";
 		};
 		96B6EE55B5CE2BD4070B91DB /* Pods */ = {
@@ -543,7 +604,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				1434159F293F21BA00984E57 /* LaunchScreen.storyboard in Resources */,
+				1445365A294732C700A2DE7D /* iconTypeTableViewCell.xib in Resources */,
 				14336BF12941CAEF000E4CDC /* listDetailHeaderView.xib in Resources */,
+				14C535C22944586300DCE20D /* WriteInVC.xib in Resources */,
+				14F3C09F294703D900C771E4 /* numberKeyboard.xib in Resources */,
 				143415CB293F27E200984E57 /* ChooseDialogVC.xib in Resources */,
 				1434160B2940319900984E57 /* barCollectionViewCell.xib in Resources */,
 				1434160F2940398900984E57 /* listTableViewCell.xib in Resources */,
@@ -607,6 +671,7 @@
 				14341601293F399B00984E57 /* ListVC.swift in Sources */,
 				14341597293F21B900984E57 /* ViewController.swift in Sources */,
 				143415FD293F394000984E57 /* ScheduleVC.swift in Sources */,
+				14F3C09D294703CD00C771E4 /* numberKeyboard.swift in Sources */,
 				143415D5293F2B6C00984E57 /* UIColor+.swift in Sources */,
 				1434160E2940398900984E57 /* listTableViewCell.swift in Sources */,
 				14341593293F21B900984E57 /* AppDelegate.swift in Sources */,
@@ -617,12 +682,14 @@
 				143415B7293F269D00984E57 /* EnumManager.swift in Sources */,
 				143415BD293F270E00984E57 /* UIViewController+Dialog.swift in Sources */,
 				140E3C5E294317DB0012BCCC /* Array+.swift in Sources */,
+				14453659294732C700A2DE7D /* iconTypeTableViewCell.swift in Sources */,
 				1434160A2940319900984E57 /* barCollectionViewCell.swift in Sources */,
 				143415C6293F279900984E57 /* UserInfo.swift in Sources */,
 				143415EA293F2E3C00984E57 /* UIView+.swift in Sources */,
 				143415F0293F2EDF00984E57 /* UITableView+.swift in Sources */,
 				143415EC293F2E7500984E57 /* UIView+layout.swift in Sources */,
 				143415B5293F266E00984E57 /* PNManager.swift in Sources */,
+				14C911A02944858600422F8F /* DateManager.swift in Sources */,
 				143415C2293F276500984E57 /* BaseReq.swift in Sources */,
 				143415DF293F2D0000984E57 /* UIButton+located.swift in Sources */,
 				143415DD293F2CDD00984E57 /* UIButton+animation.swift in Sources */,
@@ -635,6 +702,7 @@
 				143415B0293F25E600984E57 /* NotificationVC.swift in Sources */,
 				143415B9293F26B500984E57 /* UserDefaultManager.swift in Sources */,
 				143415E2293F2D3E00984E57 /* UIImage+.swift in Sources */,
+				14C535C12944586300DCE20D /* WriteInVC.swift in Sources */,
 				143415CF293F2AD900984E57 /* UIColor+CustomColor.swift in Sources */,
 				143415C4293F277000984E57 /* BaseRes.swift in Sources */,
 			);

@@ -13,7 +13,6 @@ class listTableViewCell: UITableViewCell {
     
     @IBOutlet var label_date: UILabel!
     @IBOutlet var label_cost: UILabel!
-    @IBOutlet var label_detail: UILabel!
     
     
     override func awakeFromNib() {

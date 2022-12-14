@@ -64,3 +64,23 @@ func setPopover(isAutoLayout: Bool = true, cellHeight: Int = 45, cellLimit: Int 
     }
     return popoverVC
 }
+
+/// 設定彈出排序視窗(自定義cell)
+func setPopoverWithCell(cell: String, isAutoLayout: Bool = true, cellHeight: Int = 60, cellLimit: Int = 1, width: Int = 200, isArrow: Bool = true) -> UITableViewController {
+    let popoverVC = UITableViewController()
+    popoverVC.modalPresentationStyle = UIModalPresentationStyle.popover
+    popoverVC.tableView.register(UINib(nibName: "\(cell)", bundle: nil), forCellReuseIdentifier: "cell")
+    popoverVC.tableView.alwaysBounceVertical = false
+    popoverVC.tableView.bounces = false
+    
+    if !isAutoLayout {
+        popoverVC.tableView.rowHeight = CGFloat(cellHeight)
+        popoverVC.preferredContentSize = CGSize(width: width, height: cellHeight * cellLimit)
+    }
+    
+    if let popover = popoverVC.popoverPresentationController {
+        popover.permittedArrowDirections = isArrow ? .up : []
+        popover.backgroundColor = UIColor.white
+    }
+    return popoverVC
+}

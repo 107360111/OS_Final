@@ -34,7 +34,7 @@ extension UIButton {
     
     private func animate(_ button: UIButton, transform: CGAffineTransform) {
         button.transform = transform.scaledBy(x: 1.2, y: 1.2)
-        UIView.animate(withDuration: 0.3,
+        UIView.animate(withDuration: 0.05,
                        delay: 0,
                        usingSpringWithDamping: 0.5,
                        initialSpringVelocity: 3,

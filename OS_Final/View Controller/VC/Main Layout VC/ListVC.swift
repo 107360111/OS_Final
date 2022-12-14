@@ -15,7 +15,6 @@ class ListVC: NotificationVC {
     @IBOutlet var view_gradient: UIView!
     @IBOutlet var view_timeChange: UIView!
     @IBOutlet var view_timeChange_width: NSLayoutConstraint!
-    @IBOutlet var view_writeIn: UIView!
 
     @IBOutlet var imageView_list: UIImageView! // 給予popover的邊界，沒有要做其他動作
     @IBOutlet var label_title: UILabel!
@@ -60,7 +59,6 @@ class ListVC: NotificationVC {
     
     private func setViewTap() {
         view_timeChange.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(timeChangeDidTap)))
-        view_writeIn.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(writeInDidTap)))
     }
     
     private func tableViewInit() {
@@ -118,18 +116,6 @@ class ListVC: NotificationVC {
     }
 }
 
-extension ListVC: WriteInDialogVCDelegate {
-    func chooseQRcode() {
-        var grayStyle = ToastStyle()
-        grayStyle.backgroundColor = .darkGray
-        self.view.makeToast("選擇QR code輸入", duration: 0.5, position: .bottom, style: grayStyle)
-    }
-    func chooseWritten() {
-        var grayStyle = ToastStyle()
-        grayStyle.backgroundColor = .darkGray
-        self.view.makeToast("選擇手動輸入", duration: 0.5, position: .bottom, style: grayStyle)
-    }
-}
 extension ListVC: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         // 設定header個數

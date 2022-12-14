@@ -4,27 +4,37 @@ PODS:
   - Realm (5.0.3):
     - Realm/Headers (= 5.0.3)
   - Realm/Headers (5.0.3)
+  - SDWebImage (5.11.1):
+    - SDWebImage/Core (= 5.11.1)
+  - SDWebImage/Core (5.11.1)
   - Toast-Swift (5.0.1)
+  - "UITextView+Placeholder (1.4.0)"
 
 DEPENDENCIES:
   - MBRadioCheckboxButton (= 2.0)
   - MJRefresh (= 3.7.2)
   - Realm (= 5.0.3)
+  - SDWebImage (= 5.11.1)
   - Toast-Swift (= 5.0.1)
+  - "UITextView+Placeholder"
 
 SPEC REPOS:
   trunk:
     - MBRadioCheckboxButton
     - MJRefresh
     - Realm
+    - SDWebImage
     - Toast-Swift
+    - "UITextView+Placeholder"
 
 SPEC CHECKSUMS:
   MBRadioCheckboxButton: 6e2a2cdc441e292e45b64c4e65eb8fc1fc05eef2
   MJRefresh: 30997d30b347c8e9508a4db11e3a690da0c9b85a
   Realm: bfca1699b61b0b17c3a69ae0e648314eae91fbdb
+  SDWebImage: a7f831e1a65eb5e285e3fb046a23fcfbf08e696d
   Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
+  "UITextView+Placeholder": d7b0c400921f66523f3a85d74f774512e14f6502
 
-PODFILE CHECKSUM: b14ccf8fa44c69cf25ab70ae6d00e23408a0fcdc
+PODFILE CHECKSUM: 324b03025ce04d3fb31a101264adf03681b54f5a
 
 COCOAPODS: 1.11.3

@@ -13,6 +13,8 @@ class UserDefaultManager {
         case access
         case appVersion = "CFBundleShortVersionString"
         case guestKey = "guestKey"
+        case payIn = "payIn"
+        case payOut = "payOut"
         case userInfo = "UserInfo"
     }
     
@@ -42,6 +44,25 @@ class UserDefaultManager {
     static func setLogoutUserDefault() {
         
         UIApplication.shared.unregisterForRemoteNotifications()
+    }
+    
+    // MARK: -- P --
+    static func setPayInIcon(str: String) {
+        UserDefaults().set(str, forKey: defaultKeyStr.payIn.rawValue)
+        UserDefaults().synchronize()
+    }
+    
+    static func getPayInIcon() -> String {
+        return UserDefaults().object(forKey: defaultKeyStr.payIn.rawValue) as? String ?? ""
+    }
+    
+    static func setPayOutIcon(str: String) {
+        UserDefaults().set(str, forKey: defaultKeyStr.payOut.rawValue)
+        UserDefaults().synchronize()
+    }
+    
+    static func getPayOutIcon() -> String {
+        return UserDefaults().object(forKey: defaultKeyStr.payOut.rawValue) as? String ?? ""
     }
     
     // MARK: -- U --
