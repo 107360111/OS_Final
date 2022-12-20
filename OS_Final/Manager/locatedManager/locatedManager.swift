@@ -9,7 +9,7 @@ import UIKit
 import Foundation
 
 class locatedManager {
-    static let array_time = ["今日統計","這週統計","這月統計","今年統計"]
+    static let array_time = ["總和","總支出","總收入"]
     
     static let array_payOut = ["飲食","居家","水電","交通","娛樂","保險","醫療","美容","日常用品","其他"]
     

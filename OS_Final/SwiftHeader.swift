@@ -55,7 +55,7 @@ func setPopover(isAutoLayout: Bool = true, cellHeight: Int = 45, cellLimit: Int 
     
     if !isAutoLayout {
         popoverVC.tableView.rowHeight = CGFloat(cellHeight)
-        popoverVC.preferredContentSize = CGSize(width: width, height: cellHeight * cellLimit)
+        popoverVC.preferredContentSize = CGSize(width: width, height: cellHeight * cellLimit + 10)
     }
     
     if let popover = popoverVC.popoverPresentationController {

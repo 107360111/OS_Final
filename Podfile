@@ -8,7 +8,7 @@ target 'OS_Final' do
   pod 'SDWebImage', '5.11.1'
   pod 'MBRadioCheckboxButton', '2.0'
   pod 'MJRefresh', '3.7.2'
-  pod 'Realm', '5.0.3'
+  pod 'RealmSwift', '5.0.3'
   pod 'SDWebImage', '5.11.1'
   pod 'Toast-Swift', '5.0.1'
   pod 'UITextView+Placeholder'

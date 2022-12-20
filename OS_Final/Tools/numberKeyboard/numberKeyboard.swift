@@ -16,7 +16,6 @@ import UIKit
 class numberKeyboard: UIView {
     @IBOutlet var view_C: UIView!
     @IBOutlet var view_delete: UIView!
-    @IBOutlet var view_finish: UIView!
     
     weak var delegate: numberKeyboardDelegate?
     
@@ -40,7 +39,6 @@ class numberKeyboard: UIView {
     private func viewInit() {
         view_C.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(clearDidTap)))
         view_delete.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(deleteDidTap)))
-        view_finish.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(finishDidTap)))
     }
     
     @IBAction func numberDidTap(btn: UIButton) {
@@ -54,9 +52,5 @@ class numberKeyboard: UIView {
     
     @objc private func deleteDidTap() {
         self.delegate?.deleteButtonDiaTap()
-    }
-    
-    @objc private func finishDidTap() {
-        self.delegate?.finishButtonDidTap()
     }
 }

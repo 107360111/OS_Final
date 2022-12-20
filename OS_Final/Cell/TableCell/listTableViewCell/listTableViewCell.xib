@@ -18,13 +18,13 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Ye4-lD-oRm">
-                        <rect key="frame" x="0.0" y="0.0" width="547" height="49"/>
+                        <rect key="frame" x="0.0" y="0.0" width="547" height="50"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j9r-iE-08L">
-                                <rect key="frame" x="0.0" y="0.0" width="182.33333333333334" height="49"/>
+                                <rect key="frame" x="0.0" y="0.0" width="182.33333333333334" height="50"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TCZ-ZB-bq8">
-                                        <rect key="frame" x="5" y="5" width="172.33333333333334" height="39"/>
+                                        <rect key="frame" x="5" y="5" width="172.33333333333334" height="40"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -39,28 +39,29 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5iQ-Ii-NXO">
-                                <rect key="frame" x="182.33333333333331" y="0.0" width="182.33333333333331" height="49"/>
+                                <rect key="frame" x="182.33333333333331" y="0.0" width="182.33333333333331" height="50"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0Dl-UW-Riv">
-                                        <rect key="frame" x="66.666666666666657" y="0.0" width="49" height="49"/>
+                                        <rect key="frame" x="76.333333333333343" y="10" width="30" height="30"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" secondItem="0Dl-UW-Riv" secondAttribute="height" multiplier="1:1" id="fIY-w3-m9f"/>
+                                            <constraint firstAttribute="width" secondItem="0Dl-UW-Riv" secondAttribute="height" multiplier="1:1" id="Gwe-EB-hF4"/>
                                         </constraints>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" secondItem="5iQ-Ii-NXO" secondAttribute="height" multiplier="26:7" id="2xH-na-Opf"/>
                                     <constraint firstItem="0Dl-UW-Riv" firstAttribute="centerX" secondItem="5iQ-Ii-NXO" secondAttribute="centerX" id="iSc-f9-caX"/>
                                     <constraint firstItem="0Dl-UW-Riv" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="5iQ-Ii-NXO" secondAttribute="leading" constant="5" id="oZ4-OG-77T"/>
                                     <constraint firstItem="0Dl-UW-Riv" firstAttribute="centerY" secondItem="5iQ-Ii-NXO" secondAttribute="centerY" id="pUx-oA-G8V"/>
-                                    <constraint firstItem="0Dl-UW-Riv" firstAttribute="top" secondItem="5iQ-Ii-NXO" secondAttribute="top" id="q18-iw-0Bc"/>
+                                    <constraint firstItem="0Dl-UW-Riv" firstAttribute="top" secondItem="5iQ-Ii-NXO" secondAttribute="top" constant="10" id="q18-iw-0Bc"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nfC-5T-awv">
-                                <rect key="frame" x="364.66666666666669" y="0.0" width="182.33333333333331" height="49"/>
+                                <rect key="frame" x="364.66666666666669" y="0.0" width="182.33333333333331" height="50"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TxA-c7-Q4i">
-                                        <rect key="frame" x="5" y="5" width="172.33333333333334" height="39"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TxA-c7-Q4i">
+                                        <rect key="frame" x="5" y="5" width="172.33333333333334" height="40"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>

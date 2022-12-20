@@ -8,6 +8,7 @@
 import UIKit
 import MJRefresh
 import Toast_Swift
+import RealmSwift
 
 class ListVC: NotificationVC {
     @IBOutlet var tableView: UITableView!
@@ -20,13 +21,27 @@ class ListVC: NotificationVC {
     @IBOutlet var label_title: UILabel!
     @IBOutlet var label_totalCost: UILabel!
     
+    private var listDataTableArr: Results<noteData>? { didSet { tableView.reloadData()
+        let cost: Int64 = UserDefaultManager.getTotalCost()
+        if cost > 0 {
+            self.label_totalCost.textColor = UIColor.green_1CBF47
+        } else if cost < 0 {
+            self.label_totalCost.textColor = UIColor.red_FF2C5B
+        } else {
+            self.label_totalCost.textColor = UIColor.black
+        }
+        self.label_totalCost.text = String(format: "%2d", abs(Int64(cost)))
+    }}
+    
     private let isPad: Bool = UIDevice.current.userInterfaceIdiom == .pad
-    private var selectedTimeTndex: Int = 0
-    private var timeChangeArr = [String]()
+    private var waysChangeArr = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.label_totalCost.text = String(format: "%2d", UserDefaultManager.getTotalCost())
+        realmInit()
         componentsInit()
+        notificationInit()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -35,6 +50,12 @@ class ListVC: NotificationVC {
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
+    }
+    
+    private func realmInit() {
+        if let res = RealmManager.getData() {
+            listDataTableArr = res
+        }
     }
     
     private func componentsInit() {
@@ -93,11 +114,21 @@ class ListVC: NotificationVC {
     }
     
     private func arrayInit() {
-        timeChangeArr.append(contentsOf: locatedManager.array_time.map { $0 })
+        waysChangeArr.append(contentsOf: locatedManager.array_time.map { $0 })
+    }
+    
+    func notificationInit() {
+        NotificationCenter.default.addObserver(self, selector: #selector(handleDataList), name: NSNotification.Name("SendData"), object: nil)
+    }
+    
+    @objc private func handleDataList() {
+        if let res = RealmManager.getData() {
+            listDataTableArr = res
+        }
     }
     
     @objc private func timeChangeDidTap() {
-        let popverVC = setPopover(isAutoLayout: false, cellLimit: timeChangeArr.count, width: Int(view_timeChange_width.constant))
+        let popverVC = setPopover(isAutoLayout: false, cellLimit: waysChangeArr.count, width: Int(view_timeChange_width.constant))
         popverVC.tableView.backgroundColor = UIColor.white_FFFFFF
         popverVC.tableView.delegate = self
         popverVC.tableView.dataSource = self
@@ -144,12 +175,12 @@ extension ListVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // 設定rows個數
-        return tableView.tag == 0 ? 20 : timeChangeArr.count
+        return tableView.tag == 0 ? listDataTableArr?.count ?? 0 : waysChangeArr.count
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         // 設定rows高度
-        return 40
+        return tableView.tag == 0 ? 60 : 40
     }
             
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -157,11 +188,15 @@ extension ListVC: UITableViewDelegate, UITableViewDataSource {
         switch tableView.tag {
         case 0:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "listCell") as? listTableViewCell else { return listTableViewCell() }
-            cell.setCell(date: "\(indexPath.row)", img: "", cost: "", detail: "")
+            let row: Int = indexPath.row
+            let date: String = listDataTableArr?[row].date ?? ""
+            let img: String = listDataTableArr?[row].type ?? ""
+            let cost: Int64 = listDataTableArr?[row].cost ?? 0
+            cell.setCell(date: date, img: img, cost: cost)
             return cell
         case 1:
             let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-            guard let detail: String = timeChangeArr.getObject(at: indexPath.row) else { return cell }
+            guard let detail: String = waysChangeArr.getObject(at: indexPath.row) else { return cell }
             
             cell.backgroundColor = UIColor.white_FFFFFF
             
@@ -189,9 +224,28 @@ extension ListVC: UITableViewDelegate, UITableViewDataSource {
         case 0:
             self.showNoticeDialogVC(title: .list)
         case 1:
-            if let detail = timeChangeArr.getObject(at: indexPath.row) {
-                selectedTimeTndex = indexPath.row
+            if let detail = waysChangeArr.getObject(at: indexPath.row) {
                 label_title.text = detail
+                var cost: Int64 = 0
+                switch (indexPath.row) {
+                case 0:
+                    cost = UserDefaultManager.getTotalCost()
+                    self.label_totalCost.text = String(format: "%2d", abs(Int32(cost)))
+                    self.label_totalCost.textColor = cost > 0 ? UIColor.green_59D945 : cost < 0 ? UIColor.red_E64646 : UIColor.black
+                    break
+                case 1:
+                    cost = UserDefaultManager.getPayOutCost()
+                    self.label_totalCost.text = String(format: "-%2d", cost)
+                    self.label_totalCost.textColor = UIColor.black
+                    break
+                case 2:
+                    cost = UserDefaultManager.getPayInCost()
+                    self.label_totalCost.text = String(format: "+%2d", cost)
+                    self.label_totalCost.textColor = UIColor.black
+                    break
+                default:
+                    cost = 0
+                }
                 presentedViewController?.dismiss(animated: true, completion: nil)
             }
         default:

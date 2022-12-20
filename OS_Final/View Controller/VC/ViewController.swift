@@ -20,6 +20,7 @@ class ViewController: NotificationVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionViewInit()
+        notificationInit()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -34,6 +35,11 @@ class ViewController: NotificationVC {
         flowLayout.minimumLineSpacing = 0
         flowLayout.minimumInteritemSpacing = 0
         flowLayout.sectionInset = UIEdgeInsets(top: 0, left: 2, bottom: 0, right: 2)
+    }
+    
+    func notificationInit() {
+        NotificationCenter.default.addObserver(self, selector: #selector(handleStopScrolling), name: NSNotification.Name("StopScrolling"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(handleContinuneScrolling), name: NSNotification.Name("ContinuneScrolling"), object: nil)
     }
     
     private func setPageView(page: Int, animated: Bool) {
@@ -90,6 +96,15 @@ class ViewController: NotificationVC {
             self.setPageView(page: page, animated: animated)
         }
     }
+    
+    @objc private func handleStopScrolling() {
+        self.scrollView.isScrollEnabled = false
+    }
+    
+    @objc private func handleContinuneScrolling() {
+        self.scrollView.isScrollEnabled = true
+    }
+    
 }
 
 extension ViewController: UIScrollViewDelegate {
@@ -113,9 +128,9 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
         var unreadCnt: Int = 0
         switch indexPath.row {
         case 0:
-            unreadCnt = 5
+            unreadCnt = 0
         case 2:
-            unreadCnt = 11
+            unreadCnt = 0
         default:
             unreadCnt = 0
         }

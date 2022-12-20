@@ -50,6 +50,11 @@
 		1434160F2940398900984E57 /* listTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1434160D2940398900984E57 /* listTableViewCell.xib */; };
 		14453659294732C700A2DE7D /* iconTypeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14453657294732C700A2DE7D /* iconTypeTableViewCell.swift */; };
 		1445365A294732C700A2DE7D /* iconTypeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14453658294732C700A2DE7D /* iconTypeTableViewCell.xib */; };
+		1470F3162950325400691C80 /* NoteData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1470F3152950325400691C80 /* NoteData.swift */; };
+		1470F31929503A9400691C80 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1470F31829503A9400691C80 /* RealmManager.swift */; };
+		1470F31C29503D8F00691C80 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1470F31B29503D8F00691C80 /* APIManager.swift */; };
+		1470F3202951CA6E00691C80 /* FixDataDialogVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1470F31E2951CA6E00691C80 /* FixDataDialogVC.swift */; };
+		1470F3212951CA6E00691C80 /* FixDataDialogVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1470F31F2951CA6E00691C80 /* FixDataDialogVC.xib */; };
 		14C535C12944586300DCE20D /* WriteInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C535BF2944586300DCE20D /* WriteInVC.swift */; };
 		14C535C22944586300DCE20D /* WriteInVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14C535C02944586300DCE20D /* WriteInVC.xib */; };
 		14C911A02944858600422F8F /* DateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C9119F2944858600422F8F /* DateManager.swift */; };
@@ -106,6 +111,11 @@
 		1434160D2940398900984E57 /* listTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = listTableViewCell.xib; sourceTree = "<group>"; };
 		14453657294732C700A2DE7D /* iconTypeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iconTypeTableViewCell.swift; sourceTree = "<group>"; };
 		14453658294732C700A2DE7D /* iconTypeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = iconTypeTableViewCell.xib; sourceTree = "<group>"; };
+		1470F3152950325400691C80 /* NoteData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteData.swift; sourceTree = "<group>"; };
+		1470F31829503A9400691C80 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
+		1470F31B29503D8F00691C80 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		1470F31E2951CA6E00691C80 /* FixDataDialogVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixDataDialogVC.swift; sourceTree = "<group>"; };
+		1470F31F2951CA6E00691C80 /* FixDataDialogVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FixDataDialogVC.xib; sourceTree = "<group>"; };
 		14C535BF2944586300DCE20D /* WriteInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteInVC.swift; sourceTree = "<group>"; };
 		14C535C02944586300DCE20D /* WriteInVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WriteInVC.xib; sourceTree = "<group>"; };
 		14C9119F2944858600422F8F /* DateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateManager.swift; sourceTree = "<group>"; };
@@ -224,6 +234,7 @@
 		143415A9293F24B100984E57 /* Dialog VC */ = {
 			isa = PBXGroup;
 			children = (
+				1470F31D2951CA4500691C80 /* FixDataDialogVC */,
 				143415C7293F27BA00984E57 /* ChooseDialogVC */,
 				14DC7093294331FA00618899 /* WriteInDialogVC */,
 			);
@@ -233,6 +244,7 @@
 		143415AA293F24C700984E57 /* Class */ = {
 			isa = PBXGroup;
 			children = (
+				1470F3142950322200691C80 /* NoteData */,
 				143415BE293F274200984E57 /* API */,
 			);
 			path = Class;
@@ -258,10 +270,12 @@
 		143415AC293F24DE00984E57 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
+				1470F31A29503D7E00691C80 /* APIManager */,
 				14C9119E2944857500422F8F /* DateManager */,
 				140E3C592943161F0012BCCC /* locatedManager */,
 				143415E3293F2D7300984E57 /* FileManager */,
 				143415B3293F261A00984E57 /* PNManager */,
+				1470F31729503A7D00691C80 /* RealmManager */,
 				143415B2293F260700984E57 /* EnumManager */,
 				143415B1293F25F900984E57 /* UserDefaultManager */,
 			);
@@ -474,6 +488,39 @@
 			path = iconTypeTableViewCell;
 			sourceTree = "<group>";
 		};
+		1470F3142950322200691C80 /* NoteData */ = {
+			isa = PBXGroup;
+			children = (
+				1470F3152950325400691C80 /* NoteData.swift */,
+			);
+			path = NoteData;
+			sourceTree = "<group>";
+		};
+		1470F31729503A7D00691C80 /* RealmManager */ = {
+			isa = PBXGroup;
+			children = (
+				1470F31829503A9400691C80 /* RealmManager.swift */,
+			);
+			path = RealmManager;
+			sourceTree = "<group>";
+		};
+		1470F31A29503D7E00691C80 /* APIManager */ = {
+			isa = PBXGroup;
+			children = (
+				1470F31B29503D8F00691C80 /* APIManager.swift */,
+			);
+			path = APIManager;
+			sourceTree = "<group>";
+		};
+		1470F31D2951CA4500691C80 /* FixDataDialogVC */ = {
+			isa = PBXGroup;
+			children = (
+				1470F31E2951CA6E00691C80 /* FixDataDialogVC.swift */,
+				1470F31F2951CA6E00691C80 /* FixDataDialogVC.xib */,
+			);
+			path = FixDataDialogVC;
+			sourceTree = "<group>";
+		};
 		14C535BE2944583100DCE20D /* WriteInVC */ = {
 			isa = PBXGroup;
 			children = (
@@ -613,6 +660,7 @@
 				1434160F2940398900984E57 /* listTableViewCell.xib in Resources */,
 				1434159C293F21BA00984E57 /* Assets.xcassets in Resources */,
 				1434159A293F21B900984E57 /* Main.storyboard in Resources */,
+				1470F3212951CA6E00691C80 /* FixDataDialogVC.xib in Resources */,
 				14DC70972943322700618899 /* WriteInDialogVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -672,8 +720,10 @@
 				14341597293F21B900984E57 /* ViewController.swift in Sources */,
 				143415FD293F394000984E57 /* ScheduleVC.swift in Sources */,
 				14F3C09D294703CD00C771E4 /* numberKeyboard.swift in Sources */,
+				1470F31C29503D8F00691C80 /* APIManager.swift in Sources */,
 				143415D5293F2B6C00984E57 /* UIColor+.swift in Sources */,
 				1434160E2940398900984E57 /* listTableViewCell.swift in Sources */,
+				1470F3202951CA6E00691C80 /* FixDataDialogVC.swift in Sources */,
 				14341593293F21B900984E57 /* AppDelegate.swift in Sources */,
 				143415CD293F29AE00984E57 /* SwiftHeader.swift in Sources */,
 				143415CA293F27E200984E57 /* ChooseDialogVC.swift in Sources */,
@@ -682,7 +732,9 @@
 				143415B7293F269D00984E57 /* EnumManager.swift in Sources */,
 				143415BD293F270E00984E57 /* UIViewController+Dialog.swift in Sources */,
 				140E3C5E294317DB0012BCCC /* Array+.swift in Sources */,
+				1470F31929503A9400691C80 /* RealmManager.swift in Sources */,
 				14453659294732C700A2DE7D /* iconTypeTableViewCell.swift in Sources */,
+				1470F3162950325400691C80 /* NoteData.swift in Sources */,
 				1434160A2940319900984E57 /* barCollectionViewCell.swift in Sources */,
 				143415C6293F279900984E57 /* UserInfo.swift in Sources */,
 				143415EA293F2E3C00984E57 /* UIView+.swift in Sources */,
@@ -855,6 +907,7 @@
 				DEVELOPMENT_TEAM = ZHL6G6MAR4;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = OS_Final/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "記帳本";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -884,6 +937,7 @@
 				DEVELOPMENT_TEAM = ZHL6G6MAR4;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = OS_Final/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "記帳本";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

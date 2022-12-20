@@ -7,14 +7,13 @@
 
 import UIKit
 import UITextView_Placeholder
-import Realm
 
 @objc protocol UserSettingVCDelegate {
-    
+    @objc func reloadData()
 }
 
 class UserSettingVC: NotificationVC {
-    
+
     @IBOutlet var view_gradient: UIView!
     @IBOutlet var view_date: UIView!
     @IBOutlet var view_costWay: UIView!
@@ -22,6 +21,7 @@ class UserSettingVC: NotificationVC {
     @IBOutlet var view_typeIcon: UIView!
     @IBOutlet var view_cost: UIView!
     @IBOutlet var view_checkbox: UIView!
+    @IBOutlet var view_textView_background: UIView!
     
     @IBOutlet var textField_date: UITextField!
     @IBOutlet var textField_cost: UITextField!
@@ -35,11 +35,16 @@ class UserSettingVC: NotificationVC {
     private var datePickerView: UIDatePicker = UIDatePicker()
     private var costPickerView: UIPickerView = UIPickerView()
     
+    @IBOutlet var view_date_top: NSLayoutConstraint!
+    @IBOutlet var textView_Bottom: NSLayoutConstraint!
     private var costWayIndex: Int = 0
-    private var openDetail: Bool = true
+    private var openDetail: Bool = false
+    private var chooseTextView: Bool = true
     
     private var IconURLArr = [String]()
     private var IconNameArr = [String]()
+    
+    private var saveTypeName: String = "food"
     
     weak var delegate: UserSettingVCDelegate?
     
@@ -48,13 +53,31 @@ class UserSettingVC: NotificationVC {
         componentsInit()
     }
     
+    override func KeyboardWillShow(duration: Double, height: CGFloat) {
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "StopScrolling"), object: nil)
+        if chooseTextView {
+            UIViewPropertyAnimator.runningPropertyAnimator(withDuration: duration, delay: 0) { [weak self] in
+                self?.view_date_top.constant = AppHeight < 600 ? -(height - 100) : -((AppHeight / 2) - height)
+                self?.textView_Bottom.constant = AppHeight < 600 ? (height - 100) : (AppHeight / 2) - height
+            }
+        }
+    }
+    
+    override func KeyboardWillHide(duration: Double) {
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "ContinuneScrolling"), object: nil)
+        if chooseTextView {
+            UIViewPropertyAnimator.runningPropertyAnimator(withDuration: duration, delay: 0) { [weak self] in
+                self?.view_date_top.constant = 10
+                self?.textView_Bottom.constant = 10
+            }
+        }
+    }
+    
     private func componentsInit() {
-        textView_detail.placeholder = "備註說明記帳..."
-
         imageView_icon.image = UIImage(named: UserDefaultManager.getPayOutIcon())
        
-        textView_detail.placeholderColor = UIColor.lightGray
         textFieldInit()
+        textViewInit()
         datePickerInit()
         costPickerInit()
         viewInit()
@@ -63,6 +86,12 @@ class UserSettingVC: NotificationVC {
     private func textFieldInit() {
         textField_date.text = DateManager.currentDate()
         textField_cost.placeholder = "金額"
+    }
+    
+    private func textViewInit() {
+        textView_detail.placeholder = "備註說明記帳..."
+        textView_detail.placeholderColor = UIColor.lightGray
+        textView_detail.inputAccessoryView = dateKeyboardInputAccessoryView()
     }
     
     private func datePickerInit() {
@@ -77,9 +106,10 @@ class UserSettingVC: NotificationVC {
     }
     
     private func costPickerInit() {
-    let numberKeyboard = numberKeyboard(frame: CGRect(x: 0, y: 0, width: AppWidth, height: 300))
+        let numberKeyboard = numberKeyboard(frame: CGRect(x: 0, y: 0, width: AppWidth, height: (AppHeight / 3) < 300 ? (AppHeight / 3) : 300 ))
     numberKeyboard.delegate = self
     
+    textField_cost.inputAccessoryView = dateKeyboardInputAccessoryView()
     textField_cost.inputView = numberKeyboard
 }
     
@@ -100,7 +130,7 @@ class UserSettingVC: NotificationVC {
     private func arraySelected() {
         IconURLArr = []
         IconNameArr = []
-        if (costWayIndex == 0) {
+        if costWayIndex == 0 {
             IconURLArr.append(contentsOf: locatedManager.array_payOutURL.map { $0 })
             IconNameArr.append(contentsOf: locatedManager.array_payOut.map { $0 })
         } else {
@@ -129,6 +159,8 @@ class UserSettingVC: NotificationVC {
     }
 
     @IBAction func textFieldDidClick(_ textFiled: UITextField) {
+        chooseTextView = false
+        textView_detail.isUserInteractionEnabled = false
         if (textFiled == textField_date) {
             datePickerView.datePickerMode = .date
             if #available(iOS 13.4, *) {
@@ -142,20 +174,42 @@ class UserSettingVC: NotificationVC {
         IconURLArr = []
         IconNameArr = []
         costWayIndex = sender.selectedSegmentIndex
-        if (costWayIndex == 0) {
+        if costWayIndex == 0 {
             imageView_icon.image = UIImage(named: UserDefaultManager.getPayOutIcon())
         } else {
             imageView_icon.image = UIImage(named: UserDefaultManager.getPayInIcon())
         }
     }
+    
+    @IBAction func uploadData(_ sender: Any) {
+        self.killKeyboard()
+        guard textField_cost.text?.count != 0 else {
+            textField_cost.borderColor = UIColor.red_E64646
+            self.view.makeToast("請輸入金額")
+            return
+        }
+        guard let cost: Int64 = Int64(textField_cost.text ?? "0") else { return }
         
+        RealmManager.saveData(date: textField_date.text ?? "",
+                              ways: costWayIndex == 0 ? "支出" : "收入",
+                              type: costWayIndex == 0 ? UserDefaultManager.getPayOutIcon() : UserDefaultManager.getPayInIcon(),
+                              cost: cost,
+                              detail: textView_detail.text ?? "")
+        self.view.makeToast("登記成功", duration: 0.3)
+        
+        costWayIndex == 0 ? UserDefaultManager.setPayOutCost(cost: Int64(Int(cost))) : UserDefaultManager.setPayInCost(cost: Int64(Int(cost)))
+        textField_cost.text = ""
+        textView_detail.text = ""
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "SendData"), object: nil)
+    }
+    
     @objc private func scrollDatePicker() {
         textField_date.text = DateManager.dateToString(date: datePickerView.date)
     }
     
     @objc private func typeIconDidTap() {
         arraySelected()
-        let popverVC = setPopoverWithCell(cell: "\(iconTypeTableViewCell.self)",isAutoLayout: false, cellLimit: (IconNameArr.count > 5) ? 5 : IconNameArr.count, width: Int(view_typeIcon.frame.width))
+        let popverVC = setPopoverWithCell(cell: "\(iconTypeTableViewCell.self)",isAutoLayout: false, cellLimit: IconNameArr.count > 5 ? 5 : IconNameArr.count, width: Int(view_typeIcon.frame.width))
         popverVC.tableView.backgroundColor = UIColor.white_FFFFFF
         popverVC.tableView.delegate = self
         popverVC.tableView.dataSource = self
@@ -172,12 +226,15 @@ class UserSettingVC: NotificationVC {
     @objc private func checkboxDidTap() {
         self.killKeyboard()
         
-        imageView_checkbox.image = UIImage(named: (openDetail) ? "checkbox_checked" : "checkbox")
-        textView_detail.isHidden = !openDetail
+        imageView_checkbox.image = UIImage(named: !openDetail ? "checkbox_checked" : "checkbox")
+        textView_detail.isHidden = openDetail
+        view_textView_background.isHidden = openDetail
         openDetail = !openDetail
     }
     
     @objc private func killKeyboard() {
+        chooseTextView = true
+        textView_detail.isUserInteractionEnabled = true
         self.view.endEditing(true)
     }
 }
@@ -197,8 +254,10 @@ extension UserSettingVC: numberKeyboardDelegate {
     
     func finishButtonDidTap() {
         self.killKeyboard()
+        if textField_cost.text?.count != 0 {
+            textField_cost.borderColor = UIColor.gray_C4C4C4
+        }
     }
-    
 }
 
 extension UserSettingVC: UITableViewDelegate, UITableViewDataSource {
@@ -214,7 +273,7 @@ extension UserSettingVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let icon = IconURLArr.getObject(at: indexPath.row) {
-            if (costWayIndex == 0) {
+            if costWayIndex == 0 {
                 UserDefaultManager.setPayOutIcon(str: icon)
             } else {
                 UserDefaultManager.setPayInIcon(str: icon)

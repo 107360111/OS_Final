@@ -23,7 +23,9 @@ class listTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
-    func setCell(date: String, img: String, cost: String, detail: String) {
+    func setCell(date: String, img: String, cost: Int64) {
         label_date.text = date
+        imageView_type.image = UIImage(named: img)
+        label_cost.text = String(format: "%2d", cost)
     }
 }

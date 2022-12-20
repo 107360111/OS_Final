@@ -15,6 +15,9 @@ class UserDefaultManager {
         case guestKey = "guestKey"
         case payIn = "payIn"
         case payOut = "payOut"
+        case payInCost = "payInCost"
+        case payOutCost = "payOutCost"
+        case totalCost = "totalCost"
         case userInfo = "UserInfo"
     }
     
@@ -63,6 +66,36 @@ class UserDefaultManager {
     
     static func getPayOutIcon() -> String {
         return UserDefaults().object(forKey: defaultKeyStr.payOut.rawValue) as? String ?? ""
+    }
+    
+    static func setPayInCost(cost: Int64) {
+        let payInTotalCost: Int64 = UserDefaultManager.getPayInCost() + cost
+        UserDefaults().set(payInTotalCost, forKey: defaultKeyStr.payInCost.rawValue)
+        UserDefaults().synchronize()
+        UserDefaultManager.setTotalCost()
+    }
+    static func getPayInCost() -> Int64 {
+        return UserDefaults().object(forKey: defaultKeyStr.payInCost.rawValue) as? Int64 ?? 0
+    }
+    
+    static func setPayOutCost(cost: Int64) {
+        let payOutTotalCost: Int64 = UserDefaultManager.getPayOutCost() + cost
+        UserDefaults().set(payOutTotalCost, forKey: defaultKeyStr.payOutCost.rawValue)
+        UserDefaults().synchronize()
+        UserDefaultManager.setTotalCost()
+    }
+    static func getPayOutCost() -> Int64 {
+        return UserDefaults().object(forKey: defaultKeyStr.payOutCost.rawValue) as? Int64 ?? 0
+    }
+    
+    // MARK: -- T --
+    static func setTotalCost() {
+        let cost: Int64 = UserDefaultManager.getPayInCost() - UserDefaultManager.getPayOutCost()
+        UserDefaults().set(cost, forKey: defaultKeyStr.totalCost.rawValue)
+        UserDefaults().synchronize()
+    }
+    static func getTotalCost() -> Int64 {
+        return UserDefaults().object(forKey: defaultKeyStr.totalCost.rawValue) as? Int64 ?? 0
     }
     
     // MARK: -- U --
