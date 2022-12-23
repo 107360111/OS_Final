@@ -24,6 +24,7 @@ class DateManager {
         dateFormatter.timeZone = TimeZone(identifier: "Asia/Taipei")
         return dateFormatter.string(from: date)
     }
+    
     // MARK: -- F --
     /// 取得當月第一天日期是星期幾
     static func firstWeekday(date: Date) -> Int {
@@ -34,5 +35,12 @@ class DateManager {
         /// 1 ~ 7 範圍 星期(日) 至 (六)   順序更動  (一) 至 (日)  2 ~ 8
         weekday = weekday == 1 ? 8 : weekday
         return weekday - 2
+    }
+    
+    // MARK: -- S --
+    static func stringToDate(string: String) -> Date {
+        dateFormatter.dateFormat = "YYYY/MM/dd"
+        dateFormatter.timeZone = TimeZone(identifier: "Asia/Taipei")
+        return dateFormatter.date(from: string) ?? Date()
     }
 }

@@ -51,15 +51,15 @@ class barCollectionViewCell: UICollectionViewCell {
         var imgName: String = ""
         var selectedName: String = ""
         switch index {
-        case 0: // schedule
-            imgName = "schedule"
-            selectedName = "schedule_selected"
+        case 0: // QRcode
+            imgName = "QRcode_uncheck"
+            selectedName = "QRcode_check"
         case 1: // list
-            imgName = "list"
-            selectedName = "list_selected"
-        case 2: // userSetting
-            imgName = "userSetting"
-            selectedName = "userSetting_selected"
+            imgName = "list_uncheck"
+            selectedName = "list_check"
+        case 2: // write
+            imgName = "write_uncheck"
+            selectedName = "write_check"
         default:
             break
         }

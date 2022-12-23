@@ -55,30 +55,6 @@ class ViewController: NotificationVC {
         }
     }
     
-    /// 設定漸層顏色狀態欄
-    private func setGradientStatusBar() {
-        navigationController?.navigationBar.barTintColor = .white
-        navigationController?.navigationBar.isTranslucent = false
-        navigationController?.navigationBar.shadowImage = nil
-        navigationController?.navigationBar.setBackgroundImage(nil, for: .default)
-        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.blue_4A8FE1]
-        
-        // change backbutton color
-        navigationController?.navigationBar.tintColor = .black
-        // Remove back title
-        navigationItem.backBarButtonItem = UIBarButtonItem(title: nil, style: .plain, target: nil, action: nil)
-        
-        let gradient = CAGradientLayer()
-        gradient.startPoint = CGPoint(x: 0.0, y: 0.5)
-        gradient.endPoint = CGPoint(x: 1.0, y: 0.5)
-        gradient.colors = [UIColor.blue_A8CEFA.cgColor, UIColor.blue_AAC1DC.cgColor]
-        gradient.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: 100)
-        
-        view.layer.insertSublayer(gradient, at: 0)
-        let isRootVC: Bool = (navigationController?.viewControllers.last is ViewController)
-        navigationController?.setNavigationBarHidden(isRootVC, animated: false)
-    }
-    
     private func setCollectionBarColor() {
         let gradient = CAGradientLayer()
         gradient.startPoint = CGPoint(x: 0.0, y: 0.5)
@@ -143,6 +119,6 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
         scroll(to: indexPath.row, animated: true)
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: AppWidth / CGFloat(barCount + 1), height: 45)
+        return CGSize(width: AppWidth / CGFloat(barCount + 1), height: 50)
     }
 }

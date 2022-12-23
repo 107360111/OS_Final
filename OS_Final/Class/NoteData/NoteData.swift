@@ -13,7 +13,7 @@ import RealmSwift
     dynamic var date: String = ""
     dynamic var ways: String = ""
     dynamic var type: String = ""
-    dynamic var cost: Int64 = 0
+    dynamic var cost: Int = 0
     dynamic var detail: String = ""
 
     override class func primaryKey() -> String {

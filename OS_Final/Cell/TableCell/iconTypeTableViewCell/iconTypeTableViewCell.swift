@@ -22,6 +22,11 @@ class iconTypeTableViewCell: UITableViewCell {
     
     func setCell(icon: String, name: String) {
         imageView_Icon.image = UIImage(named: icon)
-        label_name.text = name
+        
+        if name.contains("其他") {
+            label_name.text = "其他"
+        } else {
+            label_name.text = name
+        }
     }
 }

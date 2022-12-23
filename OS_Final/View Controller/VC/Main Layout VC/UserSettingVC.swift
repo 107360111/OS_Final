@@ -8,10 +8,6 @@
 import UIKit
 import UITextView_Placeholder
 
-@objc protocol UserSettingVCDelegate {
-    @objc func reloadData()
-}
-
 class UserSettingVC: NotificationVC {
 
     @IBOutlet var view_gradient: UIView!
@@ -32,21 +28,19 @@ class UserSettingVC: NotificationVC {
     @IBOutlet var imageView_icon: UIImageView!
     @IBOutlet var imageView_checkbox: UIImageView!
     
+    @IBOutlet var view_date_top: NSLayoutConstraint!
+    @IBOutlet var textView_Bottom: NSLayoutConstraint!
+    
     private var datePickerView: UIDatePicker = UIDatePicker()
     private var costPickerView: UIPickerView = UIPickerView()
     
-    @IBOutlet var view_date_top: NSLayoutConstraint!
-    @IBOutlet var textView_Bottom: NSLayoutConstraint!
     private var costWayIndex: Int = 0
     private var openDetail: Bool = false
     private var chooseTextView: Bool = true
     
     private var IconURLArr = [String]()
     private var IconNameArr = [String]()
-    
-    private var saveTypeName: String = "food"
-    
-    weak var delegate: UserSettingVCDelegate?
+    private var selectedIndex: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -74,13 +68,24 @@ class UserSettingVC: NotificationVC {
     }
     
     private func componentsInit() {
-        imageView_icon.image = UIImage(named: UserDefaultManager.getPayOutIcon())
+        imageView_icon.image = UIImage(named: UserDefaultManager.getPayoutIconFromVC())
        
+        arrayInit()
         textFieldInit()
         textViewInit()
         datePickerInit()
         costPickerInit()
         viewInit()
+    }
+    
+    private func arrayInit() {
+        if costWayIndex == 0 {
+            IconURLArr.append(contentsOf: locatedManager.array_payOutURL.map { $0 })
+            IconNameArr.append(contentsOf: locatedManager.array_payOut.map { $0 })
+        } else {
+            IconURLArr.append(contentsOf: locatedManager.array_payInURL.map { $0 })
+            IconNameArr.append(contentsOf: locatedManager.array_payIn.map { $0 })
+        }
     }
         
     private func textFieldInit() {
@@ -114,17 +119,12 @@ class UserSettingVC: NotificationVC {
 }
     
     private func viewInit() {
-        let gradient = CAGradientLayer()
-        gradient.startPoint = CGPoint(x: 0.0, y: 0.5)
-        gradient.endPoint = CGPoint(x: 1.0, y: 0.5)
-        gradient.colors = [UIColor.blue_A8CEFA.cgColor, UIColor.blue_AAC1DC.cgColor]
-        gradient.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: view_gradient.bounds.size.height)
-        view_gradient.layer.insertSublayer(gradient, at: 0)
-        
-        view_gradient.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
+        setGradientBackgroundColor(view: view_gradient)
         
         view_type.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(typeIconDidTap)))
         view_checkbox.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(checkboxDidTap)))
+        
+        segmentedControl_costway.addTarget(self, action: #selector(UserSettingVC.onChange(sender:)), for: .valueChanged)
     }
     
     private func arraySelected() {
@@ -169,38 +169,45 @@ class UserSettingVC: NotificationVC {
             }
         }
     }
-        
-    @IBAction func changedCostWays(_ sender: UISegmentedControl) {
-        IconURLArr = []
-        IconNameArr = []
-        costWayIndex = sender.selectedSegmentIndex
-        if costWayIndex == 0 {
-            imageView_icon.image = UIImage(named: UserDefaultManager.getPayOutIcon())
-        } else {
-            imageView_icon.image = UIImage(named: UserDefaultManager.getPayInIcon())
-        }
-    }
     
     @IBAction func uploadData(_ sender: Any) {
         self.killKeyboard()
+        
         guard textField_cost.text?.count != 0 else {
             textField_cost.borderColor = UIColor.red_E64646
             self.view.makeToast("請輸入金額")
             return
         }
-        guard let cost: Int64 = Int64(textField_cost.text ?? "0") else { return }
         
-        RealmManager.saveData(date: textField_date.text ?? "",
-                              ways: costWayIndex == 0 ? "支出" : "收入",
-                              type: costWayIndex == 0 ? UserDefaultManager.getPayOutIcon() : UserDefaultManager.getPayInIcon(),
-                              cost: cost,
-                              detail: textView_detail.text ?? "")
+        let costStr: String = textField_cost.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? "0"
+        guard let cost: Int = Int(costStr) else { return }
+        
+        let data = noteData()
+        data.date = textField_date.text ?? ""
+        data.ways = IconNameArr.getObject(at: selectedIndex) ?? ""
+        data.type = costWayIndex == 0 ? UserDefaultManager.getPayoutIconFromVC() : UserDefaultManager.getPayinIconFromVC()
+        data.cost = cost
+        data.detail = textView_detail.text ?? ""
+        
+        RealmManager.saveData(data: data)
         self.view.makeToast("登記成功", duration: 0.3)
         
-        costWayIndex == 0 ? UserDefaultManager.setPayOutCost(cost: Int64(Int(cost))) : UserDefaultManager.setPayInCost(cost: Int64(Int(cost)))
+        costWayIndex == 0 ? UserDefaultManager.setPayOutCost(cost: Int(Int(cost))) : UserDefaultManager.setPayInCost(cost: Int(Int(cost)))
+        textField_date.text = DateManager.currentDate()
+        datePickerView.date = Date()
         textField_cost.text = ""
         textView_detail.text = ""
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "SendData"), object: nil)
+    }
+    
+    @objc private func onChange(sender: UISegmentedControl) {
+        costWayIndex = sender.selectedSegmentIndex
+        arraySelected()
+        if (costWayIndex == 0) {
+            imageView_icon.image = UIImage(named: UserDefaultManager.getPayoutIconFromVC())
+        } else {
+            imageView_icon.image = UIImage(named: UserDefaultManager.getPayinIconFromVC())
+        }
     }
     
     @objc private func scrollDatePicker() {
@@ -235,6 +242,9 @@ class UserSettingVC: NotificationVC {
     @objc private func killKeyboard() {
         chooseTextView = true
         textView_detail.isUserInteractionEnabled = true
+        if textField_cost.text?.count != 0 {
+            textField_cost.borderColor = UIColor.gray_C4C4C4
+        }
         self.view.endEditing(true)
     }
 }
@@ -273,10 +283,11 @@ extension UserSettingVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let icon = IconURLArr.getObject(at: indexPath.row) {
+            selectedIndex = indexPath.row
             if costWayIndex == 0 {
-                UserDefaultManager.setPayOutIcon(str: icon)
+                UserDefaultManager.setPayoutIconFromVC(str: icon)
             } else {
-                UserDefaultManager.setPayInIcon(str: icon)
+                UserDefaultManager.setPayinIconFromVC(str: icon)
             }
             imageView_icon.image = UIImage(named: icon)
             presentedViewController?.dismiss(animated: true, completion: nil)

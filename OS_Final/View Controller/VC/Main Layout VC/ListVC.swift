@@ -22,7 +22,7 @@ class ListVC: NotificationVC {
     @IBOutlet var label_totalCost: UILabel!
     
     private var listDataTableArr: Results<noteData>? { didSet { tableView.reloadData()
-        let cost: Int64 = UserDefaultManager.getTotalCost()
+        let cost: Int = UserDefaultManager.getTotalCost()
         if cost > 0 {
             self.label_totalCost.textColor = UIColor.green_1CBF47
         } else if cost < 0 {
@@ -30,11 +30,12 @@ class ListVC: NotificationVC {
         } else {
             self.label_totalCost.textColor = UIColor.black
         }
-        self.label_totalCost.text = String(format: "%2d", abs(Int64(cost)))
+        self.label_totalCost.text = String(format: "%2d", abs(Int(cost)))
     }}
     
     private let isPad: Bool = UIDevice.current.userInterfaceIdiom == .pad
     private var waysChangeArr = [String]()
+    private var chooseIndex: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,14 +66,7 @@ class ListVC: NotificationVC {
     }
     
     private func viewInit() {
-        let gradient = CAGradientLayer()
-        gradient.startPoint = CGPoint(x: 0.0, y: 0.5)
-        gradient.endPoint = CGPoint(x: 1.0, y: 0.5)
-        gradient.colors = [UIColor.blue_A8CEFA.cgColor, UIColor.blue_AAC1DC.cgColor]
-        gradient.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: view_gradient.bounds.size.height)
-        view_gradient.layer.insertSublayer(gradient, at: 0)
-        
-        view_gradient.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
+        setGradientBackgroundColor(view: view_gradient)
         
         view_timeChange_width.constant = isPad ? 250 : AppWidth / 2
         setViewTap()
@@ -147,6 +141,29 @@ class ListVC: NotificationVC {
     }
 }
 
+extension ListVC: FixDataDialogVCDelegate {
+    func chooseDelete() {
+        let deleteDataType: String = listDataTableArr?[chooseIndex].ways ?? ""
+        let deleteDataCost: Int = listDataTableArr?[chooseIndex].cost ?? 0
+        
+        RealmManager.deleteData(data: listDataTableArr?[chooseIndex] ?? noteData())
+        
+        if locatedManager.array_payIn.filter({ $0.contains(deleteDataType) }).count > 0 {
+            UserDefaultManager.setDeletePayInCost(cost: deleteDataCost)
+        } else if locatedManager.array_payOut.filter({ $0.contains(deleteDataType) }).count > 0 {
+            UserDefaultManager.setDeletePayOutCost(cost: deleteDataCost)
+        }
+        
+        self.view.makeToast("已順利刪除", duration: 0.5)
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "SendData"), object: nil)
+    }
+    
+    func chooseFix() {
+        let VC = WriteInVC(data: listDataTableArr?[chooseIndex] ?? noteData())
+        self.navigationController?.pushViewController(VC, animated: true)
+    }
+}
+
 extension ListVC: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         // 設定header個數
@@ -191,7 +208,7 @@ extension ListVC: UITableViewDelegate, UITableViewDataSource {
             let row: Int = indexPath.row
             let date: String = listDataTableArr?[row].date ?? ""
             let img: String = listDataTableArr?[row].type ?? ""
-            let cost: Int64 = listDataTableArr?[row].cost ?? 0
+            let cost: Int = listDataTableArr?[row].cost ?? 0
             cell.setCell(date: date, img: img, cost: cost)
             return cell
         case 1:
@@ -222,11 +239,12 @@ extension ListVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch tableView.tag {
         case 0:
-            self.showNoticeDialogVC(title: .list)
+            chooseIndex = indexPath.row
+            self.showFixDataDialogVC(title: .list, data: listDataTableArr?[indexPath.row] ?? noteData())
         case 1:
             if let detail = waysChangeArr.getObject(at: indexPath.row) {
                 label_title.text = detail
-                var cost: Int64 = 0
+                var cost: Int = 0
                 switch (indexPath.row) {
                 case 0:
                     cost = UserDefaultManager.getTotalCost()

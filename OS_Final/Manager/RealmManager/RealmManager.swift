@@ -9,24 +9,40 @@ import RealmSwift
 
 class RealmManager {
     
-    static func saveData(date: String, ways: String, type: String, cost: Int64, detail: String) {
+    static func saveData(data: noteData) {
         let realm = try? Realm()
-        let APISaveData = noteData()
+        let saveData = noteData()
 
-        APISaveData.date = date
-        APISaveData.ways = ways
-        APISaveData.type = type
-        APISaveData.cost = cost
-        APISaveData.detail = detail
+        saveData.date = data.date
+        saveData.ways = data.ways
+        saveData.type = data.type
+        saveData.cost = data.cost
+        saveData.detail = data.detail
         
         try? realm?.write {
-            realm?.add(APISaveData)
+            realm?.add(saveData)
+        }
+    }
+    
+    static func updateData(data: noteData) {
+        let realm = try? Realm()
+        
+        try? realm?.write {
+            realm?.add(data, update: .modified)
+        }
+    }
+    
+    static func deleteData(data: noteData) {
+        let predicate = NSPredicate(format: "id_key = %@", data.id_key)
+        let realm = try? Realm()
+        guard let deleteData = realm?.objects(noteData.self).filter(predicate).first else { return }
+        try? realm?.write {
+            realm?.delete(deleteData)
         }
     }
     
     static func getData() -> Results<noteData>? {
         let realm = try? Realm()
-        let APISaveData = realm?.objects(noteData.self)
-        return APISaveData
+        return realm?.objects(noteData.self)
     }
 }

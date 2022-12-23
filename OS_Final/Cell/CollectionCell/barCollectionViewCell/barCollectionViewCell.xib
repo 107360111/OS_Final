@@ -23,13 +23,13 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Ic4-Qc-wsS">
-                        <rect key="frame" x="25.666666666666671" y="21.666666666666671" width="35" height="35"/>
+                        <rect key="frame" x="23" y="19" width="40" height="40"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Ud-Ax-8iV">
-                                <rect key="frame" x="0.0" y="0.0" width="35" height="35"/>
+                                <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="square.and.arrow.up.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="2uB-rd-QfE">
-                                        <rect key="frame" x="0.0" y="1" width="35" height="33.666666666666671"/>
+                                        <rect key="frame" x="0.0" y="1" width="40" height="38.666666666666671"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="2uB-rd-QfE" secondAttribute="height" multiplier="1:1" id="zfe-I6-P1S"/>
@@ -45,18 +45,18 @@
                                 </constraints>
                             </view>
                             <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="square.and.arrow.up.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="7ld-ag-BvV" userLabel="Image View Selected">
-                                <rect key="frame" x="0.0" y="1" width="35" height="33.666666666666671"/>
+                                <rect key="frame" x="0.0" y="1" width="40" height="38.666666666666671"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="7ld-ag-BvV" secondAttribute="height" multiplier="1:1" id="aBj-tN-Bk5"/>
-                                    <constraint firstAttribute="height" constant="35" id="xyV-ZH-IHm"/>
+                                    <constraint firstAttribute="height" constant="40" id="xyV-ZH-IHm"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </stackView>
                     <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="99" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Em-Bn-1EU">
-                        <rect key="frame" x="45.666666666666664" y="18.666666666666668" width="19.999999999999993" height="20.000000000000004"/>
+                        <rect key="frame" x="48" y="16" width="20" height="20"/>
                         <color key="backgroundColor" systemColor="systemRedColor"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="20" id="LdT-vm-JaC"/>

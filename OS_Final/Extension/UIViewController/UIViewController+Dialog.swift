@@ -19,6 +19,13 @@ extension UIViewController {
         case pushFromLeft
     }
     
+    // MARK: -- F --
+    func showFixDataDialogVC(title: Titles, data: noteData, isUpdate: Bool = false) {
+        let VC = FixDataDialogVC(title: title, data: data, isUpdate: isUpdate)
+        VC.delegate = self as? FixDataDialogVCDelegate
+        VC.dialogShow(vc: self)
+    }
+    
     // MARK: -- N --
     func showNoticeDialogVC(title: Titles, buttonTitle: String = "確定", canDismiss: Bool = true, message: String = "") {
         let VC = ChooseDialogVC(title: title, canDismiss: canDismiss, message: message)

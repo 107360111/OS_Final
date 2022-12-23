@@ -34,6 +34,21 @@ class UserDefaultManager {
         return ""
     }
     
+    // MARK: -- D --
+    static func setDeletePayInCost(cost: Int) {
+        let newCost: Int = UserDefaultManager.getPayInCost() - cost
+        UserDefaults().set(newCost, forKey: defaultKeyStr.payInCost.rawValue)
+        UserDefaults().synchronize()
+        UserDefaultManager.setTotalCost()
+    }
+    
+    static func setDeletePayOutCost(cost: Int) {
+        let newCost: Int = UserDefaultManager.getPayOutCost() - cost
+        UserDefaults().set(newCost, forKey: defaultKeyStr.payOutCost.rawValue)
+        UserDefaults().synchronize()
+        UserDefaultManager.setTotalCost()
+    }
+    
     // MARK: -- G --
     static func getGuestKey() -> String {
         return getLoginState() ? "" : (UserDefaults().object(forKey: defaultKeyStr.guestKey.rawValue) as? String ?? "")
@@ -49,53 +64,54 @@ class UserDefaultManager {
         UIApplication.shared.unregisterForRemoteNotifications()
     }
     
-    // MARK: -- P --
-    static func setPayInIcon(str: String) {
+    // MARK: -- Pay In/Out from VC --
+    static func setPayinIconFromVC(str: String) {
         UserDefaults().set(str, forKey: defaultKeyStr.payIn.rawValue)
         UserDefaults().synchronize()
     }
     
-    static func getPayInIcon() -> String {
+    static func getPayinIconFromVC() -> String {
         return UserDefaults().object(forKey: defaultKeyStr.payIn.rawValue) as? String ?? ""
     }
     
-    static func setPayOutIcon(str: String) {
+    static func setPayoutIconFromVC(str: String) {
         UserDefaults().set(str, forKey: defaultKeyStr.payOut.rawValue)
         UserDefaults().synchronize()
     }
     
-    static func getPayOutIcon() -> String {
+    static func getPayoutIconFromVC() -> String {
         return UserDefaults().object(forKey: defaultKeyStr.payOut.rawValue) as? String ?? ""
     }
     
-    static func setPayInCost(cost: Int64) {
-        let payInTotalCost: Int64 = UserDefaultManager.getPayInCost() + cost
+    // MARK: -- Pay In/Out cost --
+    static func setPayInCost(cost: Int) {
+        let payInTotalCost: Int = UserDefaultManager.getPayInCost() + cost
         UserDefaults().set(payInTotalCost, forKey: defaultKeyStr.payInCost.rawValue)
         UserDefaults().synchronize()
         UserDefaultManager.setTotalCost()
     }
-    static func getPayInCost() -> Int64 {
-        return UserDefaults().object(forKey: defaultKeyStr.payInCost.rawValue) as? Int64 ?? 0
+    static func getPayInCost() -> Int {
+        return UserDefaults().object(forKey: defaultKeyStr.payInCost.rawValue) as? Int ?? 0
     }
     
-    static func setPayOutCost(cost: Int64) {
-        let payOutTotalCost: Int64 = UserDefaultManager.getPayOutCost() + cost
+    static func setPayOutCost(cost: Int) {
+        let payOutTotalCost: Int = UserDefaultManager.getPayOutCost() + cost
         UserDefaults().set(payOutTotalCost, forKey: defaultKeyStr.payOutCost.rawValue)
         UserDefaults().synchronize()
         UserDefaultManager.setTotalCost()
     }
-    static func getPayOutCost() -> Int64 {
-        return UserDefaults().object(forKey: defaultKeyStr.payOutCost.rawValue) as? Int64 ?? 0
+    static func getPayOutCost() -> Int {
+        return UserDefaults().object(forKey: defaultKeyStr.payOutCost.rawValue) as? Int ?? 0
     }
     
     // MARK: -- T --
     static func setTotalCost() {
-        let cost: Int64 = UserDefaultManager.getPayInCost() - UserDefaultManager.getPayOutCost()
+        let cost: Int = UserDefaultManager.getPayInCost() - UserDefaultManager.getPayOutCost()
         UserDefaults().set(cost, forKey: defaultKeyStr.totalCost.rawValue)
         UserDefaults().synchronize()
     }
-    static func getTotalCost() -> Int64 {
-        return UserDefaults().object(forKey: defaultKeyStr.totalCost.rawValue) as? Int64 ?? 0
+    static func getTotalCost() -> Int {
+        return UserDefaults().object(forKey: defaultKeyStr.totalCost.rawValue) as? Int ?? 0
     }
     
     // MARK: -- U --
