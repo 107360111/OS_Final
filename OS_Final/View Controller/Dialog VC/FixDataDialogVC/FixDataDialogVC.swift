@@ -34,7 +34,7 @@ class FixDataDialogVC: UIViewController {
     @IBOutlet var label_detail: UILabel!
     @IBOutlet var label_titleDetail: UILabel!
     
-    private var chooseTitle: Titles = .reLogin
+    private var chooseTitle: Titles = .none
     private var data: noteData?
     private var isUpdate: Bool = false
     

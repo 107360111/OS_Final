@@ -210,7 +210,7 @@ class WriteInVC: NotificationVC {
         
         guard textField_cost.text?.count != 0 else {
             textField_cost.borderColor = UIColor.red_E64646
-            self.view.makeToast("請輸入金額")
+            self.view.makeToast(ToastMes.ToastString(title: .inputCost))
             return
         }
         
@@ -307,7 +307,7 @@ extension WriteInVC: FixDataDialogVCDelegate {
     
     func chooseFix() {
         RealmManager.updateData(data: data)
-        self.view.makeToast("修改成功", duration: 0.3)
+        self.view.makeToast(ToastMes.ToastString(title: .canUpdate), duration: ShortTime)
         let average_cost: Int = originalCost - data.cost
         if costWayIndex == 0 { // 支出
             if average_cost < 0 { // 調整後價錢上升

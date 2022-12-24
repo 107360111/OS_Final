@@ -1,4 +1,5 @@
 PODS:
+  - lottie-ios (4.0.1)
   - MBRadioCheckboxButton (2.0)
   - MJRefresh (3.7.2)
   - Realm (5.0.3):
@@ -13,6 +14,7 @@ PODS:
   - "UITextView+Placeholder (1.4.0)"
 
 DEPENDENCIES:
+  - lottie-ios
   - MBRadioCheckboxButton (= 2.0)
   - MJRefresh (= 3.7.2)
   - RealmSwift (= 5.0.3)
@@ -22,6 +24,7 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
+    - lottie-ios
     - MBRadioCheckboxButton
     - MJRefresh
     - Realm
@@ -31,6 +34,7 @@ SPEC REPOS:
     - "UITextView+Placeholder"
 
 SPEC CHECKSUMS:
+  lottie-ios: 54d22edf55b839f0929cabbfe609c9aa548b1145
   MBRadioCheckboxButton: 6e2a2cdc441e292e45b64c4e65eb8fc1fc05eef2
   MJRefresh: 30997d30b347c8e9508a4db11e3a690da0c9b85a
   Realm: bfca1699b61b0b17c3a69ae0e648314eae91fbdb
@@ -39,6 +43,6 @@ SPEC CHECKSUMS:
   Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
   "UITextView+Placeholder": d7b0c400921f66523f3a85d74f774512e14f6502
 
-PODFILE CHECKSUM: 9d53a34da4dd846060f8e03a48a2f8ab1e8e4416
+PODFILE CHECKSUM: 0c19cdeae05d6ea1a6eff2c5e455780ef83cae81
 
 COCOAPODS: 1.11.3

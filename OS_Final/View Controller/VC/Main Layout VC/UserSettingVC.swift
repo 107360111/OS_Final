@@ -175,7 +175,7 @@ class UserSettingVC: NotificationVC {
         
         guard textField_cost.text?.count != 0 else {
             textField_cost.borderColor = UIColor.red_E64646
-            self.view.makeToast("請輸入金額")
+            self.view.makeToast(ToastMes.ToastString(title: .inputCost))
             return
         }
         
@@ -190,7 +190,7 @@ class UserSettingVC: NotificationVC {
         data.detail = textView_detail.text ?? ""
         
         RealmManager.saveData(data: data)
-        self.view.makeToast("登記成功", duration: 0.3)
+        self.view.makeToast(ToastMes.ToastString(title: .canAssign), duration: ShortTime)
         
         costWayIndex == 0 ? UserDefaultManager.setPayOutCost(cost: Int(Int(cost))) : UserDefaultManager.setPayInCost(cost: Int(Int(cost)))
         textField_date.text = DateManager.currentDate()

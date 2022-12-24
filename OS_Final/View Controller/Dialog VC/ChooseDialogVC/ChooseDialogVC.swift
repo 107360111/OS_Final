@@ -27,7 +27,7 @@ class ChooseDialogVC: UIViewController {
     @IBOutlet var view_cancel: UIView!
     @IBOutlet var view_confirm: UIView!
     
-    private var chooseTitle: Titles = .reLogin
+    private var chooseTitle: Titles = .none
     private var message: String = ""
     private var mode: ViewMode = .Notice
     
@@ -46,7 +46,7 @@ class ChooseDialogVC: UIViewController {
         case GPS
     }
     
-    convenience init(title: Titles,canDismiss: Bool = true, message: String = "", needCheck: Bool = false) {
+    convenience init(title: Titles, canDismiss: Bool = true, message: String = "", needCheck: Bool = false) {
         self.init()
         self.chooseTitle = title
         self.canDismiss = canDismiss

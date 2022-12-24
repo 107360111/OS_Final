@@ -5,7 +5,7 @@ target 'OS_Final' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
 
-  pod 'SDWebImage', '5.11.1'
+  pod 'lottie-ios'
   pod 'MBRadioCheckboxButton', '2.0'
   pod 'MJRefresh', '3.7.2'
   pod 'RealmSwift', '5.0.3'

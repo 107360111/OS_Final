@@ -154,7 +154,7 @@ extension ListVC: FixDataDialogVCDelegate {
             UserDefaultManager.setDeletePayOutCost(cost: deleteDataCost)
         }
         
-        self.view.makeToast("已順利刪除", duration: 0.5)
+        self.view.makeToast(ToastMes.ToastString(title: .canDelete), duration: LongTime)
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "SendData"), object: nil)
     }
     

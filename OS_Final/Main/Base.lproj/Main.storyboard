@@ -131,6 +131,20 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NjQ-ai-eec">
                                 <rect key="frame" x="0.0" y="48" width="414" height="662"/>
                                 <subviews>
+                                    <view alpha="0.20000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lpv-2Z-3fv">
+                                        <rect key="frame" x="0.0" y="69" width="414" height="593"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fE3-IH-Qhf">
+                                        <rect key="frame" x="207" y="331" width="0.0" height="0.0"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WIS-LK-1Ip">
+                                        <rect key="frame" x="70" y="169" width="274" height="143"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M27-re-hpb">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="69"/>
                                         <subviews>
@@ -147,13 +161,26 @@
                                             <constraint firstItem="CyQ-td-MdF" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="M27-re-hpb" secondAttribute="leading" constant="5" id="OwB-Oq-AIZ"/>
                                             <constraint firstItem="CyQ-td-MdF" firstAttribute="centerX" secondItem="M27-re-hpb" secondAttribute="centerX" id="tVq-hO-Elp"/>
                                             <constraint firstItem="CyQ-td-MdF" firstAttribute="centerY" secondItem="M27-re-hpb" secondAttribute="centerY" id="x4m-KH-gDn"/>
+                                            <constraint firstAttribute="height" constant="69" id="zcU-pH-zXu"/>
                                         </constraints>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstItem="fE3-IH-Qhf" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="NjQ-ai-eec" secondAttribute="leading" constant="5" id="2Lp-aW-CMh"/>
                                     <constraint firstItem="M27-re-hpb" firstAttribute="top" secondItem="NjQ-ai-eec" secondAttribute="top" id="EC9-Or-qOx"/>
+                                    <constraint firstItem="lpv-2Z-3fv" firstAttribute="top" secondItem="M27-re-hpb" secondAttribute="bottom" id="EuX-Lp-TfH"/>
+                                    <constraint firstItem="WIS-LK-1Ip" firstAttribute="centerX" secondItem="NjQ-ai-eec" secondAttribute="centerX" id="GjS-fo-8ND"/>
+                                    <constraint firstAttribute="bottom" secondItem="WIS-LK-1Ip" secondAttribute="bottom" constant="350" id="Pau-0B-2dE"/>
+                                    <constraint firstItem="WIS-LK-1Ip" firstAttribute="leading" secondItem="NjQ-ai-eec" secondAttribute="leading" constant="70" id="SPH-BK-sNn"/>
+                                    <constraint firstAttribute="trailing" secondItem="lpv-2Z-3fv" secondAttribute="trailing" id="Z6J-49-EvG"/>
+                                    <constraint firstItem="fE3-IH-Qhf" firstAttribute="centerY" secondItem="NjQ-ai-eec" secondAttribute="centerY" id="ZFy-rA-VGP"/>
+                                    <constraint firstItem="fE3-IH-Qhf" firstAttribute="top" relation="greaterThanOrEqual" secondItem="M27-re-hpb" secondAttribute="bottom" constant="5" id="dRb-dD-bYf"/>
                                     <constraint firstItem="M27-re-hpb" firstAttribute="leading" secondItem="NjQ-ai-eec" secondAttribute="leading" id="eBO-Rr-z7y"/>
+                                    <constraint firstItem="WIS-LK-1Ip" firstAttribute="top" secondItem="M27-re-hpb" secondAttribute="bottom" constant="100" id="i7u-fa-IFc"/>
+                                    <constraint firstItem="lpv-2Z-3fv" firstAttribute="leading" secondItem="NjQ-ai-eec" secondAttribute="leading" id="qn6-h6-sKp"/>
+                                    <constraint firstItem="fE3-IH-Qhf" firstAttribute="centerX" secondItem="NjQ-ai-eec" secondAttribute="centerX" id="xZq-8u-9LK"/>
+                                    <constraint firstAttribute="bottom" secondItem="lpv-2Z-3fv" secondAttribute="bottom" id="xuq-VF-BkB"/>
                                     <constraint firstAttribute="trailing" secondItem="M27-re-hpb" secondAttribute="trailing" id="ytx-1R-jb6"/>
                                 </constraints>
                             </view>
@@ -172,7 +199,10 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="animated_gif" destination="WIS-LK-1Ip" id="rhe-JX-Sne"/>
+                        <outlet property="label_hint" destination="fE3-IH-Qhf" id="tWJ-gz-nyt"/>
                         <outlet property="view_gradient" destination="M27-re-hpb" id="YFd-nK-C2w"/>
+                        <outlet property="view_main" destination="lpv-2Z-3fv" id="Roo-Uw-A7y"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cq9-Oo-AQI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

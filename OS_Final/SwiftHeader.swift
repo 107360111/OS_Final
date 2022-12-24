@@ -12,6 +12,9 @@ import Foundation
 
 let AppWidth: CGFloat = UIScreen.main.bounds.width
 let AppHeight: CGFloat = UIScreen.main.bounds.height
+let LongTime: Double = 0.5
+let ShortTime: Double = 0.3
+let ToastMes: ToastMessages = .none
 
 // MARK: -- C --
 

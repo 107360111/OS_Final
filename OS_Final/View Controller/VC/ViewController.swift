@@ -43,6 +43,9 @@ class ViewController: NotificationVC {
     }
     
     private func setPageView(page: Int, animated: Bool) {
+        if page == 0 {
+//            AuthorizationManager.checkCameraPermission()
+        }
         ViewController.selectIndex = page
         setGradientStatusBar()
         UIView.setAnimationsEnabled(animated)
