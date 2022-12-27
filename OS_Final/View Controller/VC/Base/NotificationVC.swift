@@ -35,7 +35,7 @@ class NotificationVC: UIViewController {
         setNavigationBar()
     }
     
-    private func notificationsInit() {
+    func notificationsInit() {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShowReceiver), name: UIWindow.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHideReceiver), name: UIWindow.keyboardWillHideNotification, object: nil)
     }
@@ -111,6 +111,4 @@ class NotificationVC: UIViewController {
     @objc private func backBarItemClick() {
         navigationController?.popViewController(animated: true)
     }
-    
-    
 }

@@ -11,6 +11,7 @@ import UITextView_Placeholder
 class WriteInVC: NotificationVC {
     @IBOutlet var view_topGradient: UIView!
     
+    @IBOutlet var view_main: UIView!
     @IBOutlet var view_gradient: UIView!
     @IBOutlet var view_date: UIView!
     @IBOutlet var view_costWay: UIView!
@@ -58,6 +59,7 @@ class WriteInVC: NotificationVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         componentsInit()
+        notificationsInit()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -66,18 +68,18 @@ class WriteInVC: NotificationVC {
     
     override func KeyboardWillShow(duration: Double, height: CGFloat) {
         if chooseTextView {
-            UIViewPropertyAnimator.runningPropertyAnimator(withDuration: duration, delay: 0) { [weak self] in
-                self?.view_date_top.constant = AppHeight < 600 ? -(height - 100) : -((AppHeight / 2) - height)
-                self?.textView_Bottom.constant = AppHeight < 600 ? (height - 100) : (AppHeight / 2) - height
+            UIViewPropertyAnimator.runningPropertyAnimator(withDuration: duration, delay: 0, options: []) {
+                self.view_date_top.constant = AppHeight < 600 ? -(height - 100) : -((AppHeight / 2) - height)
+                self.textView_Bottom.constant = AppHeight < 600 ? (height - 100) : (AppHeight / 2) - height
             }
         }
     }
     
     override func KeyboardWillHide(duration: Double) {
         if chooseTextView {
-            UIViewPropertyAnimator.runningPropertyAnimator(withDuration: duration, delay: 0) { [weak self] in
-                self?.view_date_top.constant = 10
-                self?.textView_Bottom.constant = 10
+            UIViewPropertyAnimator.runningPropertyAnimator(withDuration: duration, delay: 0, options: []) {
+                self.view_date_top.constant = 10
+                self.textView_Bottom.constant = 10
             }
         }
     }
@@ -113,7 +115,7 @@ class WriteInVC: NotificationVC {
     }
     
     private func costPickerInit() {
-        let numberKeyboard = numberKeyboard(frame: CGRect(x: 0, y: 0, width: AppWidth, height: 300))
+        let numberKeyboard = numberKeyboard(frame: CGRect(x: 0, y: 0, width: AppWidth, height: (AppHeight / 3) < 300 ? (AppHeight / 3) : 300 ))
         numberKeyboard.delegate = self
         textField_cost.inputAccessoryView = dateKeyboardInputAccessoryView()
         textField_cost.inputView = numberKeyboard
@@ -226,7 +228,7 @@ class WriteInVC: NotificationVC {
         data.detail = textView_detail.text ?? ""
         
         self.data = data
-        self.showFixDataDialogVC(title: .check, data: data, isUpdate: true)
+        self.showFixDataDialogVC(title: .check, data: data, isFix: true)
     }
     
     @objc private func onChange(sender: UISegmentedControl) {

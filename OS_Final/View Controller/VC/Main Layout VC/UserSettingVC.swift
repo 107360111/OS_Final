@@ -50,9 +50,9 @@ class UserSettingVC: NotificationVC {
     override func KeyboardWillShow(duration: Double, height: CGFloat) {
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "StopScrolling"), object: nil)
         if chooseTextView {
-            UIViewPropertyAnimator.runningPropertyAnimator(withDuration: duration, delay: 0) { [weak self] in
-                self?.view_date_top.constant = AppHeight < 600 ? -(height - 100) : -((AppHeight / 2) - height)
-                self?.textView_Bottom.constant = AppHeight < 600 ? (height - 100) : (AppHeight / 2) - height
+            UIViewPropertyAnimator.runningPropertyAnimator(withDuration: duration, delay: 0, options: []) {
+                self.view_date_top.constant = AppHeight < 600 ? -(height - 100) : -((AppHeight / 2) - height)
+                self.textView_Bottom.constant = AppHeight < 600 ? (height - 100) : (AppHeight / 2) - height
             }
         }
     }
@@ -60,9 +60,9 @@ class UserSettingVC: NotificationVC {
     override func KeyboardWillHide(duration: Double) {
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "ContinuneScrolling"), object: nil)
         if chooseTextView {
-            UIViewPropertyAnimator.runningPropertyAnimator(withDuration: duration, delay: 0) { [weak self] in
-                self?.view_date_top.constant = 10
-                self?.textView_Bottom.constant = 10
+            UIViewPropertyAnimator.runningPropertyAnimator(withDuration: duration, delay: 0, options: []) {
+                self.view_date_top.constant = 10
+                self.textView_Bottom.constant = 10
             }
         }
     }

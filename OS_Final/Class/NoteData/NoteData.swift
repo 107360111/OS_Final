@@ -15,6 +15,8 @@ import RealmSwift
     dynamic var type: String = ""
     dynamic var cost: Int = 0
     dynamic var detail: String = ""
+    
+    dynamic var isScan: Bool = false
 
     override class func primaryKey() -> String {
         return "id_key"

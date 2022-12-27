@@ -20,10 +20,10 @@ extension UIViewController {
     }
     
     // MARK: -- F --
-    func showFixDataDialogVC(title: Titles, data: noteData, isUpdate: Bool = false) {
-        let VC = FixDataDialogVC(title: title, data: data, isUpdate: isUpdate)
+    func showFixDataDialogVC(title: Titles, data: noteData, isFix: Bool = false, isScan: Bool = false) {
+        let VC = FixDataDialogVC(title: title, data: data, isFix: isFix, isScan: isScan)
         VC.delegate = self as? FixDataDialogVCDelegate
-        VC.dialogShow(vc: self)
+        VC.dialogShow(vc: self, animator: isScan ? .fadeOut : .enlarge)
     }
     
     // MARK: -- N --
@@ -31,6 +31,13 @@ extension UIViewController {
         let VC = ChooseDialogVC(title: title, canDismiss: canDismiss, message: message)
         VC.delegate = self as? ChooseDialogVCDelegate
         VC.dialogShow(vc: self)
+    }
+    
+    // MARK: -- N --
+    func showSameDataDialogVC(title: Titles, message: String) {
+        let VC = ChooseDialogVC(title: title, message: message)
+        VC.delegate = self as? ChooseDialogVCDelegate
+        VC.dialogShow(vc: self, animator: .fadeOut)
     }
     
     // MARK: -- W --

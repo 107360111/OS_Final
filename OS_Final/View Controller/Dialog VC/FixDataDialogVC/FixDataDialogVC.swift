@@ -36,15 +36,17 @@ class FixDataDialogVC: UIViewController {
     
     private var chooseTitle: Titles = .none
     private var data: noteData?
-    private var isUpdate: Bool = false
+    private var isFix: Bool = false // 是不是修正
+    private var isScan: Bool = false // 是不是用掃描登入的
     
     weak var delegate: FixDataDialogVCDelegate?
     
-    convenience init(title: Titles, data: noteData, isUpdate: Bool) {
+    convenience init(title: Titles, data: noteData, isFix: Bool, isScan: Bool) {
         self.init()
         self.chooseTitle = title
         self.data = data
-        self.isUpdate = isUpdate
+        self.isFix = isFix
+        self.isScan = isScan
     }
     
     override func viewDidLoad() {
@@ -55,13 +57,10 @@ class FixDataDialogVC: UIViewController {
     private func componentsInit() {
         viewInit()
         labelInit()
-        isUpdateInit()
+        ButtonInit()
     }
     
-    private func viewInit() {
-        sumView_onlyDelete.isHidden = !(data?.type == "cloud")
-        sumView_select.isHidden = data?.type == "cloud"
-        
+    private func viewInit() {        
         view_background.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(cancelDidTap)))
         view_cancel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(cancelDidTap)))
         view_delete.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(deleteDidTap)))
@@ -83,13 +82,29 @@ class FixDataDialogVC: UIViewController {
         label_detail.text = data?.detail
     }
     
-    private func isUpdateInit() {
-        if isUpdate {
+    private func ButtonInit() {
+        switch (isFix, isScan) {
+        case (true, false):
             view_delete.borderColor = UIColor.gray_C4C4C4
             label_delete.text = "取消"
             label_delete.textColor = UIColor.gray_C4C4C4
             
             label_fix.text = "確認"
+            break
+        case (false, true):
+            view_background.isHidden = true
+            view_cancel.isHidden = true
+            
+            view_delete.borderColor = UIColor.gray_C4C4C4
+            label_delete.text = "取消"
+            label_delete.textColor = UIColor.gray_C4C4C4
+            
+            label_fix.text = "確認"
+            break
+        default:
+            sumView_onlyDelete.isHidden = !(data?.type == "cloud")
+            sumView_select.isHidden = data?.type == "cloud"
+            break
         }
     }
     

@@ -9,7 +9,7 @@ import RealmSwift
 
 class RealmManager {
     
-    static func saveData(data: noteData) {
+    static func saveData(data: noteData, isScan: Bool = false) {
         let realm = try? Realm()
         let saveData = noteData()
 
@@ -18,6 +18,7 @@ class RealmManager {
         saveData.type = data.type
         saveData.cost = data.cost
         saveData.detail = data.detail
+        saveData.isScan = data.isScan
         
         try? realm?.write {
             realm?.add(saveData)

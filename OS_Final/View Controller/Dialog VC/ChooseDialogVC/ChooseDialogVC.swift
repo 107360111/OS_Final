@@ -10,9 +10,9 @@ import MBRadioCheckboxButton
 
 @objc protocol ChooseDialogVCDelegate: AnyObject {
     func positiveBtnClickWith(title: Titles)
-    @objc optional func negativeBtnClickedWith(title: Titles)
-    @objc optional func dismissButtonDidTap(with title: Titles)
-    @objc optional func checkBtnClick(isCheck: Bool)
+    func negativeBtnClickedWith(title: Titles)
+    func dismissButtonDidTap(with title: Titles)
+    func checkBtnClick(isCheck: Bool)
 }
 
 class ChooseDialogVC: UIViewController {
@@ -70,6 +70,11 @@ class ChooseDialogVC: UIViewController {
     }
     
     private func viewInit() {
+        if chooseTitle == .sameData {
+            view_confirm.isHidden = true
+            view_cancel.isHidden = true
+        }
+        
         view_background.isUserInteractionEnabled = canDismiss
         view_background.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(viewDidTap)))
         
@@ -81,7 +86,7 @@ class ChooseDialogVC: UIViewController {
     }
     
     @objc private func viewDidTap() {
-        delegate?.dismissButtonDidTap?(with: chooseTitle)
+        delegate?.dismissButtonDidTap(with: chooseTitle)
         dialogDismiss()
     }
     
@@ -91,12 +96,12 @@ class ChooseDialogVC: UIViewController {
     
     @objc private func confirmDidTap() {
         self.delegate?.positiveBtnClickWith(title: self.chooseTitle)
-        self.delegate?.checkBtnClick?(isCheck: self.btn_check.isOn)
+        self.delegate?.checkBtnClick(isCheck: self.btn_check.isOn)
         dialogDismiss()
     }
     
     @objc private func cancelDidTap() {
-        delegate?.negativeBtnClickedWith?(title: chooseTitle)
+        delegate?.negativeBtnClickedWith(title: chooseTitle)
         dialogDismiss()
     }
     

@@ -44,7 +44,7 @@ class ViewController: NotificationVC {
     
     private func setPageView(page: Int, animated: Bool) {
         if page == 0 {
-//            AuthorizationManager.checkCameraPermission()
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "CloseCamera"), object: nil)
         }
         ViewController.selectIndex = page
         setGradientStatusBar()

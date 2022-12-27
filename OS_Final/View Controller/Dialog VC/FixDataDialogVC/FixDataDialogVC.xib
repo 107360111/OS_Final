@@ -38,7 +38,7 @@
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FY1-mx-0Aa">
-                    <rect key="frame" x="32" y="67.5" width="256" height="433.5"/>
+                    <rect key="frame" x="32" y="87.5" width="256" height="393.5"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YQc-fq-vAb" userLabel="Label Title">
                             <rect key="frame" x="104" y="10" width="48" height="30"/>
@@ -153,9 +153,9 @@
                             </constraints>
                         </view>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Tpj-sH-ebp">
-                            <rect key="frame" x="30" y="333.5" width="196" height="90"/>
+                            <rect key="frame" x="30" y="333.5" width="196" height="50"/>
                             <subviews>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wf8-tm-7UT" userLabel="View Only Delete">
+                                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wf8-tm-7UT" userLabel="View Only Delete">
                                     <rect key="frame" x="0.0" y="0.0" width="196" height="40"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fAa-rH-ke6" userLabel="View Cancel">
@@ -197,7 +197,7 @@
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P2A-5p-oef" userLabel="View Selected">
-                                    <rect key="frame" x="0.0" y="40" width="196" height="50"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="196" height="50"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6ID-0x-Hok" userLabel="View Cancel">
                                             <rect key="frame" x="0.0" y="10" width="85" height="40"/>
