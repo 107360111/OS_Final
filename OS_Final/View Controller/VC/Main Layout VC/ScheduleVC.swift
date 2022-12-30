@@ -253,17 +253,20 @@ extension ScheduleVC: FixDataDialogVCDelegate {
     
     func chooseFix() {
         RealmManager.saveData(data: scanData)
+
+        UserDefaultManager.setCost(cost: scanData.cost, type: scanData.type, costType: .set)
         
         self.view.makeToast(ToastMes.ToastString(title: .canAssign))
-        UserDefaultManager.setPayOutCost(cost: scanData.cost)
+        
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "SendData"), object: nil)
         
-        scanData = noteData() // 登入後歸零
+        scanData = noteData() // 發票登入後歸零
         
         CameraVC.stopCapturing()
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
             guard let parentVC = self.parent as? ViewController else { return self.CameraVC.startCapturing()}
             parentVC.scroll(to: 1, animated: true)
+            // 跳轉至list主頁
         }
     }
 }

@@ -74,6 +74,7 @@
 		14CB394D2959820A0032D4A4 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14CB394C2959820A0032D4A4 /* UIViewController+Extensions.swift */; };
 		14CB3957295A92B20032D4A4 /* loading.json in Resources */ = {isa = PBXBuildFile; fileRef = 14CB3955295A92B20032D4A4 /* loading.json */; };
 		14CB395B295A93F00032D4A4 /* hand_tap.json in Resources */ = {isa = PBXBuildFile; fileRef = 14CB395A295A93F00032D4A4 /* hand_tap.json */; };
+		14CB399F295E7EFF0032D4A4 /* UserDefaultManager+CostType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14CB399E295E7EFF0032D4A4 /* UserDefaultManager+CostType.swift */; };
 		14DC70962943322700618899 /* WriteInDialogVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14DC70942943322700618899 /* WriteInDialogVC.swift */; };
 		14DC70972943322700618899 /* WriteInDialogVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14DC70952943322700618899 /* WriteInDialogVC.xib */; };
 		14F3C09D294703CD00C771E4 /* numberKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F3C09C294703CD00C771E4 /* numberKeyboard.swift */; };
@@ -151,6 +152,7 @@
 		14CB394C2959820A0032D4A4 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		14CB3955295A92B20032D4A4 /* loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loading.json; sourceTree = "<group>"; };
 		14CB395A295A93F00032D4A4 /* hand_tap.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = hand_tap.json; sourceTree = "<group>"; };
+		14CB399E295E7EFF0032D4A4 /* UserDefaultManager+CostType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaultManager+CostType.swift"; sourceTree = "<group>"; };
 		14DC70942943322700618899 /* WriteInDialogVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteInDialogVC.swift; sourceTree = "<group>"; };
 		14DC70952943322700618899 /* WriteInDialogVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WriteInDialogVC.xib; sourceTree = "<group>"; };
 		14F3C09C294703CD00C771E4 /* numberKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = numberKeyboard.swift; sourceTree = "<group>"; };
@@ -328,6 +330,7 @@
 			isa = PBXGroup;
 			children = (
 				143415B8293F26B500984E57 /* UserDefaultManager.swift */,
+				14CB399E295E7EFF0032D4A4 /* UserDefaultManager+CostType.swift */,
 			);
 			path = UserDefaultManager;
 			sourceTree = "<group>";
@@ -837,6 +840,7 @@
 				14CB394B29597FB30032D4A4 /* AVMetadataObject+Extensions.swift in Sources */,
 				14F3C09D294703CD00C771E4 /* numberKeyboard.swift in Sources */,
 				1470F31C29503D8F00691C80 /* APIManager.swift in Sources */,
+				14CB399F295E7EFF0032D4A4 /* UserDefaultManager+CostType.swift in Sources */,
 				143415D5293F2B6C00984E57 /* UIColor+.swift in Sources */,
 				1434160E2940398900984E57 /* listTableViewCell.swift in Sources */,
 				14CB393C295979AE0032D4A4 /* CornerLocation.swift in Sources */,

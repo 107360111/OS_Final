@@ -22,6 +22,7 @@ class WriteInVC: NotificationVC {
     @IBOutlet var view_textView_background: UIView!
     @IBOutlet var view_back: UIView!
     
+    @IBOutlet var stackView: UIStackView!
     @IBOutlet var textField_date: UITextField!
     @IBOutlet var textField_cost: UITextField!
     @IBOutlet var textView_detail: UITextView!
@@ -69,8 +70,16 @@ class WriteInVC: NotificationVC {
     override func KeyboardWillShow(duration: Double, height: CGFloat) {
         if chooseTextView {
             UIViewPropertyAnimator.runningPropertyAnimator(withDuration: duration, delay: 0, options: []) {
-                self.view_date_top.constant = AppHeight < 600 ? -(height - 100) : -((AppHeight / 2) - height)
-                self.textView_Bottom.constant = AppHeight < 600 ? (height - 100) : (AppHeight / 2) - height
+                self.view.bringSubviewToFront(self.view_topGradient)
+                if AppHeight < 600 {
+                    self.view_date_top.constant = -height
+                }
+                
+                if let window = UIApplication.shared.windows.first {
+                    self.textView_Bottom.constant = (height - window.safeAreaInsets.bottom)
+                } else {
+                    self.textView_Bottom.constant = height
+                }
             }
         }
     }
@@ -78,6 +87,7 @@ class WriteInVC: NotificationVC {
     override func KeyboardWillHide(duration: Double) {
         if chooseTextView {
             UIViewPropertyAnimator.runningPropertyAnimator(withDuration: duration, delay: 0, options: []) {
+                self.view.bringSubviewToFront(self.view_main)
                 self.view_date_top.constant = 10
                 self.textView_Bottom.constant = 10
             }
@@ -309,22 +319,18 @@ extension WriteInVC: FixDataDialogVCDelegate {
     
     func chooseFix() {
         RealmManager.updateData(data: data)
-        self.view.makeToast(ToastMes.ToastString(title: .canUpdate), duration: ShortTime)
-        let average_cost: Int = originalCost - data.cost
-        if costWayIndex == 0 { // 支出
-            if average_cost < 0 { // 調整後價錢上升
-                UserDefaultManager.setPayOutCost(cost: abs(average_cost))
-            } else if average_cost > 0 { // 調整後價錢下降
-                UserDefaultManager.setDeletePayOutCost(cost: abs(average_cost))
-            }
-        } else { // 收入
-            if average_cost < 0 { // 調整後價錢上升
-                UserDefaultManager.setPayInCost(cost: abs(average_cost))
-            } else if average_cost > 0 { // 調整後價錢下降
-                UserDefaultManager.setDeletePayInCost(cost: abs(average_cost))
-            }
+        let vary_cost = originalCost - data.cost
+        
+        if vary_cost < 0 { // 調整後價錢上升
+            UserDefaultManager.setCost(cost: abs(vary_cost), type: data.type, costType: .set)
+        } else if vary_cost > 0 { // 調整後價錢下降
+            UserDefaultManager.setCost(cost: abs(vary_cost), type: data.type, costType: .delete)
         }
+
+        self.view.makeToast(ToastMes.ToastString(title: .canUpdate), duration: ShortTime)
+        
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "SendData"), object: nil)
+        
         navigationController?.popViewController(animated: true)
     }
 }

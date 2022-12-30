@@ -14,9 +14,10 @@
                 <outlet property="imageView_checkbox" destination="bey-pe-xAr" id="4Fk-EK-YkP"/>
                 <outlet property="imageView_icon" destination="s0y-7F-B5h" id="qyQ-d0-eC0"/>
                 <outlet property="segmentedControl_costway" destination="JxU-tN-gVC" id="CBF-Wr-FNt"/>
+                <outlet property="stackView" destination="oqC-5H-ce7" id="UYL-Rc-vz2"/>
                 <outlet property="textField_cost" destination="T23-cJ-lQS" id="hUU-rY-HYJ"/>
                 <outlet property="textField_date" destination="whb-f9-h0t" id="1im-Vq-GAG"/>
-                <outlet property="textView_Bottom" destination="hqR-7o-1PF" id="pgh-kF-3as"/>
+                <outlet property="textView_Bottom" destination="4HJ-cY-tYg" id="ocD-eu-nTX"/>
                 <outlet property="textView_detail" destination="FM3-78-wJh" id="omo-EI-E4u"/>
                 <outlet property="view" destination="ZUR-4g-bze" id="9fS-TV-K96"/>
                 <outlet property="view_back" destination="fNj-Ge-R1h" id="SGi-7H-ThH"/>

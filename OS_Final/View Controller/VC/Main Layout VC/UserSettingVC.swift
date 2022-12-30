@@ -51,8 +51,15 @@ class UserSettingVC: NotificationVC {
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "StopScrolling"), object: nil)
         if chooseTextView {
             UIViewPropertyAnimator.runningPropertyAnimator(withDuration: duration, delay: 0, options: []) {
-                self.view_date_top.constant = AppHeight < 600 ? -(height - 100) : -((AppHeight / 2) - height)
-                self.textView_Bottom.constant = AppHeight < 600 ? (height - 100) : (AppHeight / 2) - height
+                if AppHeight < 600 {
+                    self.view_date_top.constant = -(height - 50)
+                }
+                
+                if let window = UIApplication.shared.windows.first {
+                    self.textView_Bottom.constant = (height - window.safeAreaInsets.bottom) - 50
+                } else {
+                    self.textView_Bottom.constant = height - 50
+                }
             }
         }
     }
@@ -190,13 +197,16 @@ class UserSettingVC: NotificationVC {
         data.detail = textView_detail.text ?? ""
         
         RealmManager.saveData(data: data)
+        
+        UserDefaultManager.setCost(cost: cost, type: data.type, costType: .set)
+        
         self.view.makeToast(ToastMes.ToastString(title: .canAssign), duration: ShortTime)
         
-        costWayIndex == 0 ? UserDefaultManager.setPayOutCost(cost: Int(Int(cost))) : UserDefaultManager.setPayInCost(cost: Int(Int(cost)))
         textField_date.text = DateManager.currentDate()
         datePickerView.date = Date()
         textField_cost.text = ""
         textView_detail.text = ""
+        
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "SendData"), object: nil)
     }
     
