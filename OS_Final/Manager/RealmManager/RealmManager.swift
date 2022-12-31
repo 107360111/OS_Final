@@ -42,6 +42,14 @@ class RealmManager {
         }
     }
     
+    static func deleteAllData() {
+        let realm = try? Realm()
+        
+        try? realm?.write {
+            realm?.deleteAll()
+        }
+    }
+    
     static func getData() -> Results<noteData>? {
         let realm = try? Realm()
         return realm?.objects(noteData.self)

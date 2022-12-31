@@ -231,8 +231,8 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mhy-he-jni" userLabel="View Title">
                                                 <rect key="frame" x="0.0" y="5" width="394" height="20.5"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="今日統計" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5ml-4U-6ci">
-                                                        <rect key="frame" x="162.5" y="0.0" width="69.5" height="20.5"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="總和" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5ml-4U-6ci">
+                                                        <rect key="frame" x="179.5" y="0.0" width="35" height="20.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
@@ -356,10 +356,10 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vyu-cl-Ac5">
-                                                                <rect key="frame" x="0.0" y="0.0" width="128" height="0.0"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="128" height="6"/>
                                                                 <subviews>
                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wsZ-Ni-8iQ">
-                                                                        <rect key="frame" x="64" y="0.0" width="0.0" height="0.0"/>
+                                                                        <rect key="frame" x="64" y="3" width="0.0" height="0.0"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" secondItem="wsZ-Ni-8iQ" secondAttribute="height" multiplier="1:1" id="N82-Qo-tKa"/>
                                                                         </constraints>
@@ -367,9 +367,9 @@
                                                                 </subviews>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
-                                                                    <constraint firstItem="wsZ-Ni-8iQ" firstAttribute="top" secondItem="vyu-cl-Ac5" secondAttribute="top" id="1Sj-j3-qPp"/>
+                                                                    <constraint firstItem="wsZ-Ni-8iQ" firstAttribute="top" secondItem="vyu-cl-Ac5" secondAttribute="top" constant="3" id="1Sj-j3-qPp"/>
                                                                     <constraint firstItem="wsZ-Ni-8iQ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="vyu-cl-Ac5" secondAttribute="leading" id="aZR-S7-BwC"/>
-                                                                    <constraint firstAttribute="bottom" secondItem="wsZ-Ni-8iQ" secondAttribute="bottom" id="fOa-07-KOK"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="wsZ-Ni-8iQ" secondAttribute="bottom" constant="3" id="fOa-07-KOK"/>
                                                                     <constraint firstItem="wsZ-Ni-8iQ" firstAttribute="centerX" secondItem="vyu-cl-Ac5" secondAttribute="centerX" id="kVf-bc-UfD"/>
                                                                 </constraints>
                                                             </view>

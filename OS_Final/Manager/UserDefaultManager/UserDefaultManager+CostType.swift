@@ -39,7 +39,7 @@ extension UserDefaultManager {
     /// 收入、支出總和
     static func getTotalCost(costWay: costWay) -> Int {
         var totalCost: Int = 0
-        var array = [String()]
+        var array = [String]()
         switch costWay {
         case .payIn:
             array = locatedManager.array_payInURL

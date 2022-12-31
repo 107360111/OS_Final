@@ -14,6 +14,9 @@ class DateManager {
     /// 取得當前時間(YYYY/MM/dd)
     static func currentDate() -> String {
         let date = Date()
+        print(date)
+        
+        let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "YYYY/MM/dd"
         return dateFormatter.string(from: date)
     }
@@ -42,5 +45,18 @@ class DateManager {
         dateFormatter.dateFormat = "YYYY/MM/dd"
         dateFormatter.timeZone = TimeZone(identifier: "Asia/Taipei")
         return dateFormatter.date(from: string) ?? Date()
+    }
+    
+    static func stringToNumber(String: String) -> Int {
+        if String.isEmpty {
+            return 0
+        }
+        
+        let dfmatter = DateFormatter()
+        dfmatter.dateFormat = "YYYY/MM/dd"
+        guard let date = dfmatter.date(from: String) else { return 0 }
+        let dateStamp: TimeInterval = date.timeIntervalSince1970
+        
+        return Int(dateStamp)
     }
 }

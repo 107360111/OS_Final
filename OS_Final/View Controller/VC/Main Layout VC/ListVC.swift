@@ -17,6 +17,11 @@ import RealmSwift
     case cost = 4
 }
 
+@objc enum System: Int {
+    case high2low = 0
+    case low2high = 1
+}
+
 class ListVC: NotificationVC {
     @IBOutlet var tableView: UITableView!
     
@@ -46,7 +51,7 @@ class ListVC: NotificationVC {
     @IBOutlet var label_cost_symbol: UILabel! // 顯示用
     
     // MARK: -- DataArr --
-    private var listDataTableArr: Results<noteData>? { didSet { tableView.reloadData()
+    private var listDataTableArr = [noteData]() { didSet { tableView.reloadData()
         let cost: Int = UserDefaultManager.getTotalCost(costWay: .payIn) - UserDefaultManager.getTotalCost(costWay: .payOut)
         if cost > 0 { // 收入 > 支出
             self.label_totalCost.textColor = UIColor.green_1CBF47
@@ -60,12 +65,12 @@ class ListVC: NotificationVC {
     
     private let isPad: Bool = UIDevice.current.userInterfaceIdiom == .pad
     
+    private var chooseIndex: Int = 0
+    
     private var waysChangeArr = [String]()
     private var timeChangeArr = [String]()
     private var typeChangeArr = [String]()
     private var costChangeArr = [String]()
-    
-    private var chooseIndex: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -85,7 +90,7 @@ class ListVC: NotificationVC {
     
     private func realmInit() {
         if let res = RealmManager.getData() {
-            listDataTableArr = res
+            listDataTableArr = Array(res)
         }
     }
     
@@ -165,7 +170,7 @@ class ListVC: NotificationVC {
             size = view_title_cost.frame.size
         }
         
-        var popverVC = setPopover(isAutoLayout: false, cellLimit: array.count > 5 ? 5 : array.count, width: popupView_width)
+        let popverVC = setPopover(isAutoLayout: false, cellLimit: array.count > 5 ? 5 : array.count, width: popupView_width)
         
         popverVC.tableView.backgroundColor = UIColor.white_FFFFFF
         popverVC.tableView.delegate = self
@@ -180,9 +185,223 @@ class ListVC: NotificationVC {
         present(popverVC, animated: true, completion: nil)
     }
     
+    private func resetList(symbol: Symbols, row: Int, changeType: String) {
+        if let res = RealmManager.getData() {
+            listDataTableArr = Array(res)
+        }
+        
+        if changeType == "" { // 只有在選擇型別並且不是不限時才禁止方法的按鈕
+            view_waysChange.isUserInteractionEnabled = true
+            imageView_list.image = UIImage(named: "chooseTime")
+        } else {
+            view_waysChange.isUserInteractionEnabled = false
+            imageView_list.image = UIImage(named: "unchooseTime")
+        }
+        
+        switch symbol {
+        case .ways:
+            resetTotalCost(symbol: .ways, row: row)
+            break
+        case .time:
+            if row == 1 {
+                listDataTableArr = filterArray(array: listDataTableArr, symbol: symbol, changeType: "", sortType: "close2far")
+            } else if row == 2 {
+                listDataTableArr = filterArray(array: listDataTableArr, symbol: symbol, changeType: "", sortType: "far2close")
+            }
+            resetTotalCost(symbol: .time)
+            break
+        case .type:
+            
+            listDataTableArr = filterArray(array: listDataTableArr, symbol: symbol, changeType: changeType, sortType: "")
+            
+            if row != 0 {
+                resetCostByTapType(changeType: changeType)
+            } else {                
+                resetTotalCost(symbol: .type)
+            }
+            break
+        case .cost:
+            if row == 1 {
+                listDataTableArr = filterArray(array: listDataTableArr, symbol: symbol, changeType: "", sortType: "small2big")
+            } else if row == 2 {
+                listDataTableArr = filterArray(array: listDataTableArr, symbol: symbol, changeType: "", sortType: "big2small")
+            }
+            resetTotalCost(symbol: .cost)
+            break
+        }
+    }
+    
+    private func filterArray(array: [noteData], symbol: Symbols, changeType: String, sortType: String) -> [noteData] {
+        var new_array = [noteData]() // 新的匯出陣列
+        var temp_array_cost = [Int]() // 紀錄cost暫存
+        var temp_array_dateTimeStamp = [Int]() // 紀錄date轉換成時間戳的暫存
+        
+        var temp_array_id_key = [String]() // 紀錄id_key
+        var sorted_temp_array_id_key = [String]() // 紀錄排序後id_key
+        
+        for idKey in 0..<array.count {
+            temp_array_id_key.append(array[idKey].id_key)
+        }
+        
+        switch symbol {
+        case .ways:
+            break
+        case .time:
+            for index in 0..<array.count {// 暫存時間戳資料
+                temp_array_dateTimeStamp.append(DateManager.stringToNumber(String: array[index].date))
+            }
+            
+            if sortType == "far2close" { // 由近排到遠
+                (temp_array_dateTimeStamp, sorted_temp_array_id_key) = sorted(array: temp_array_dateTimeStamp, idKeyArray: temp_array_id_key, system: .low2high)
+            } else if sortType == "close2far" { // 由遠排到近
+                (temp_array_dateTimeStamp, sorted_temp_array_id_key) = sorted(array: temp_array_dateTimeStamp, idKeyArray: temp_array_id_key, system: .high2low)
+            }
+                        
+            for sorted_id_key in sorted_temp_array_id_key {
+                if let new_index = temp_array_id_key.firstIndex(of: sorted_id_key) {
+                    new_array.append(array[new_index])
+                }
+            }
+            break
+        case .cost:
+            for index in 0..<array.count { // 暫存金額資料
+                temp_array_cost.append(array[index].cost)
+            }
+            
+            if sortType == "small2big" { // 由小排到大
+                (temp_array_cost, sorted_temp_array_id_key) = sorted(array: temp_array_cost, idKeyArray: temp_array_id_key, system: .low2high)
+            } else if sortType == "big2small" { // 由大排到小
+                (temp_array_cost, sorted_temp_array_id_key) = sorted(array: temp_array_cost, idKeyArray: temp_array_id_key, system: .high2low)
+            }
+            
+            for sorted_id_key in sorted_temp_array_id_key {
+                if let new_index = temp_array_id_key.firstIndex(of: sorted_id_key) {
+                    new_array.append(array[new_index])
+                }
+            }
+            break
+        case .type:
+            if changeType == "" {
+                return array
+            }
+            
+            for index in 0..<array.count {
+                if changeType == array[index].type {
+                    new_array.append(array[index])
+                }
+            }
+            
+            break
+        }
+        return new_array
+    }
+    
+    private func sorted(array: [Int], idKeyArray: [String], system: System) -> (array: [Int], idKetArray: [String]) {
+        var array = array
+        var idKeyArray = idKeyArray
+        switch system {
+        case .high2low:
+            for i in 0..<array.count {
+                for j in i..<array.count {
+                    if array[j] > array[i] {
+                        let temp = array[j]
+                        array[j] = array[i]
+                        array[i] = temp
+                        
+                        let temp_idKey = idKeyArray[j]
+                        idKeyArray[j] = idKeyArray[i]
+                        idKeyArray[i] = temp_idKey
+                    }
+                }
+            }
+            return (array, idKeyArray)
+        case .low2high:
+            for i in 0..<array.count {
+                for j in i..<array.count {
+                    if array[j] < array[i] {
+                        let temp = array[j]
+                        array[j] = array[i]
+                        array[i] = temp
+                        
+                        let temp_idKey = idKeyArray[j]
+                        idKeyArray[j] = idKeyArray[i]
+                        idKeyArray[i] = temp_idKey
+                    }
+                }
+            }
+            return (array, idKeyArray)
+        }
+    }
+    
+    private func resetTotalCost(symbol: Symbols, row: Int = 0) {
+        var cost = 0
+        var row = row
+        /// 還原初始化
+        self.label_title.text = row == 1 ? "總支出" : row == 2 ? "總收入" : "總和"
+        
+        
+        /// 設定價錢
+        if symbol == .ways {
+            cost = row == 1 ? UserDefaultManager.getTotalCost(costWay: .payOut) : row == 2 ? UserDefaultManager.getTotalCost(costWay: .payIn) : UserDefaultManager.getTotalCost(costWay: .payIn) - UserDefaultManager.getTotalCost(costWay: .payOut)
+        } else {
+            if label_title.text == "總和" {
+                row = 0
+                cost = UserDefaultManager.getTotalCost(costWay: .payIn) - UserDefaultManager.getTotalCost(costWay: .payOut)
+            } else if label_title.text == "總支出" {
+                row = 1
+                cost = UserDefaultManager.getTotalCost(costWay: .payOut)
+            } else if label_title.text == "總收入" {
+                row = 2
+                cost = UserDefaultManager.getTotalCost(costWay: .payIn)
+            }
+        }
+
+        /// 顯示價錢
+        switch (row) {
+        case 0: // 總和
+            self.label_totalCost.text = String(format: "%2d", abs(cost))
+            self.label_totalCost.textColor = cost > 0 ? UIColor.green_59D945 : cost < 0 ? UIColor.red_E64646 : UIColor.black
+            break
+        case 1: // 總支出
+            self.label_totalCost.text = String(format: "-%2d", cost)
+            self.label_totalCost.textColor = UIColor.black
+            break
+        case 2: // 總輸入
+            self.label_totalCost.text = String(format: "+%2d", cost)
+            self.label_totalCost.textColor = UIColor.black
+            break
+        default:
+            break
+        }
+    }
+    
+    private func resetCostByTapType(changeType: String) {
+        var cost = 0
+        let index = locatedManager.array_allItemsURL.firstIndex(of: changeType)
+        
+        if changeType != "others" {
+            cost = UserDefaultManager.showCost(type: changeType)
+        } else {
+            cost = UserDefaultManager.showCost(type: "others_payin") - UserDefaultManager.showCost(type: "others_payout")
+        }
+        
+        self.label_title.text = "種類為『 \(typeChangeArr[index ?? 14]) 』的金額為"
+        self.label_totalCost.text = String(format: "%2d", abs(cost))
+        self.label_totalCost.textColor = changeType != "others" ? UIColor.black : cost > 0 ? UIColor.green_59D945 : cost < 0 ? UIColor.red_E64646 : UIColor.black
+    }
+    
     @objc private func handleDataList() {
         if let res = RealmManager.getData() {
-            listDataTableArr = res
+            listDataTableArr = Array(res)
+            
+            label_title_type.isHidden = false
+            view_imageView_type_symbol.isHidden = true
+            
+            label_time_symbol.text = "(-)"
+            label_title_type.text = "型別"
+            label_cost_symbol.text = "(-)"
+            
+            resetList(symbol: .ways, row: 0, changeType: "") // 還原初始狀態
         }
     }
     
@@ -205,10 +424,10 @@ class ListVC: NotificationVC {
 
 extension ListVC: FixDataDialogVCDelegate {
     func chooseDelete() {
-        let deleteDataType: String = listDataTableArr?[chooseIndex].type ?? ""
-        let deleteDataCost: Int = listDataTableArr?[chooseIndex].cost ?? 0
+        let deleteDataType: String = listDataTableArr[chooseIndex].type
+        let deleteDataCost: Int = listDataTableArr[chooseIndex].cost
         
-        RealmManager.deleteData(data: listDataTableArr?[chooseIndex] ?? noteData())
+        RealmManager.deleteData(data: listDataTableArr[chooseIndex])
         
         UserDefaultManager.setCost(cost: deleteDataCost, type: deleteDataType, costType: .delete)
         
@@ -217,7 +436,7 @@ extension ListVC: FixDataDialogVCDelegate {
     }
     
     func chooseFix() {
-        let VC = WriteInVC(data: listDataTableArr?[chooseIndex] ?? noteData())
+        let VC = WriteInVC(data: listDataTableArr[chooseIndex])
         self.navigationController?.pushViewController(VC, animated: true)
     }
 }
@@ -243,7 +462,7 @@ extension ListVC: UITableViewDelegate, UITableViewDataSource {
         // 設定rows個數
         switch tableView.tag {
         case 0:
-            return listDataTableArr?.count ?? 0
+            return listDataTableArr.count
         case 1:
             return waysChangeArr.count
         case 2:
@@ -268,9 +487,9 @@ extension ListVC: UITableViewDelegate, UITableViewDataSource {
         case 0:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "listCell") as? listTableViewCell else { return listTableViewCell() }
             let row: Int = indexPath.row
-            let date: String = listDataTableArr?[row].date ?? ""
-            let img: String = listDataTableArr?[row].type ?? ""
-            let cost: Int = listDataTableArr?[row].cost ?? 0
+            let date: String = listDataTableArr[row].date
+            let img: String = listDataTableArr[row].type
+            let cost: Int = listDataTableArr[row].cost
             cell.setCell(date: date, img: img, cost: cost)
             return cell
         default:
@@ -315,41 +534,82 @@ extension ListVC: UITableViewDelegate, UITableViewDataSource {
         switch tableView.tag {
         case 0:
             chooseIndex = indexPath.row
-            self.showFixDataDialogVC(title: .list, data: listDataTableArr?[indexPath.row] ?? noteData())
+            self.showFixDataDialogVC(title: .list, data: listDataTableArr[indexPath.row])
         case 1: // 選支出收入
             if let detail = waysChangeArr.getObject(at: indexPath.row) {
                 label_title.text = detail
-                var cost: Int = 0
-                switch (indexPath.row) {
-                case 0:
-                    cost = UserDefaultManager.getTotalCost(costWay: .payIn) - UserDefaultManager.getTotalCost(costWay: .payOut)
-                    self.label_totalCost.text = String(format: "%2d", abs(Int32(cost)))
-                    self.label_totalCost.textColor = cost > 0 ? UIColor.green_59D945 : cost < 0 ? UIColor.red_E64646 : UIColor.black
-                    break
-                case 1:
-                    cost = UserDefaultManager.getTotalCost(costWay: .payOut)
-                    self.label_totalCost.text = String(format: "-%2d", cost)
-                    self.label_totalCost.textColor = UIColor.black
-                    break
-                case 2:
-                    cost = UserDefaultManager.getTotalCost(costWay: .payIn)
-                    self.label_totalCost.text = String(format: "+%2d", cost)
-                    self.label_totalCost.textColor = UIColor.black
-                    break
-                default:
-                    break
-                }
-                presentedViewController?.dismiss(animated: true, completion: nil)
+                
+                resetList(symbol: .ways, row: indexPath.row, changeType: "")
             }
+            presentedViewController?.dismiss(animated: true, completion: nil)
             break
         case 2: // 選日期
+            label_title_type.isHidden = false
+            view_imageView_type_symbol.isHidden = true
+            
+            label_title_type.text = "型別"
+            label_cost_symbol.text = "(-)"
+            
+            if timeChangeArr.getObject(at: indexPath.row) != nil {
+                switch indexPath.row {
+                case 1:
+                    label_time_symbol.text = "(⇩)"
+                    break
+                case 2:
+                    label_time_symbol.text = "(⇧)"
+                    break
+                default:
+                    label_time_symbol.text = "(-)"
+                    break
+                }
+                resetList(symbol: .time, row: indexPath.row, changeType: "")
+            }
+            presentedViewController?.dismiss(animated: true, completion: nil)
             break
         case 3: // 選型別
+            label_time_symbol.text = "(-)"
+            label_cost_symbol.text = "(-)"
+            if let detail = locatedManager.array_allItemsURL.getObject(at: indexPath.row) {
+                if detail == "unlimited" {
+                    label_title_type.isHidden = false
+                    view_imageView_type_symbol.isHidden = true
+                    
+                    label_title_type.text = "型別"
+                } else {
+                    label_title_type.isHidden = true
+                    view_imageView_type_symbol.isHidden = false
+                    
+                    guard let tintedTmage = UIImage(named: detail)?.withRenderingMode(.alwaysTemplate) else { return }
+                    imageView_type_symbol.image = tintedTmage
+                }
+                resetList(symbol: .type, row: indexPath.row, changeType: indexPath.row == 0 ? "" : detail)
+            }
+            presentedViewController?.dismiss(animated: true, completion: nil)
             break
         case 4: // 選金額
+            label_title_type.isHidden = false
+            view_imageView_type_symbol.isHidden = true
+            
+            label_time_symbol.text = "(-)"
+            label_title_type.text = "型別"
+            
+            if costChangeArr.getObject(at: indexPath.row) != nil {
+                switch indexPath.row {
+                case 1:
+                    label_cost_symbol.text = "(⇩)"
+                    break
+                case 2:
+                    label_cost_symbol.text = "(⇧)"
+                    break
+                default:
+                    label_cost_symbol.text = "(-)"
+                    break
+                }
+                resetList(symbol: .cost, row: indexPath.row, changeType: "")
+            }
+            presentedViewController?.dismiss(animated: true, completion: nil)
             break
         default:
-            presentedViewController?.dismiss(animated: true, completion: nil)
             break
         }
     }

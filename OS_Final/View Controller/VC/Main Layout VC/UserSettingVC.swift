@@ -97,6 +97,7 @@ class UserSettingVC: NotificationVC {
         
     private func textFieldInit() {
         textField_date.text = DateManager.currentDate()
+        print(DateManager.currentDate())
         textField_cost.placeholder = "金額"
     }
     
