@@ -97,7 +97,6 @@ class UserSettingVC: NotificationVC {
         
     private func textFieldInit() {
         textField_date.text = DateManager.currentDate()
-        print(DateManager.currentDate())
         textField_cost.placeholder = "金額"
     }
     
@@ -195,7 +194,7 @@ class UserSettingVC: NotificationVC {
         data.ways = IconNameArr.getObject(at: selectedIndex) ?? ""
         data.type = costWayIndex == 0 ? UserDefaultManager.getPayoutIconFromVC() : UserDefaultManager.getPayinIconFromVC()
         data.cost = cost
-        data.detail = textView_detail.text ?? ""
+        data.detail = textView_detail.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
         
         RealmManager.saveData(data: data)
         

@@ -235,7 +235,7 @@ class WriteInVC: NotificationVC {
         data.ways = IconNameArr.getObject(at: selectedIndex) ?? ""
         data.type = costWayIndex == 0 ? payOutIcon : payInIcon
         data.cost = cost
-        data.detail = textView_detail.text ?? ""
+        data.detail = textView_detail.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
         
         self.data = data
         self.showFixDataDialogVC(title: .check, data: data, isFix: true)

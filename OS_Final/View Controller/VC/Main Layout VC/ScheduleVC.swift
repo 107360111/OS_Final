@@ -194,7 +194,7 @@ class ScheduleVC: NotificationVC {
         let invoice_date_month = String(invoice_date[invoice_date.index(invoice_date.startIndex, offsetBy: 3)..<invoice_date.index(invoice_date.startIndex, offsetBy: 5)])
         let invoice_date_day = String(invoice_date[invoice_date.index(invoice_date.startIndex, offsetBy: 5)..<invoice_date.index(invoice_date.startIndex, offsetBy: 7)])
         let new_invoice_date_year = "\((Int(invoice_date_year) ?? 0) + 1911)"
-        return "\(new_invoice_date_year).\(invoice_date_month).\(invoice_date_day)"
+        return "\(new_invoice_date_year)/\(invoice_date_month)/\(invoice_date_day)"
     }
 }
 

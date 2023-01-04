@@ -14,7 +14,6 @@ class DateManager {
     /// 取得當前時間(YYYY/MM/dd)
     static func currentDate() -> String {
         let date = Date()
-        print(date)
         
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "YYYY/MM/dd"
