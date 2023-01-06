@@ -186,7 +186,10 @@ class UserSettingVC: NotificationVC {
             return
         }
         
-        let costStr: String = textField_cost.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? "0"
+        var costStr: String = textField_cost.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? "0"
+        if costStr.count >= 7 {
+            costStr = "1000000"
+        }
         guard let cost: Int = Int(costStr) else { return }
         
         let data = noteData()
