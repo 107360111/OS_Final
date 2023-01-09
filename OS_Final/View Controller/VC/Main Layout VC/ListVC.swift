@@ -200,6 +200,11 @@ class ListVC: NotificationVC {
         
         switch symbol {
         case .ways:
+            if row == 1 {
+                listDataTableArr = filterArray(array: listDataTableArr, symbol: symbol, changeType: "", sortType: "onlyPayOut")
+            } else if row == 2 {
+                listDataTableArr = filterArray(array: listDataTableArr, symbol: symbol, changeType: "", sortType: "onlyPayIn")
+            }
             resetTotalCost(symbol: .ways, row: row)
             break
         case .time:
@@ -245,6 +250,27 @@ class ListVC: NotificationVC {
         
         switch symbol {
         case .ways:
+            if sortType == "onlyPayOut" { // 由小排到大
+                var arrayList = locatedManager.array_payOutURL.map { $0 }
+                arrayList.append("cloud")
+                for index in 0..<array.count {
+                    if arrayList.filter({ $0.contains(array[index].type) }).count > 0 {
+                        new_array.append(array[index])
+                    }
+                }
+            } else if sortType == "onlyPayIn" { // 由大排到小
+                for index in 0..<array.count {
+                    if locatedManager.array_payInURL.filter({ $0.contains(array[index].type) }).count > 0 {
+                        new_array.append(array[index])
+                    }
+                }
+            }
+            
+            for index in 0..<array.count {
+                if changeType == array[index].type {
+                    new_array.append(array[index])
+                }
+            }
             break
         case .time:
             for index in 0..<array.count {// 暫存時間戳資料
@@ -536,6 +562,13 @@ extension ListVC: UITableViewDelegate, UITableViewDataSource {
             chooseIndex = indexPath.row
             self.showFixDataDialogVC(title: .list, data: listDataTableArr[indexPath.row])
         case 1: // 選支出收入
+            label_title_type.isHidden = false
+            view_imageView_type_symbol.isHidden = true
+            
+            label_time_symbol.text = "(-)"
+            label_title_type.text = "型別"
+            label_cost_symbol.text = "(-)"
+            
             if let detail = waysChangeArr.getObject(at: indexPath.row) {
                 label_title.text = detail
                 
